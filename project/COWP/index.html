@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>COWP Project</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="/css/css" rel="stylesheet" type="text/css">
+
+<body data-gr-c-s-loaded="true" data-new-gr-c-s-check-loaded="14.998.0" data-gr-ext-installed="">
+    <link media="all" href="/css/glab.css" type="text/css" rel="StyleSheet">
+
+    <style type="text/css" media="all">
+        IMG {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 0px;
+            FLOAT: right;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 0px
+        }
+
+        #primarycontent {
+            MARGIN-LEFT: auto;
+            WIDTH: expression(document.body.clientWidth > 500? "500px": "auto");
+            MARGIN-RIGHT: auto;
+            TEXT-ALIGN: left;
+            max-width: 850px;
+        }
+
+        BODY {
+            TEXT-ALIGN: center
+        }
+
+    </style>
+
+    <div id="primarycontent">
+        <center>
+            <h0>Robot Task Planning and Situation Handling in Open Worlds</h0>
+        </center>
+        <center>
+            <p>Yan Ding<sup>1</sup>,&nbsp;Xiaohan Zhang<sup>1</sup>,&nbsp;Saeid Amiri<sup>1</sup>,&nbsp;Nieqing Cao<sup>1</sup>,&nbsp;Hao Yang<sup>2</sup>,<br>&nbsp;Chad Esselink<sup>2</sup>,&nbsp;Shiqi Zhang<sup>1</sup></p>
+            <center>
+                <p><sup>1</sup>SUNY Binghamton &nbsp;<sup>2</sup>Ford Motor Company</p>
+                <center>
+                    <!--                    <p>IEEE RA-L, 2022 </p>-->
+                    <p>[<a href='files/COWP_ICRA2023.pdf'>Paper</a>]&nbsp[<a href="https://github.com/yding25/GPT-Planner">Code</a>]&nbsp[<a href="files/COWP_dataset_6tasks.xlsx">Situation Dataset</a>]
+                    </p>
+
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td valign="middle" align="center">
+                                    <iframe width="600" height="400" src="https://www.youtube.com/embed/HtxlXSzY5VQ" frameborder="0" allowfullscreen></iframe>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <h1 align="center">Abstract</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">Automated task planning algorithms have been developed to help robots complete complex tasks that require multiple actions. Most of those algorithms have been developed for “closed worlds” assuming complete world knowledge is provided. However, the real world is generally open, and the robots frequently encounter <b>unforeseen situations</b> that can potentially break the planner’s completeness. </p>
+
+                        <p align="justify" width="20%">This work introduces a novel algorithm (<b>COWP</b>) for open-world task planning and situation handling that dynamically augments the robot’s action knowledge with task-oriented common sense. In particular, common sense is extracted from Large Language Models based on the current task at hand and robot skills.</p>
+
+                        <p align="justify" width="20%">For systematic evaluations, we collected a dataset that includes <b>561 execution-time situations in a dining domain</b>, where each situation corresponds to a state instance of a robot being potentially unable to complete a task using a solution that normally works. Experimental results show that our approach significantly outperforms competitive baselines from the literature in the success rate of service tasks. Additionally, we have demonstrated COWP using a mobile manipulator.</p>
+                    </div>
+
+                    <br>
+
+                    <!--
+                    <h1 align="center">Contributions</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">The main contribution of this work is <b>a novel integration of a pre-trained LLM with a knowledge-based task planner</b>. Inheriting the desirable features from both sides, COWP is well grounded in specific domains while embracing commonsense solutions at large. </p>
+                        <p align="justify" width="20%">
+                            For systematic evaluations, we have created a dataset with <b>561</b> execution-time situations collected from a <b>dining domain</b> using a crowd-sourcing platform, where each situation corresponds to an instance of a robot not being able to perform a plan (that normally works).
+                        </p>
+                    </div>
+
+                    <br>
+-->
+
+                    <h1 align="center">Framework</h1>
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <td>
+                            <img src="./img/fig_cowp.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                        </td>
+                    </table>
+
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">
+                            An overview of COWP that includes the three key components of <b>Task Planner</b> (provided as prior knowledge under closed-world assumption), <b>Knowledge Acquirer</b>, and <b>Plan Monitor</b>.
+                        </p>
+                        <ul>
+                            <li>
+                                <p align="justify" width="20%">
+                                    The <b style="color:#008000">green</b> (dashed) loop represents a plan execution process where the robot does encounter no situation, or these situations have no impact on the robot's plan execution.
+                                </p>
+                            </li>
+                            <li line-height="10px">
+                                <p align="justify" width="20%">The <b style="color:#FFA500">orange</b> loop is activated when the robot's current (closed-world) task planner is unable to develop a plan, which activates Knowledge Acquirer to augment the task planner with additional action effects utilizing common sense.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Algorithm</h1>
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <td>
+                            <img src="./img/algorithm.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                        </td>
+                    </table>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> Algorithm 1 describes how the components of COWP interact with each other. More details can be found in the paper.</p>
+                        <!--                        Initially, Task Planner generates a satisficing plan based on the goal provided by a human user in Line 2. After that, the actions in the plan are performed sequentially by a robot in the for-loop of Lines 3-20. If the current plan remains feasible, as evaluated by Plan Monitor, the next action will be directly passed to the robot for execution in Line 18; otherwise, an action precondition will be added to Task Planner in Line 6. For example, when Task Planner does not know anything about “dirty cups,” it might wrongly believe that one can use a dirty cup as a container for drinking water. In this situation, Line 6 will add a new statement “The precondition of filling a cup with water is that the cup is not dirty” into the task planner. fter the domain description of Task Planner is updated (adding action preconditions or effects), the planner tries to generate a new plan pln′ in Line 7. If no plan is generated by Task Planner (Line 8), Knowledge Acquirer will be activated for knowledge augmentation with external task-oriented common sense in Line 9. If the extracted common sense includes action effects, such information will be added into the task planner in Line 11. For instance, the robot might learn that a chopping board can be used for holding steak, as an action effect that was unknown before. This process continues until no additional action effects can be generated (in this case, COWP reports “no solution” in Line 14) or a plan is generated. COWP leverages common sense to augment a knowledge-based task planner to address situations towards robust task completion in open worlds. The implementations of Lines 4 and 9 using common sense are non-trivial in practice. Next, we describe how commonsense knowledge is extracted from an LLM (GPT-3 in our case) for those purposes.-->
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Closed-World Task Planners in PDDL</h1>
+
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> For each task in the evaluation, we developed a closed-world task planner in PDDL [1]. PDDL, an action-centered language, is designed to formalize Artificial Intelligence (AI) planning problems, allowing for a more direct comparison of planning algorithms and implementations.</p>
+
+                        <p align="justify" width="20%"> The below figure shows a task planner for the task of ``serving water'', which consists of a domain file (<b>upper</b>) and a problem file (<b>lower</b>).</p>
+
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/fig_planner.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+
+                        <p align="justify" width="20%"> In the upper subfigure, a set of predicates (e.g., <b>cup_at</b>) and a set of actions (e.g., <b>fill</b>) are predefined, where an action is defined by its preconditions and effects. For example, one of preconditions for action <b>fill</b> is <b>(cup_is_held ?c) - (cup_is_empty ?c)</b>, and the action effect is <b>(cup_is_filled ?c)</b>.</p>
+
+                        <p align="justify" width="20%"> In the lower subfigure, a task problem is defined by an initial state and a goal state (i.e., a user is satisfied and the faucet is turned off.) A task plan for drinking water is generated after inputting these two files into a solver, as shown below: </p>
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/task_plan.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+
+                        <p align="justify" width="20%"> The solver is accessible at <a href="http://editor.planning.domains">http://editor.planning.domains/</a>.</p>
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Prompt Design</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> The realization of our plan monitor relies on repeatedly querying GPT-3 for each action using the following prompt.</p>
+                        <p align="justify" width="20%"><b>Template 1</b>: <em>Is it suitable to/that [PERFORM ACTION], if there exists [SITUATION].</em></p>
+
+                        <p align="justify" width="20%">The following template is for querying an LLM for acquiring common sense about action effects.</p>
+
+                        <p align="justify" width="20%"><b>Template 2</b>: <em> Is it suitable to/that [PERFORM ACTION] on/in/with/at/over [OBJECT]?</em></p>
+
+                        <p align="justify" width="20%"><b>Template 3</b>: <em> There are some objects, such as [OBJ-1, OBJ-2, ..., and OBJ-N]. Which is the most suitable for [CURRENT TASK]?</em></p>
+
+                        <p align="justify" width="20%">The below figure shows three examples for prompt construction based on our <b>Templates 1-3</b>, respectively. In the figure, the interface, called Playground, is intended for testing GPT-3 online, where a user can text a prompt in the blank, and customize the hyperparameters of GPT-3 (e.g., model). In our case, we use the <b>text-davinci-002</b> model, which is the most capable engine.</p>
+
+                        <p align="justify" width="20%">The prompt for Plan Monitor (PM) is constructed based on Template 1, where PM evaluates if the current task plan is feasible or not. In the <b>top</b> figure, we can know an action precondition that ``one cannot fill a broken cup with water'' according to the common sense from GPT-3. </p>
+
+                        <p align="justify" width="20%">The prompts for Knowledge Acquirer (KA) are constructed based on Template 2 and Template 3, where KA extracts common sense to augment the classical task planner. In these two figures (<b>middle</b> and <b>bottom</b>), we can know that common sense that ``one can use a bowl for drinking water'' can be added into an action effect, according to the common sense from GPT-3.</p>
+
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/fig_templates.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                        <p align="justify" width="20%">The playground of GPT-3 is accessible at <a href="https://beta.openai.com/playground">https://beta.openai.com/playground</a>.</p>.
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Experiment Results</h1>
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td><img src="./img/fig_result1.png" width="850" height="320">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="./img/fig_result2.png" width="850" height="260">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">
+                            <b>Top:</b> Overall performances of COWP (ours) and three baseline methods under six different tasks, where the x-axis represents the task.
+                            Each success rate value is an average of 150 trials. The tasks are ranked based on the performance of COWP, where the very left corresponds to its best performance.
+                        </p>
+                        <p align="justify" width="20%">
+                            <b>Bottom:</b> Overall performances of COWP (ours) and three baseline methods under different objects, where the x-axis represents the object involved in the situation, the number beside each object is the occurrence of the object in our situation dataset, and the y-axis represents the success rate.
+                            The objects are ranked based on the performance of COWP, where the very left corresponds to its best performance.
+                        </p>
+                    </div>
+
+
+                    <br>
+
+                    <h1 align="center">Questionnaire for Collecting Situation Dataset</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> To collect execution-time situations, a questionnaire was designed and published on Amazon Mechanical Turk. The below figure shows the Mechanical Turk interface for one everyday task (i.e., serving water). In the interface, each MTurker was provided with a task description, including steps for completing the task. The MTurkers were asked to respond to a questionnaire by identifying one step in the provided plan and describing a situation that might occur in that step within the blank. </p>
+
+                        <p align="justify" width="20%">On the questionnaire, there are six everyday tasks (e.g., setting a dining table) associated with their steps, which were extracted from an existing dataset [2]. In the end, we have collected a dataset of 561 valid situations, where each instance of the dataset corresponds to a situation that prevents a service robot from completing a task in a dining domain. In the next section, we will discuss the statistics of the dataset.</p>
+
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/fig_questionnaire.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                    </div>
+                    
+                    <br>
+                    
+                    <h1 align="center">Statistics of Situation Dataset</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> The following two figures show the statistics of situations for six everyday tasks used in our evaluation, where x-axis reflects the occurrence of each distinguishable situations, and y-axis represents each distinguishable situations, respectively. In the top left corner of each subfigure, (X) represents the number of distinguishable situations in each task. In the bottom right corner of each subfigure, Total = X represents the number of situations in each task. According to the two figures, we can see that there are at least 92 situations collected for each of the six tasks used in our evaluation, with 16 to 22 distinguishable situations. </p>
+                        
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/fig_situation123.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+<!--                        <p align="justify" width="20%"><b>Top</b>: Details of situations in the task of “setting table”; <b>Middle</b>: Details of situations in the task of “drinking coke”; <b>Bottom</b>: Details of situations in the task of “preparing burger”; x-axis reflects the occurrence of each distinguishable situations, and y-axis represents each distinguishable situations, respectively. (X) in the top left corner of each subfigure represents the number of distinguishable situations in each task. Total = X indicates the number of situations in each task.</p>-->
+                        
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/fig_situation456.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+<!--                        <p align="justify" width="20%"><b>Top</b>: Details of situations in the task of “drinking water”; <b>Middle</b>: Details of situations in the task of “cleaning floor”; <b>Bottom</b>: Details of situations in the task of “washing plate”; x-axis reflects the occurrence of each distinguishable situations, and y-axis represents each distinguishable situations, respectively. (X) in the top left corner of each subfigure represents the number of distinguishable situations in each task. Total = X indicates the number of situations in each task.</p>-->
+                    </div>
+                    
+                    <br>
+                    
+                    <h1 align="center">Object Library for Simulation</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> For simulating dining tasks, we extracted 86 objects (e.g., cup, burger, folk, table, and chair) from an existing dataset [2]. Fig. 4 shows these objects, which is categorized into five groups: utensil, appliance, furniture, food, and beverage. From the figure, we can see that the category “utensil” contains the greatest number of objects (i.e., 29), while the category “beverage” contains the fewest ones (i.e., 8). </p>
+                        
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/fig_object.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+<!--                        <p align="justify" width="20%">For simulating dining tasks, we extracted 86 objects from an existing dataset. These objects are categorized into five groups: utensil, appliance, furniture, food, and beverage, with (X) representing the number of objects in each group.</p>-->
+                    </div>
+                    
+                    <h1 align="center">Reference</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">[1] C. Aeronautiques, A. Howe, C. Knoblock, I. D. McDermott, A. Ram, M. Veloso, D. Weld, D. W.SRI, A. Barrett, D. Christianson et al., “Pddl— the planning domain definition language,” Technical Report, Tech. Rep., 1998</p>
+                        
+                        <p align="justify" width="20%">[2] W. Huang, P. Abbeel, D. Pathak, and I. Mordatch, “Language models as zero-shot planners: Extracting actionable knowledge for embodied agents,” Thirty-ninth International Conference on Machine Learning, 2022</p>
+                            </div>
+                    <!-- <center>
+                        <h1>Acknowledgements</h1>
+                    </center> -->
+                    <!-- The webpage template was borrowed from some <a href="https://nvlabs.github.io/SPADE/">GAN folks</a>. -->
+                    <!-- <div style="font-size:30px">
+                        <p align="justify">
+                            This work has taken place in the Autonomous Intelligent Robotics (AIR) Group at SUNY Binghamton. AIR research is supported in part by grants from the National Science Foundation (IIS-1925044 and REU Supplement), Ford Motor Company (URP Awards), OPPO (Faculty Research Award), and SUNY Research Foundation
+                        </p>
+                    </div> -->
+                    <br><br>
+
+</html>

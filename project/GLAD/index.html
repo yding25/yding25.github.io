@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>GLAD Project</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="/css/css" rel="stylesheet" type="text/css">
+
+<body data-gr-c-s-loaded="true" data-new-gr-c-s-check-loaded="14.998.0" data-gr-ext-installed="">
+    <link media="all" href="/css/glab.css" type="text/css" rel="StyleSheet">
+
+    <style type="text/css" media="all">
+        IMG {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 0px;
+            FLOAT: right;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 0px
+        }
+
+        #primarycontent {
+            MARGIN-LEFT: auto;
+            WIDTH: expression(document.body.clientWidth > 500? "500px": "auto");
+            MARGIN-RIGHT: auto;
+            TEXT-ALIGN: left;
+            max-width: 850px;
+        }
+
+        BODY {
+            TEXT-ALIGN: center
+        }
+    </style>
+
+    <div id="primarycontent">
+        <center>
+            <h0>GLAD: Grounded Layered Autonomous Driving for Complex Service Tasks</h0>
+        </center>
+        <center>
+            <p>Yan Ding,&nbsp;Cheng Cui,&nbsp;Xiaohan Zhang,&nbsp;Shiqi Zhang</p>
+            <center>
+                <p>SUNY Binghamton</p>
+                <center>
+                    <!--                    <p>IEEE RA-L, 2022 </p>-->
+                    <p>[<a href='files/GLAD_ICRA2023.pdf'>Paper</a>]&nbsp[<a href="files/ASP.zip">ASP</a>]&nbsp[<a href="https://www.dropbox.com/scl/fo/3cxbsuzxiak6qnbd7atiz/h?dl=0&rlkey=3o04anx3dkdg2j9eo8ksxa972">Image Dataset</a>]&nbsp[<a href="https://github.com/yding25/Test">Code</a>]
+                    </p>
+
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td valign="middle" align="center">
+                                    <iframe width="600" height="400" src="https://www.youtube.com/embed/3T22B6tCYFA" frameborder="0" allowfullscreen></iframe>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <h1 align="center">Abstract</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">Given the current point-to-point navigation capabilities of autonomous vehicles, researchers are looking into complex service requests that require the vehicles to visit multiple points of interest. </p>
+
+                        <p align="justify" width="20%">In this paper, we develop a layered planning framework, called <b>GLAD</b>, for complex service requests in autonomous urban driving. There are three layers for <b>service-level</b>, <b>behavior-level</b>, and <b>motion-level</b> planning. The layered framework is unique in its tight coupling, where the different layers communicate user preferences, safety estimates, and motion costs for system optimization. </p>
+
+                        <p align="justify" width="20%">GLAD is visually grounded by perceptual learning from <b>a dataset of 13.8k instances</b> collected from driving behaviors. GLAD enables autonomous vehicles to efficiently and safely fulfill complex service requests. Experimental results from abstract and full simulation show that our system outperforms a few competitive baselines from the literature. </p>
+                    </div>
+
+                    <!-- <br> -->
+
+                    <!-- <h1 align="center">Contributions</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">The main contribution of this work is <b>a novel integration of a pre-trained LLM with a knowledge-based task planner</b>. Inheriting the desirable features from both sides, GLAD is well grounded in specific domains while embracing commonsense solutions at large. </p>
+                        <p align="justify" width="20%">
+                            For systematic evaluations, we have created a dataset with <b>561</b> execution-time situations collected from a dining domain using a crowd-sourcing platform, where each situation corresponds to an instance of a robot not being able to perform a plan (that normally works). According to experimental results, we see GLAD performed significantly better than three literature-selected baselines in success rate. We implemented and demonstrated GLAD using a mobile manipulator.</p>
+                    </div> -->
+
+                    <br>
+
+                    <h1 align="center">Framework</h1>
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <td>
+                            <img src="./img/fig_overview.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                        </td>
+                    </table>
+
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%">
+                            An overview of the GLAD planning framework for complex driving tasks in urban scenarios. GLAD consists of three decision-making layers about fulfilling service requests, sequencing driving behaviors, and computing motion trajectories respectively. GLAD is a visually grounded planning framework, because the safety levels of driving behaviors are evaluated using computer vision.
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Algorithm</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> Algorithm 1 presents our GLAD algorithm – the main contribution of this work. More details can be found in the paper.</p>
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/algorithm.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Task Planner implemented by ASP</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> Our task planner is implemented using ASP. The figure shows the definition of actions in the planner. More details can be found in the ASP code.</p>
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/asp.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">IM Dataset Collection</h1>
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> We built an image dataset to train the safety estimator, where the dataset contains 13.8k instances. Each instance is referred to as IM, which includes the <em>1st</em>, <em>2nd</em>, <em>4th</em>, and <em>10th</em> frames, as marked in blue box in the following figure. Right after taking an IM, the vehicle was forced to merge left (or right) using a predefined motion trajectory. In each trial, the vehicle was given ten seconds to complete the behavior. By the end of the ten seconds, the IM was labeled <b>positive</b>, if there was a collision with a surrounding vehicle, or there existed another vehicle that was very close to our vehicle (the threshold was 1.0 meter). Otherwise, the instance was labeled <b>negative</b>. </p>
+
+                        <p align="justify" width="20%"> The figure shows two instances (positive on the left, and negative on the right), where we also present bird views of the two trials. Our dataset is also well balanced, as 46.5% of instances are labeled positive, and the remaining ones are labeled negative. To ensure the diversity of driving scenarios, instances were sampled from 24 different roads. The dataset has been open-sourced, where the link for downloading and additional information are provided in the supplementary materials. </p>
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/collection.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <h1 align="center">Illustration</h1>
+                    <table border="0" cellspacing="10" cellpadding="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td><img src="./img/fig_illustration.png" width="850" height="320">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="font-size:30px">
+                        <p align="justify" width="20%"> An illustrative example of GLAD for grounded layered autonomous urban driving. <em>The vehicle's service task was to take Emma home after work. On the way home, Emma needed to pick up kid from school, stop at a gas station, and visit a grocery store.</em> To fulfill the service request, our vehicle needed to visit at least four POIs, including School, Grocery Store, Gas Station, and Home.
+                        </p>
+                        <p align="justify" width="20%"> <b>(a)</b> GLAD computed a task-motion plan as shown in blue dashed line, where at the service level the vehicle planned to visit the following POIs in order: Gas Station 1, School, Grocery Store 2, and Home. All POIs are marked with red pins. The planned “merge lane” positions are marked with green circles.
+                        </p>
+                        <p align="justify" width="20%"> <b>(b)</b> Our vehicle (a blue car) was preparing to merge left in the highlighted area, and observed that there was a red car making it unsafe to merge left.
+                        </p>
+                        <p align="justify" width="20%"> <b>(c)</b> Based on the computed safety value, GLAD generated a new task-motion plan that helped avoid merging lane in the highlighted area. Although the new plan required a longer traveling distance, it significantly improved driving safety, while considering user preferences. Following the updated plan, the vehicle was able to fulfill the service request.
+                        </p>
+                    </div>
+
+
+                    <br>
+
+                    <h1 align="center">Experiment Results</h1>
+                    <div style="font-size:30px">
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/safety_estimator.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                        <p align="justify" width="20%"> Performance of safety estimators SE-ANN and SE-SVM under two training settings: Default (<b>Top</b>), and Non-default (<b>Bottom</b>). x-axis represents the percentage of DTrain used in training, and y-axis represents the F1-score. </p>
+                        <table border="0" cellspacing="10" cellpadding="0" align="center">
+                            <td>
+                                <img src="./img/glad.png" style="width:100%;margin-left:0%;margin-right:0%;">
+                            </td>
+                        </table>
+                        <p align="justify" width="20%"> Overall performances of GLAD and three baselines, where the x-axis represents different methods, and the y-axis represents the average utility value. We also reported the standard deviations on top of each bar. </p>
+                    </div>
+
+                    <br>
+                    <!-- <center>
+                        <h1>Acknowledgements</h1>
+                    </center> -->
+                    <!-- The webpage template was borrowed from some <a href="https://nvlabs.github.io/SPADE/">GAN folks</a>. -->
+                    <!-- <div style="font-size:30px">
+                        <p align="justify">
+                            This work has taken place in the Autonomous Intelligent Robotics (AIR) Group at SUNY Binghamton. AIR research is supported in part by grants from the National Science Foundation (IIS-1925044 and REU Supplement), Ford Motor Company (URP Awards), OPPO (Faculty Research Award), and SUNY Research Foundation
+                        </p>
+                    </div> -->
+
+                </center>
+            </center>
+        </center>
+    </div>
+</body>
+</head></html>
