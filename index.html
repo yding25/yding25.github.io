@@ -1,507 +1,401 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
 <head>
-    <title>Yan Ding</title>
+    <meta name=viewport content="width=800">
+    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
     <style type="text/css">
-        body {
-            background-color: #ffffff;
-            font-family: Open Sans;
-            text-decoration: none;
-            min-height: auto;
-            max-height: auto;
-            min-width: auto;
-            max-width: 100vh;
-            margin: auto;
-        }
-
-        /* three level heads */
-        .style0 {
-            font-size: 300%;
-            color: #000000;
-            font-weight: bold;
-            font-family: Open Sans;
-        }
-
-        .style1 {
-            font-size: 200%;
-            color: #000000;
-            font-weight: bold;
-            font-family: Open Sans;
-        }
-
-        .style2 {
-            font-size: 140%;
-            color: #000000;
-            font-weight: normal;
-            font-family: Open Sans;
-        }
-
-        .style3 {
-            font-size: 150%;
-            color: #000000;
-            font-weight: normal;
-            font-style: italic;
-            font-family: Open Sans;
-            background-color: yellowgreen;
-        }
+        /* Color scheme stolen from Sergey Karayev */
 
         a {
-            color: black;
+            color: #1772d0;
             text-decoration: none;
         }
 
+        a:focus,
         a:hover {
-            background-color: yellowgreen;
-        }
-
-        b {
-            color: black;
+            color: #f09228;
             text-decoration: none;
         }
 
-        b:hover {
-            background-color: yellowgreen;
+        body,
+        td,
+        th,
+        tr,
+        p,
+        a {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 14px
         }
 
-        i {
-            color: yellow;
-            text-decoration: none;
+        strong {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 14px;
         }
 
-        i:hover {
-            background-color: yellowgreen;
+        heading {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 22px;
         }
 
-/*
-        td.level0 {
-            line-height: 300%;
+        papertitle {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 700
         }
 
-        td.level1 {
-            line-height: 200%;
+        name {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 32px;
         }
-*/
+
+        .one {
+            width: 160px;
+            height: 160px;
+            position: relative;
+        }
+
+        .two {
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            transition: opacity .2s ease-in-out;
+            -moz-transition: opacity .2s ease-in-out;
+            -webkit-transition: opacity .2s ease-in-out;
+        }
+
+        .fade {
+            transition: opacity .2s ease-in-out;
+            -moz-transition: opacity .2s ease-in-out;
+            -webkit-transition: opacity .2s ease-in-out;
+        }
+
+        span.highlight {
+            background-color: #ffffd0;
+        }
 
     </style>
+    <link rel="icon" type="image/jpg" href="images/seal_icon.jpg">
+    <title>Yan Ding</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 
+
 <body>
-    <br>
-    <!-- first part -->
-    <div>
-        <table>
-            <tr>
-                <th>
-                    <span class=style0> Yan Ding </span>
-                </th>
-                <!-- <th width="10%", align="left">
-                    <span class="style1"> <a href="kitrob/kitrob.html"> KitRob</a> </span>
-                </th>
-                <th align="right">
-                    <span class="style1"> <a href="sexbots/sexbots.html"> Sexbots</a> </span>
-                </th> -->
-            </tr>
-        </table>
-    </div>
+    <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td width="67%" valign="middle">
+                            <p align="center">
+                                <name>Yan Ding</name>
+                            </p>
+                            <p>I am a forth year computer science PhD student at the State University of New York (SUNY) at Binghamton. I am supervised by Associated Professor <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a> and supported by grants from the Ford Motor Company. I was supervised by <a href="http://www.cs.cqu.edu.cn/info/1322/6092.htm">Chao Chen</a>, a full professor, during my master's program. I received my M.S. in Computer Science in 2019, and got my B.A. in Mechanical Engineering in 2016 from Chongqing University, China.
+                            </p>
+                            <p>Feel free to contact me at yding25@binghamton.edu.
+                            </p>
+                            <p>[<a href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ&hl=en">Google Scholar (Citation>220)</a>]
+<!--                                [<a href="pdf/cv_20200405.pdf">CV (March 2023)</a>]-->
+                            </p>
+                        </td>
+                        <td width="33%">
+                            <img src="img/photo.jpg" width="162" height="225">
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td width="100%" valign="middle">
+                            <heading>Research</heading>
+                            <p>I aim to create a household robot that frees humans from tedious chores, allowing them to enjoy their leisure time. My research focuses on the intersection of planning and learning in complex home environments, using techniques from classical planning, task and motion planning, machine learning and reinforcement learning.
+                            </p>
+                            <p>
+                                I have created and currently manage an open-source robot simulation project called <a href="https://yding25.github.io/BestMan/">BestMan</a>, featuring a UR5e robotic arm and a Segway base.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
 
-    <br>
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
 
-    <div>
-        <table>
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/llm-grop.jpg' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2109.14830">
+                                <papertitle>Task and Motion Planning with Large Language Models for Object Rearrangement</papertitle>
+                            </a>
+                            <br>
+                            <strong>Yan Ding*</strong>, Xiaohan Zhang*, Chris Paxton, Shiqi Zhang
+                            <br>
+                            <em>Under Review</em>
+                            <br>
+                            [<a href="https://arxiv.org/pdf/2303.06247.pdf">Paper</a>]
+                            [<a href="https://sites.google.com/view/llm-grop">Project</a>]
+                            [<a href="https://youtu.be/HtxlXSzY5VQ">Video</a>]
+                            [<a href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">Code</a>]
+                            <br>
+                            <p></p>
+                            <p>LLM-GROP is a method that uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates them with a task and motion planner, allowing for successful and efficient multi-object rearrangement in various environments using a mobile manipulator.</p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/glad_croped.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2203.09634">
+                                <papertitle>GLAD: Grounded Layered Autonomous Driving for Complex Service Tasks</papertitle>
+                            </a>
+                            <br>
+                            <strong>Yan Ding</strong>, Cheng Cui, Xiaohan Zhang, Shiqi Zhang
+                            <br>
+                            <em>Under Review</em>
+                            <br>
+                            [<a href="https://arxiv.org/pdf/2210.02302.pdf">Paper</a>]
+                            <br>
+                            <p></p>
+                            <p>A new planning framework called GLAD has been developed for autonomous urban driving to enable efficient and safe fulfillment of complex service requests.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/cowp_real.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href=" http://arxiv.org/abs/2204.10420">
+                                <papertitle>Robot Task Planning and Situation Handling in Open Worlds</papertitle>
+                            </a>
+                            <br>
+                            <strong>Yan Ding</strong>, Xiaohan Zhang, Saeid Amiri, Hao Yang, Chad Esselink, Shiqi Zhang
+                            <br>
+                            <em>Under Review</em>
+                            <br>
+                            [<a href="https://arxiv.org/pdf/2210.01287.pdf">Paper</a>]
+                            [<a href="https://cowplanning.github.io/">Project</a>]
+                            [<a href="https://youtu.be/HtxlXSzY5VQ">Video</a>]
+                            [<a href="https://github.com/yding25/GPT-Planner">Code</a>]
+                            <br>
+                            <p></p>
+                            <p>The paper introduces a new algorithm (COWP) that uses task-oriented common sense extracted from Large Language Models to help robots handle unforeseen situations and complete complex tasks in an open world, with better success rates than previous algorithms.</p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/tmoc.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2208.07737">
+                                <papertitle>Learning to Ground Objects for Robot Task and Motion Planning</papertitle>
+                            </a>
+                            <br>
+                            <strong>Yan Ding</strong>, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang
+                            <br>
+                            <em>ICRA with RA-L option</em>, 2022
+                            <br>
+                            [<a href="https://arxiv.org/pdf/2202.06674.pdf">Paper</a>]
+                            [<a href="https://yding25.github.io/project/TMOC/TMOC.html">Project</a>]
+                            [<a href="https://github.com/yding25/TMOC">Code</a>]
+                            [<a href="https://www.youtube.com/embed/3ijtbbeCQho">Presentation</a>]
+                            <br>
+                            <p></p>
+                            <p>The paper presents a new robot planning algorithm, TMOC, which can handle complex real-world scenarios without prior knowledge of object properties by learning them through a physics engine, outperforming existing algorithms.</p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/tmpud.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2206.10680">
+                                <papertitle>Task-Motion Planning for Safe and Efficient Urban Driving</papertitle>
+                            </a>
+                            <br>
+                            <strong>Yan Ding</strong>, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang
+                            <br>
+                            <em>IROS</em>, 2022.
+                            <br>
+                            [<a href="pdf/TMPUD_IROS_camera_ready.pdf">Paper</a>]
+                            [<a href="https://yding25.github.io/project/TMPUD/TMPUD.html">Project</a>]
+                            [<a href="https://github.com/yding25/TMPUD">Code</a>]
+                            [<a href="https://www.youtube.com/watch?v=8NHQYUqMyoI">Demo</a>]
+                            [<a href="https://youtu.be/k-Pcnx8zgxE">Presentation</a>]
+                            <br>
+                            <p></p>
+                            <p>Autonomous vehicles need to balance efficiency and safety when planning tasks and motions, and the algorithm Task-Motion Planning for Urban Driving (TMPUD) enables communication between planners for optimal performance.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/DVAT.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2105.14074">
+                                <papertitle>DAVT: an error-bounded vehicle trajectory data representation and compression framework</papertitle>
+                            </a>
+                            <br>
+                            Chao Chen*, <strong>Yan Ding*</strong>, Suiming Guo, Yasha Wang
+                            <br>
+                            <em>IEEE TVT</em>, 2020.
+                            <br>
+                            [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296&casa_token=ZbgAMop0EiYAAAAA:BVnLHMxb3jaLs0Ukmq_RTszRARtuiPh5qg51GXNgxmmOsr5GbGna31OvxG6WnB8gfnyEJQUb">PDF</a>]
+                            <br>
+                            <p></p>
+                            <p>DAVT proposes a mobile edge computing solution for vehicle trajectory data compression, which reduces data at the source and lowers communication and storage costs, using three compressors for distance, acceleration, velocity, and time data parts, and outperforms other baselines according to evaluation results.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/VTracer.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2105.14074">
+                                <papertitle>VTracer: When online vehicle trajectory compression meets mobile edge computing</papertitle>
+                            </a>
+                            <br>
+                            Chao Chen*, <strong>Yan Ding*</strong>, Zhu Wang, Junfeng Zhao, Bin Guo, Daqing Zhang
+                            <br>
+                            <em>IEEE Systems Journal</em>, 2019.
+                            <br>
+                            [<a href="https://hal.science/hal-02321015/document">PDF</a>]
+                            <br>
+                            <p></p>
+                            <p>This paper proposes an online trajectory compression framework that uses SD-Matching for GPS alignment and HCC for compression, and demonstrates its effectiveness and efficiency using real-world datasets in Beijing and deployment in Chongqing.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/trajcompressor.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2105.14074">
+                                <papertitle>TrajCompressor: An Online Map-matching-based Trajectory Compression Framework Leveraging Vehicle Heading Direction and Change</papertitle>
+                            </a>
+                            <br>
+                            Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng Xie, Shu Zhang, Zhu Wang, Liang Feng
+                            <br>
+                            <em>IEEE TITS</em>, 2019.
+                            <br>
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/8697124">PDF</a>]
+                            <br>
+                            <p></p>
+                            <p>This paper presents an online trajectory compression framework for reducing storage, communication, and computation issues caused by massive and redundant vehicle trajectory data, consisting of two phases: online trajectory mapping and trajectory compression, using Spatial-Directional Matching and Heading Change Compression algorithms respectively, which have been evaluated with real-world datasets in Beijing and deployed in Chongqing, showing higher accuracy and efficiency compared to state-of-the-art algorithms.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/api.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2105.14074">
+                                <papertitle>Fuel Consumption Estimation of Potential Driving Paths by Leveraging Online Route APIs</papertitle>
+                            </a>
+                            <br>
+                            Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng Xie, Xuefeng Xie, Zhikai Yang
+                            <br>
+                            <em>Green, Pervasive, and Cloud Computing: 13th International Conference (GPC)</em>, 2018.
+                            <br>
+                            [<a href="https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7">PDF</a>]
+                            <br>
+                            <p></p>
+                            <p>This paper proposes a fuel consumption model based on GPS trajectory and OBD-II data, which can estimate the fuel usage of driving paths and help drivers choose fuel-efficient routes to reduce greenhouse gas and pollutant emissions.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/threestage.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://arxiv.org/abs/2105.14074">
+                                <papertitle>A three-stage online map-matching algorithm by fully using vehicle heading direction</papertitle>
+                            </a>
+                            <br>
+                            Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng Xie, Shu Zhang
+                            <br>
+                            <em>Journal of Ambient Intelligence and Humanized Computing</em>, 2018.
+                            <br>
+                            [<a href="https://link.springer.com/article/10.1007/s12652-018-0760-0">PDF</a>]
+                            <br>
+                            <p></p>
+                            <p>The SD-Matching algorithm proposes a three-stage approach to improve the accuracy and speed of online map-matching by incorporating vehicle heading direction data.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/greenplanner.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7917867&casa_token=4gh4bR-jrIEAAAAA:pfwiZ89kkvAsyOtRtYU3kreZDqcfwXOAVnz3xnCRPRZSr_BJlxtNTwSu7fQ0QmDVH4p-24lb">
+                                <papertitle>Greenplanner: Planning personalized fuel-efficient driving routes using multi-sourced urban data</papertitle>
+                            </a>
+                            <br>
+                            <strong>Yan Ding*</strong>, Chao Chen*, Shu Zhang, Bin Guo, Zhiwen Yu, Yasha Wang
+                            <br>
+                            <em>IEEE PerCom</em>, 2017.
+                            <br>
+                            [<a href="https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf">PDF</a>]
+                            <br>
+                            <p></p>
+                            <p>Greenhouse gas emissions from vehicles in modern cities is a significant problem, but recommending fuel-efficient routes to drivers through a personalized fuel consumption model can help alleviate this issue, as demonstrated by the successful implementation of GreenPlanner in Beijing, which achieved a mean fuel consumption error of less than 7% and an average savings of 20% fuel consumption for suggested routes.</p>
+                        </td>
+                    </tr>
+
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%" cellspacing="0" cellpadding="20" border="0" align="center">
+        <tbody>
             <tr>
-                <td class="level1">
-                    <span class=style2> As a fourth-year Ph.D. candidate in Computer Science at the State University of New York (SUNY) at Binghamton, I am supervised by Assistant Professor Shiqi Zhang and supported by grants from the Ford Motor Company. My research focus is on the field of Robotics, specifically in the area of planning and learning. My current interests lie in two specific topics:
-                        <br>
-                        <br>
-                        1) <b>Grounded Task and Motion Planning</b>: To enhance task-motion execution, the robot must have the capability to consider its affordances, object physical properties, dynamic obstacles, and plan efficiency for optimization.
-                        <br>
-                        <br>
-                        2) <b>Open-World Task and Motion Planning</b>: In open-world environments, the robot may face unforeseen situations, such as a broken cup during the delivery of a cup of water. To overcome these challenges, we try to use common sense knowledge from Large Language Models (LLMs) to guarantee the robot's robust and reliable performance.
-                    </span>
-                </td>
                 <td>
-                    <img src="img/photo.jpg" width="224" height="310" style="margin-left: 30px;" />
+                    <br>
+                    <p align="center">
+                        <font size="2">
+                            Template from <a href="https://github.com/jonbarron/jonbarron_website">here.</a>
+                        </font>
+                    </p>
                 </td>
             </tr>
-        </table>
-    </div>
+        </tbody>
+    </table>
 
-    <br>
-    <br>
-
-    <div>
-        <table align="left">
-            <tr>
-                <td>
-                    <span class="style1">🔥<a href="https://yding25.github.io/BestMan/">BestMan</a> </span>
-                </td>
-                <td>
-                    &nbsp; / &nbsp; <span class="style1"> <a href="pdf/cv_20200405.pdf">CV</a> </span>
-                </td>
-                <td>
-                    &nbsp; / &nbsp; <span class="style1"> <a href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ&hl=en">G-Scholar</a> </span>
-                </td>
-                <td>
-                    &nbsp; / &nbsp; <span class="style1"> <a href="https://github.com/yding25">Github</a> </span>
-                </td>
-                <td>
-                    &nbsp; / &nbsp; <span class="style1"> <a href="https://yding25.github.io/ReadingGroup/">Reading Group</a> </span>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div>
-        <table>
-            <tr>
-                <td class="level0">
-                    <span class="style1"> Robot Platform </span>
-                </td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td class="level1">
-                    <img src="img/bestman0.jpg" width="266" height="200" style="margin-left: 5px;" />
-                </td>
-                <td class="level1">
-                    <img src="img/bestman3.jpg" width="200" height="200" style="margin-left: 10px;" />
-                </td>
-                <td class="level1">
-                    <img src="img/bestman2.png" width="320" height="200" style="margin-left: 10px;" />
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <br>
-    <br>
-
-    <div>
-        <table>
-            <tr>
-                <td class="level0">
-                    <span class="style1"> Education </span>
-                </td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td class="level1">
-                    <span class=style2> Binghamton University (USA) | PhD in CS, Expected June 2023 | 3.9 GPA </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="level1">
-                    <span class=style2> Chongqing University (China) | MS in CS, June 2019 | 3.0 GPA </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="level1">
-                    <span class=style2> Chongqing University (China) | BS in ME, June 2016 | 3.2 GPA (Ranking %7) </span>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <br>
-    <br>
-
-    <div>
-        <table>
-            <tr>
-                <td class="level0">
-                    <span class="style1"> Research </span>
-                </td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td class="level1">
-                    <span class="style3"> Topic 1: Safety-aware Task-Motion Planning </span>
-                </td>
-            </tr>
-        </table>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> Task-Motion Planning for Safe and Efficient Urban Driving </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> <b>Yan Ding</b>, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> IEEE IROS, 2020 </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="pdf/TMPUD_IROS_camera_ready.pdf">Paper</a>]&nbsp[<a href="https://yding25.github.io/project/TMPUD/TMPUD.html">Project</a>]&nbsp[<a href="https://github.com/yding25/TMPUD">Code</a>]&nbsp[<a href="https://www.youtube.com/watch?v=8NHQYUqMyoI">Demo</a>]&nbsp[<a href="https://youtu.be/k-Pcnx8zgxE">Presentation</a>] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/tmpud.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> GLAD: Grounded Layered Autonomous Driving for Complex Service Tasks </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> <b>Yan Ding</b>, Cheng Cui, Xiaohan Zhang, Shiqi Zhang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> Under Review </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [Paper]&nbsp[Project]&nbsp[Video]&nbsp[Code] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/glad.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-
-        <table>
-            <tr>
-                <td class="level1">
-                    <span class="style3"> Topic 2: Grounded Task-Motion Planning </span>
-                </td>
-            </tr>
-        </table>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> Learning to Ground Objects for Robot Task and Motion Planning </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> <b>Yan Ding</b>, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> IEEE RA-L, 2022 </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="pdf/TMOC_RAL_camera_ready.pdf">Paper</a>]&nbsp[<a href="https://yding25.github.io/project/TMOC/TMOC.html">Project</a>]&nbsp[<a href="https://github.com/yding25/TMOC">Code</a>]&nbsp[<a href="https://github.com/yding25/TMOC">Demo</a>]&nbsp[<a href="https://www.youtube.com/embed/3ijtbbeCQho">Presentation</a>] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/tmoc.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> Visually grounded task and motion planning for mobile manipulation </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> Xiaohan Zhang, Yifeng Zhu, <b>Yan Ding</b>, Yuke Zhu, Peter Stone, Shiqi Zhang<br> </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> IEEE ICRA, 2022 </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="https://arxiv.org/abs/2202.10667">Paper</a>]&nbsp[<a href="https://sites.google.com/view/grop-tamp">Project</a>]&nbsp[<a href="https://github.com/keke-220/segbot-ur5">Code</a>]&nbsp[<a href="https://sites.google.com/view/grop-tamp">Demo</a>]&nbsp[<a href="https://sites.google.com/view/grop-tamp">Presentation</a>] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/grop.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-
-        <table>
-            <tr>
-                <td class="level1">
-                    <span class="style3"> Topic 3: Open-world Task-Motion Planning </span>
-                </td>
-            </tr>
-        </table>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> Robot Task Planning with Common Sense in Open Worlds </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> <b>Yan Ding</b>, Xiaohan Zhang, Saeid Amiri, Hao Yang, Chad Esselink, Shiqi Zhang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> Under Review </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="https://cowplanning.github.io/files/COWP_ICRA2023.pdf">Paper</a>]&nbsp[<a href="https://cowplanning.github.io/">Project</a>]&nbsp[<a href="https://youtu.be/HtxlXSzY5VQ">Video</a>]&nbsp[<a href="https://github.com/yding25/GPT-Planner">Code</a>] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/cowp_real.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-        
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> Task and Motion Planning with Large Language Models for Object Rearrangement</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> <b>Yan Ding</b>, Xiaohan Zhang, Chris Paxton, Shiqi Zhang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> Under Review </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="">Paper</a>]&nbsp[<a href="https://sites.google.com/view/llm-grop">Project</a>]&nbsp[<a href="https://youtu.be/HtxlXSzY5VQ">Video</a>]&nbsp[<a href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">Code</a>] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/llm-grop.jpg" width="230" height="200" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> Task and Situation Structures for Case-Based Planning </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> Hao Yang, Tavan Eftekhar, Chad Esselink, <b>Yan Ding</b>, Shiqi Zhang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> IEEE ICCBR, 2021 </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="https://robotics.cs.binghamton.edu/papers/yang2021task.pdf">Paper</a>]&nbsp[Project]&nbsp[Video]&nbsp[Code] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/ford.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-        <br>
-        <br>
-
-        <table>
-            <tr>
-                <td class="level1">
-                    <span class="style3"> Topic 4: Others </span>
-                </td>
-            </tr>
-        </table>
-
-        <div style="display: flex; align-items: center; justify-content: left;">
-            <table>
-                <tr>
-                    <td class="level1" style="width: 600px; word-break: break-word; word-wrap: break-word;">
-                        <span class=style2> DAVT: an error-bounded vehicle trajectory data representation and compression framework </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> <b>Yan Ding*</b>, Chao Chen*, Suiming Guo, Yasha Wang </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> IEEE TVT, 2020 </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="level1">
-                        <span class=style2> [<a href="pdf/DAVT_TVT_camera_ready.pdf">Paper</a>]&nbsp[Project]&nbsp[Video]&nbsp[Code] </span>
-                    </td>
-                </tr>
-            </table>
-            <img src="img/DVAT.png" width="230" height="150" alt="image" style="margin-left: 20px;" />
-        </div>
-
-    </div>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div>
-        <table align="center">
-            <tr>
-                <td class="level0" ; text-align="center">
-                    <span class=style2> Copyright 2023 Yan Ding </span>
-                </td>
-            </tr>
-        </table>
-    </div>
 </body>
-
-</html>
