@@ -156,9 +156,11 @@
 <script type="text/javascript">
     function togglePapers(category) {
         var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
-        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
         var firstAuthorBtn = document.getElementById('first-author-btn');
+        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
         var collaborativeBtn = document.getElementById('collaborative-btn');
+        var preprintPapers = document.getElementsByClassName('preprint-paper');
+        var preprintBtn = document.getElementById('preprint-btn');
 
         if (category === 'first-author') {
             for (var i = 0; i < firstAuthorPapers.length; i++) {
@@ -167,17 +169,40 @@
             for (var i = 0; i < collaborativePapers.length; i++) {
                 collaborativePapers[i].style.display = 'none';
             }
+            for (var i = 0; i < preprintPapers.length; i++) {
+                preprintPapers[i].style.display = 'none';
+            }
             firstAuthorBtn.style.backgroundColor = '#f2f2f2';
             collaborativeBtn.style.backgroundColor = '#ffffff';
-        } else {
+            preprintBtn.style.backgroundColor = '#ffffff';
+        } 
+        if (category === 'collaborative') {
             for (var i = 0; i < firstAuthorPapers.length; i++) {
                 firstAuthorPapers[i].style.display = 'none';
             }
             for (var i = 0; i < collaborativePapers.length; i++) {
                 collaborativePapers[i].style.display = 'table-row';
             }
+            for (var i = 0; i < preprintPapers.length; i++) {
+                preprintPapers[i].style.display = 'none';
+            }
             firstAuthorBtn.style.backgroundColor = '#ffffff';
             collaborativeBtn.style.backgroundColor = '#f2f2f2';
+            preprintBtn.style.backgroundColor = '#ffffff';
+        }
+        if (category === 'preprint') {
+            for (var i = 0; i < firstAuthorPapers.length; i++) {
+                firstAuthorPapers[i].style.display = 'none';
+            }
+            for (var i = 0; i < collaborativePapers.length; i++) {
+                collaborativePapers[i].style.display = 'none';
+            }
+            for (var i = 0; i < preprintPapers.length; i++) {
+                preprintPapers[i].style.display = 'table-row';
+            }
+            firstAuthorBtn.style.backgroundColor = '#ffffff';
+            collaborativeBtn.style.backgroundColor = '#ffffff';
+            preprintBtn.style.backgroundColor = '#f2f2f2';
         }
     }
 
@@ -194,11 +219,11 @@
                             <p align="center">
                                 <name>Yan Ding</name>
                             </p>
-                            <p>I am a forth year computer science PhD student at the State University of New York (SUNY) at Binghamton. I am supervised by Associate Professor <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a> and supported by grants from the Ford Motor Company. I was supervised by <a href="http://www.cs.cqu.edu.cn/info/1322/6092.htm">Chao Chen</a>, a full professor, during my master's program. I received my M.S. in Computer Science in 2019, and got my B.S. in Mechanical Engineering in 2016 from Chongqing University, China. Master Thesis is accessible through this <a href="./project/PDF/dissertation_master.pdf">Link</a>.
+                            <p>I am a fifth year computer science PhD student at the State University of New York (SUNY) at Binghamton. I am supervised by Associate Professor <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a> and supported by grants from the Ford Motor Company. I was supervised by <a href="http://www.cs.cqu.edu.cn/info/1322/6092.htm">Chao Chen</a>, a full professor, during my master's program. I received my M.S. in Computer Science in 2019, and got my B.S. in Mechanical Engineering in 2016 from Chongqing University, China. Master Thesis is accessible through this <a href="./project/PDF/dissertation_master.pdf">Link</a>. I have created and currently manage an open-source robot simulation project called <a href="https://yding25.github.io/BestMan_Website/">BestMan</a>, featuring a UR5e robotic arm and a Segway base. This is my YouTube channel, featuring several videos centered around robots by searching &#64;yanding1760.
                             </p>
                             <p>Feel free to contact me at yding25@binghamton.edu.
                             </p>
-                            <p>[<a href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ&hl=en">Google Scholar (Citation>285)</a>]
+                            <p>[<a href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ&hl=en">Google Scholar (Citation>300)</a>]
                                 [<a href="./project/PDF/CV.pdf">CV (May 2023)</a>]
                             </p>
                         </td>
@@ -211,13 +236,8 @@
                 <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
                     <tr>
                         <td width="100%" valign="middle" class="papers-heading">
-                            <heading>Research</heading>
-                            <p>I aim to create a household robot that frees humans from tedious chores, allowing them to enjoy their leisure time. My research focuses on the intersection of planning and learning in complex home environments, using techniques from task and motion planning, machine learning and reinforcement learning.
-                            </p>
-                            <p>
-                                I have created and currently manage an open-source robot simulation project called <a href="https://yding25.github.io/BestMan_Website/">BestMan</a>, featuring a UR5e robotic arm and a Segway base.
-                                This is my YouTube channel, featuring several videos centered around robots by searching &#64;yanding1760.
-                            </p>
+                            <heading>Research Direction</heading>
+                            <p>My research primarily focuses on Task and Motion Planning (TAMP), Reinforcement Learning (RL), Large Language Models (LLMs), and Vision-Language Models (VLMs), with a particular emphasis on their applications in the context of mobile manipulators (MoMa).</p>
                         </td>
                     </tr>
                 </table>
@@ -232,6 +252,9 @@
                     <td width="100%" valign="middle" class="papers-heading">
                         <button id="collaborative-btn" onclick="togglePapers('collaborative')">Collaborative</button>
                     </td>
+                    <td width="100%" valign="middle" class="papers-heading">
+                        <button id="preprint-btn" onclick="togglePapers('preprint')">Preprint</button>
+                    </td>
                 </table>
 
                 <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10" class="papers-table">
@@ -239,7 +262,7 @@
                     <tr class="first-author-paper">
                         <td width="25%">
                             <div class="one">
-                                <div class="two"><img src='img/llm-grop.jpg' width="160" vspace="20"></div>
+                                <div class="two"><img src='img/llm-grop.jpg' width="160" vspace="5"></div>
                             </div>
                         </td>
                         <br>
@@ -326,7 +349,7 @@
                         </td>
                     </tr>
 
-                    <tr class="first-author-paper">
+                    <tr class="preprint-paper">
                         <td width="25%">
                             <div class="one">
                                 <div class="two"><img src='img/glad_croped.png' width="160" vspace="20"></div>
@@ -345,6 +368,28 @@
                             <br>
                             <p></p>
                             <p>A new planning framework called GLAD has been developed for autonomous urban driving to enable efficient and safe fulfillment of complex service requests.</p>
+                        </td>
+                    </tr>
+                    
+                    <tr class="preprint-paper">
+                        <td width="25%">
+                            <div class="one">
+                                <div class="two"><img src='img/ORLA.png' width="160" vspace="20"></div>
+                            </div>
+                        </td>
+                        <td valign="middle" width="75%">
+                            <a>
+                                <papertitle>ORLA*: Mobile Manipulator-Based Object Rearrangement with Lazy A</papertitle>
+                            </a>
+                            <br>
+                            Kai Gao, <strong>Yan Ding</strong>, Shiqi Zhang, Jingjin Yu
+                            <br>
+                            <em>Under Review</em>
+                            <br>
+                            [<a href="https://arxiv.org/pdf/2309.13707.pdf">Paper</a>]
+                            <br>
+                            <p></p>
+                            <p>In this research, we propose ORLA*, which leverages delayed (lazy) evaluation in searching for a high-quality object pick and place sequence that considers both end-effector and mobile robot base travel.</p>
                         </td>
                     </tr>
 
@@ -373,7 +418,7 @@
                     <tr class="first-author-paper">
                         <td width="25%">
                             <div class="one">
-                                <div class="two"><img src='img/cowp_real.png' width="160" vspace="20"></div>
+                                <div class="two"><img src='img/cowp_real.png' width="160" vspace="50"></div>
                             </div>
                         </td>
                         <td valign="middle" width="75%">
@@ -399,7 +444,7 @@
                     <tr class="first-author-paper">
                         <td width="25%">
                             <div class="one">
-                                <div class="two"><img src='img/tmoc.png' width="160" vspace="20"></div>
+                                <div class="two"><img src='img/tmoc.png' width="160" vspace="30"></div>
                             </div>
                         </td>
                         <td valign="middle" width="75%">
