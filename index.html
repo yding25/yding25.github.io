@@ -1,10 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
-<head>
-    <meta name=viewport content="width=800">
-    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-    <style type="text/css">
+    <head>
+        <meta name=viewport content="width=800">
+        <meta name="generator"
+            content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+        <style type="text/css">
         /* Color scheme stolen from Sergey Karayev */
 
         a {
@@ -145,15 +146,17 @@
 
     </style>
 
-    <link rel="icon" type="image/jpg" href="images/seal_icon.jpg">
-    <title>Yan Ding</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/jpg" href="images/seal_icon.jpg">
+        <title>Yan Ding</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+        <link
+            href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic'
+            rel='stylesheet' type='text/css'>
 
-</head>
+    </head>
 
-<!-- Add JavaScript to toggle visibility -->
-<script type="text/javascript">
+    <!-- Add JavaScript to toggle visibility -->
+    <script type="text/javascript">
     function togglePapers(category) {
         var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
         var firstAuthorBtn = document.getElementById('first-author-btn');
@@ -208,482 +211,727 @@
 
 </script>
 
-
-<body>
-    <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-        <tr>
-            <td>
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <tr>
-                        <td width="100%" valign="middle" class="papers-heading">
-                            <p align="center">
-                                <name>Yan Ding</name>
-                            </p>
-                            <p>I am a fifth year computer science PhD student at the State University of New York (SUNY) at Binghamton. I am supervised by Associate Professor <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a> and supported by grants from the Ford Motor Company. I was supervised by <a href="http://www.cs.cqu.edu.cn/info/1322/6092.htm">Chao Chen</a>, a full professor, during my master's program. I received my M.S. in Computer Science in 2019, and got my B.S. in Mechanical Engineering in 2016 from Chongqing University, China. Master Thesis is accessible through this <a href="./project/PDF/dissertation_master.pdf">Link</a>. I have created and currently manage an open-source robot simulation project called <a href="https://yding25.github.io/BestMan_Website/">BestMan</a>, featuring a UR5e robotic arm and a Segway base. This is my YouTube channel, featuring several videos centered around robots by searching &#64;yanding1760.
-                            </p>
-                            <p>Feel free to contact me at yding25@binghamton.edu.
-                            </p>
-                            <p>[<a href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ&hl=en">Google Scholar (Citation>300)</a>]
-                                [<a href="./project/PDF/CV.pdf">CV (Dec 2023)</a>]
-                            </p>
-                        </td>
-                        <td width="33%">
-                            <img src="img/photo.jpg" width="162" height="225">
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <tr>
-                        <td width="100%" valign="middle" class="papers-heading">
-                            <heading>Research Direction</heading>
-                            <p>My research primarily focuses on Task and Motion Planning (TAMP), Reinforcement Learning (RL), Large Language Models (LLMs), and Vision-Language Models (VLMs), with a particular emphasis on their applications in the context of mobile manipulators (MoMa).</p>
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <heading>Publication</heading>
-                    </td>
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <button id="first-author-btn" onclick="togglePapers('first-author')">First-Author</button>
-                    </td>
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <button id="collaborative-btn" onclick="togglePapers('collaborative')">Collaborative</button>
-                    </td>
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <button id="preprint-btn" onclick="togglePapers('preprint')">Preprint</button>
-                    </td>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10" class="papers-table">
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/llm-grop.jpg' width="160" vspace="5"></div>
-                            </div>
-                        </td>
-                        <br>
-
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Task and Motion Planning with Large Language Models for Object Rearrangement</papertitle>
-                            </a>
-                            <br>
-                            <strong>Yan Ding*</strong>, Xiaohan Zhang*, Chris Paxton, Shiqi Zhang
-                            <br>
-                            <em>International Conference on Intelligent Robots and Systems (IROS), 2023</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2303.06247.pdf">Paper</a>]
-                            [<a href="https://sites.google.com/view/llm-grop">Project</a>]
-                            [<a href="https://youtu.be/8q5WPkABfNE">Video</a>]
-                            [<a href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">Code</a>]
-                            <br>
-                            <p></p>
-                            <p>LLM-GROP is a method that uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates them with a task and motion planner, allowing for successful and efficient multi-object rearrangement in various environments using a mobile manipulator.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="collaborative-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/Chelsea.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <br>
-
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>ARDIE: AR, Dialogue, and Eye Gaze Policies for Human-Robot Collaboration</papertitle>
-                            </a>
-                            <br>
-                            Chelsea Zou, Kishan Chandan, <strong>Yan Ding</strong>, Shiqi Zhang
-                            <br>
-                            <em>ICRA Workshop on CoPerception: Collaborative Perception and Learning, 2023</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2305.04685.pdf">Paper</a>]
-                        </td>
-                    </tr>
-
-                    <tr class="collaborative-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/s30.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <br>
-
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Symbolic State Space Optimization for Long Horizon Mobile Manipulation Planning</papertitle>
-                            </a>
-                            <br>
-                            Xiaohan Zhang, Yifeng Zhu, <strong>Yan Ding</strong>, Yuqian Jiang, Yuke Zhu, Peter Stone, and Shiqi Zhang
-                            <br>
-                            <em>International Conference on Intelligent Robots and Systems (IROS), 2023</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2307.11889.pdf">Paper</a>]
-                        </td>
-                    </tr>
-
-                    <tr class="collaborative-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/UAI.jpg' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <br>
-
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Learning to Reason about Contextual Knowledge for Planning under Uncertainty</papertitle>
-                            </a>
-                            <br>
-                            Cheng Cui, Saeid Amiri, <strong>Yan Ding</strong>, Xingyue Zhan, Shiqi Zhang
-                            <br>
-                            <em>The Conference on Uncertainty in Artificial Intelligence (UAI), 2023</em>
-                            <br>
-                            [<a href="https://proceedings.mlr.press/v216/cui23a/cui23a.pdf">Paper</a>]
-                        </td>
-                    </tr>
-
-                    <tr class="preprint-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/glad_croped.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>GLAD: Grounded Layered Autonomous Driving for Complex Service Tasks</papertitle>
-                            </a>
-                            <br>
-                            <strong>Yan Ding</strong>, Cheng Cui, Xiaohan Zhang, Shiqi Zhang
-                            <br>
-                            <em>Under Review</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2210.02302.pdf">Paper</a>]
-                            <br>
-                            <p></p>
-                            <p>A new planning framework called GLAD has been developed for autonomous urban driving to enable efficient and safe fulfillment of complex service requests.</p>
-                        </td>
-                    </tr>
-                    
-                    <tr class="preprint-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/ORLA.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>ORLA*: Mobile Manipulator-Based Object Rearrangement with Lazy A</papertitle>
-                            </a>
-                            <br>
-                            Kai Gao, <strong>Yan Ding</strong>, Shiqi Zhang, Jingjin Yu
-                            <br>
-                            <em>Under Review</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2309.13707.pdf">Paper</a>]
-                            <br>
-                            <p></p>
-                            <p>In this research, we propose ORLA*, which leverages delayed (lazy) evaluation in searching for a high-quality object pick and place sequence that considers both end-effector and mobile robot base travel.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="collaborative-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/tpvqa.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <br>
-
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Grounding Classical Task Planners via Vision-Language Models</papertitle>
-                            </a>
-                            <br>
-                            Xiaohan Zhang, <strong>Yan Ding</strong>, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, and Shiqi Zhang
-                            <br>
-                            <em>ICRA Workshop on Robot Execution Failures and Failure Management Strategies, 2023</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2304.08587.pdf">Paper</a>]
-                            <br>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/cowp_real.png' width="160" vspace="50"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Integrating Action Knowledge and LLMs for Task Planning and Situation Handling in Open Worlds</papertitle>
-                            </a>
-                            <br>
-                            <strong>Yan Ding</strong>, Xiaohan Zhang, Saeid Amiri, Nieqing Cao, Hao Yang, Chad Esselink, Shiqi Zhang
-                            <br>
-                            <em>Autonomous Robots (accepted)</em>
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2305.17590.pdf">Paper</a>]
-                            [<a href="https://cowplanning.github.io/">Project</a>]
-                            [<a href="https://youtu.be/HtxlXSzY5VQ">Video</a>]
-                            [<a href="https://github.com/yding25/GPT-Planner">Code</a>]
-                            <br>
-                            <p></p>
-                            <p>The paper introduces a new algorithm (COWP) that uses task-oriented common sense extracted from Large Language Models to help robots handle unforeseen situations and complete complex tasks in an open world, with better success rates than previous algorithms.</p>
-                        </td>
-                    </tr>
-
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/tmoc.png' width="160" vspace="30"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Learning to Ground Objects for Robot Task and Motion Planning</papertitle>
-                            </a>
-                            <br>
-                            <strong>Yan Ding</strong>, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang
-                            <br>
-                            <em>IEEE Robotics and Automation Letters (RA-L)</em>, 2022
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2202.06674.pdf">Paper</a>]
-                            [<a href="https://yding25.github.io/project/TMOC/TMOC.html">Project</a>]
-                            [<a href="https://github.com/yding25/TMOC">Code</a>]
-                            [<a href="https://www.youtube.com/embed/3ijtbbeCQho">Presentation</a>]
-                            <br>
-                            <p></p>
-                            <p>The paper presents a new robot planning algorithm, TMOC, which can handle complex real-world scenarios without prior knowledge of object properties by learning them through a physics engine, outperforming existing algorithms.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="collaborative-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/grop_real.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Visually Grounded Task and Motion Planning for Mobile Manipulation</papertitle>
-                            </a>
-                            <br>
-                            Xiaohan Zhang, Yifeng Zhu, <strong>Yan Ding</strong>, Yuke Zhu, Peter Stone, and Shiqi Zhang
-                            <br>
-                            <em>International Conference on Robotics and Automation (ICRA)</em>, 2022
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2202.10667.pdf">Paper</a>]
-                            [<a href="https://sites.google.com/view/grop-tamp">Project</a>]
-                        </td>
-                    </tr>
-
-                    <tr class="collaborative-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/howie.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Task and Situation Structures for Case-Based Planning</papertitle>
-                            </a>
-                            <br>
-                            Hao Yang, Tavan Eftekhar, Chad Esselink, <strong>Yan Ding</strong>, Shiqi Zhang
-                            <br>
-                            <em>International Conference on Case-Based Reasoning (ICCBR)</em>, 2021
-                            <br>
-                            [<a href="https://link.springer.com/chapter/10.1007/978-3-030-86957-1_18">Paper</a>]
-                        </td>
-                    </tr>
-
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/tmpud.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Task-Motion Planning for Safe and Efficient Urban Driving</papertitle>
-                            </a>
-                            <br>
-                            <strong>Yan Ding</strong>, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang
-                            <br>
-                            <em>International Conference on Intelligent Robots and Systems (IROS)</em>, 2020.
-                            <br>
-                            [<a href="https://arxiv.org/pdf/2003.03807.pdf">Paper</a>]
-                            [<a href="https://yding25.github.io/project/TMPUD/TMPUD.html">Project</a>]
-                            [<a href="https://github.com/yding25/TMPUD">Code</a>]
-                            [<a href="https://www.youtube.com/watch?v=8NHQYUqMyoI">Demo</a>]
-                            [<a href="https://youtu.be/k-Pcnx8zgxE">Presentation</a>]
-                            <br>
-                            <p></p>
-                            <p>Autonomous vehicles need to balance efficiency and safety when planning tasks and motions, and the algorithm Task-Motion Planning for Urban Driving (TMPUD) enables communication between planners for optimal performance.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/DVAT.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>DAVT: an error-bounded vehicle trajectory data representation and compression framework</papertitle>
-                            </a>
-                            <br>
-                            Chao Chen*, <strong>Yan Ding*</strong>, Suiming Guo, Yasha Wang
-                            <br>
-                            <em>IEEE TVT</em>, 2020.
-                            <br>
-                            [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296&casa_token=ZbgAMop0EiYAAAAA:BVnLHMxb3jaLs0Ukmq_RTszRARtuiPh5qg51GXNgxmmOsr5GbGna31OvxG6WnB8gfnyEJQUb">PDF</a>]
-                            <br>
-                            <p></p>
-                            <p>DAVT proposes a mobile edge computing solution for vehicle trajectory data compression, which reduces data at the source and lowers communication and storage costs, using three compressors for distance, acceleration, velocity, and time data parts, and outperforms other baselines according to evaluation results.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/VTracer.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>VTracer: When online vehicle trajectory compression meets mobile edge computing</papertitle>
-                            </a>
-                            <br>
-                            Chao Chen*, <strong>Yan Ding*</strong>, Zhu Wang, Junfeng Zhao, Bin Guo, Daqing Zhang
-                            <br>
-                            <em>IEEE Systems Journal</em>, 2019.
-                            <br>
-                            [<a href="https://hal.science/hal-02321015/document">PDF</a>]
-                            <br>
-                            <p></p>
-                            <p>This paper proposes an online trajectory compression framework that uses SD-Matching for GPS alignment and HCC for compression, and demonstrates its effectiveness and efficiency using real-world datasets in Beijing and deployment in Chongqing.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/trajcompressor.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>TrajCompressor: An Online Map-matching-based Trajectory Compression Framework Leveraging Vehicle Heading Direction and Change</papertitle>
-                            </a>
-                            <br>
-                            Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng Xie, Shu Zhang, Zhu Wang, Liang Feng
-                            <br>
-                            <em>IEEE TITS</em>, 2019.
-                            <br>
-                            [<a href="https://ieeexplore.ieee.org/abstract/document/8697124">PDF</a>]
-                            <br>
-                            <p></p>
-                            <p>This paper presents an online trajectory compression framework for reducing storage, communication, and computation issues caused by massive and redundant vehicle trajectory data, consisting of two phases: online trajectory mapping and trajectory compression, using Spatial-Directional Matching and Heading Change Compression algorithms respectively, which have been evaluated with real-world datasets in Beijing and deployed in Chongqing, showing higher accuracy and efficiency compared to state-of-the-art algorithms.
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/api.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Fuel Consumption Estimation of Potential Driving Paths by Leveraging Online Route APIs</papertitle>
-                            </a>
-                            <br>
-                            Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng Xie, Xuefeng Xie, Zhikai Yang
-                            <br>
-                            <em>Green, Pervasive, and Cloud Computing: 13th International Conference (GPC)</em>, 2018.
-                            <br>
-                            [<a href="https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7">PDF</a>]
-                            <br>
-                            <p></p>
-                            <p>This paper proposes a fuel consumption model based on GPS trajectory and OBD-II data, which can estimate the fuel usage of driving paths and help drivers choose fuel-efficient routes to reduce greenhouse gas and pollutant emissions.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/threestage.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>A three-stage online map-matching algorithm by fully using vehicle heading direction</papertitle>
-                            </a>
-                            <br>
-                            Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng Xie, Shu Zhang
-                            <br>
-                            <em>Journal of Ambient Intelligence and Humanized Computing</em>, 2018.
-                            <br>
-                            [<a href="https://link.springer.com/article/10.1007/s12652-018-0760-0">PDF</a>]
-                            <br>
-                            <p></p>
-                            <p>The SD-Matching algorithm proposes a three-stage approach to improve the accuracy and speed of online map-matching by incorporating vehicle heading direction data.</p>
-                        </td>
-                    </tr>
-
-                    <tr class="first-author-paper">
-                        <td width="25%">
-                            <div class="one">
-                                <div class="two"><img src='img/greenplanner.png' width="160" vspace="20"></div>
-                            </div>
-                        </td>
-                        <td valign="middle" width="75%">
-                            <a>
-                                <papertitle>Greenplanner: Planning personalized fuel-efficient driving routes using multi-sourced urban data</papertitle>
-                            </a>
-                            <br>
-                            <strong>Yan Ding*</strong>, Chao Chen*, Shu Zhang, Bin Guo, Zhiwen Yu, Yasha Wang
-                            <br>
-                            <em>IEEE PerCom</em>, 2017.
-                            <br>
-                            [<a href="https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf">PDF</a>]
-                            <br>
-                            <p></p>
-                            <p>Greenhouse gas emissions from vehicles in modern cities is a significant problem, but recommending fuel-efficient routes to drivers through a personalized fuel consumption model can help alleviate this issue, as demonstrated by the successful implementation of GreenPlanner in Beijing, which achieved a mean fuel consumption error of less than 7% and an average savings of 20% fuel consumption for suggested routes.</p>
-                        </td>
-                    </tr>
-
-                    <script src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js" id="yding25-com-8yejwvr6d"></script>
-                </table>
-            </td>
-        </tr>
-    </table>
-
-    <table width="100%" cellspacing="0" cellpadding="20" border="0" align="center">
-        <tbody>
+    <body>
+        <table width="800" border="0" align="center" cellspacing="0"
+            cellpadding="0">
             <tr>
                 <td>
-                    <br>
-                    <p align="center">
-                        <font size="2">
-                            Template from <a href="https://github.com/jonbarron/jonbarron_website">here.</a>
-                        </font>
-                    </p>
+                    <table width="100%" align="center" border="0"
+                        cellspacing="0" cellpadding="10">
+                        <tr>
+                            <td width="100%" valign="middle"
+                                class="papers-heading">
+                                <p align="center">
+                                    <name>Yan Ding</name>
+                                </p>
+                                <p>I am a fifth year computer science PhD
+                                    student at the State University of New York
+                                    (SUNY) at Binghamton. I am supervised by
+                                    Associate Professor <a
+                                        href="https://www.cs.binghamton.edu/~szhang/">Shiqi
+                                        Zhang</a> and supported by grants from
+                                    the Ford Motor Company. I was supervised by
+                                    <a
+                                        href="http://www.cs.cqu.edu.cn/info/1322/6092.htm">Chao
+                                        Chen</a>, a full professor, during my
+                                    master's program. I received my M.S. in
+                                    Computer Science in 2019, and got my B.S. in
+                                    Mechanical Engineering in 2016 from
+                                    Chongqing University, China. Master Thesis
+                                    is accessible through this <a
+                                        href="./project/PDF/dissertation_master.pdf">Link</a>.
+                                    I have created and currently manage an
+                                    open-source robot simulation project called
+                                    <a
+                                        href="http://bestmanrobot.com/">BestMan</a>,
+                                    featuring a UR5e robotic arm and a Segway
+                                    base. This is my YouTube channel, featuring
+                                    several videos centered around robots by
+                                    searching &#64;yanding1760.
+                                </p>
+                                <p>Feel free to contact me at
+                                    yding25@binghamton.edu.
+                                </p>
+                                <p>[<a
+                                        href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ&hl=en">Google
+                                        Scholar (Citation>340)</a>]
+                                    [<a href="./project/PDF/CV.pdf">CV (Dec
+                                        2023)</a>]
+                                </p>
+                            </td>
+                            <td width="33%">
+                                <img src="img/photo.jpg" width="162"
+                                    height="225">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="100%" align="center" border="0"
+                        cellspacing="0" cellpadding="10">
+                        <tr>
+                            <td width="100%" valign="middle"
+                                class="papers-heading">
+                                <heading>Research Direction</heading>
+                                <p>My research primarily focuses on Task and
+                                    Motion Planning (TAMP), Reinforcement
+                                    Learning (RL), Large Language Models (LLMs),
+                                    and Vision-Language Models (VLMs), with a
+                                    particular emphasis on their applications in
+                                    the context of mobile manipulators
+                                    (MoMa).</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="100%" align="center" border="0"
+                        cellspacing="0" cellpadding="10">
+                        <td width="100%" valign="middle" class="papers-heading">
+                            <heading>Publication</heading>
+                        </td>
+                        <td width="100%" valign="middle" class="papers-heading">
+                            <button id="first-author-btn"
+                                onclick="togglePapers('first-author')">First-Author</button>
+                        </td>
+                        <td width="100%" valign="middle" class="papers-heading">
+                            <button id="collaborative-btn"
+                                onclick="togglePapers('collaborative')">Collaborative</button>
+                        </td>
+                        <td width="100%" valign="middle" class="papers-heading">
+                            <button id="preprint-btn"
+                                onclick="togglePapers('preprint')">Preprint</button>
+                        </td>
+                    </table>
+
+                    <table width="100%" align="center" border="0"
+                        cellspacing="0" cellpadding="10" class="papers-table">
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/llm-grop.jpg'
+                                            width="160" vspace="5"></div>
+                                </div>
+                            </td>
+                            <br>
+
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Task and Motion Planning with
+                                        Large Language Models for Object
+                                        Rearrangement</papertitle>
+                                </a>
+                                <br>
+                                <strong>Yan Ding*</strong>, Xiaohan Zhang*,
+                                Chris Paxton, Shiqi Zhang
+                                <br>
+                                <em>International Conference on Intelligent
+                                    Robots and Systems (IROS), 2023</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2303.06247.pdf">Paper</a>]
+                                [<a
+                                    href="https://sites.google.com/view/llm-grop">Project</a>]
+                                [<a
+                                    href="https://youtu.be/8q5WPkABfNE">Video</a>]
+                                [<a
+                                    href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">Code</a>]
+                                <br>
+                                <p></p>
+                                <p>LLM-GROP is a method that uses prompting to
+                                    extract commonsense knowledge about object
+                                    configurations from a large language model
+                                    and instantiates them with a task and motion
+                                    planner, allowing for successful and
+                                    efficient multi-object rearrangement in
+                                    various environments using a mobile
+                                    manipulator.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="collaborative-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/Chelsea.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <br>
+
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>ARDIE: AR, Dialogue, and Eye
+                                        Gaze Policies for Human-Robot
+                                        Collaboration</papertitle>
+                                </a>
+                                <br>
+                                Chelsea Zou, Kishan Chandan, <strong>Yan
+                                    Ding</strong>, Shiqi Zhang
+                                <br>
+                                <em>ICRA Workshop on CoPerception: Collaborative
+                                    Perception and Learning, 2023</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2305.04685.pdf">Paper</a>]
+                            </td>
+                        </tr>
+
+                        <tr class="collaborative-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/s30.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <br>
+
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Symbolic State Space
+                                        Optimization for Long Horizon Mobile
+                                        Manipulation Planning</papertitle>
+                                </a>
+                                <br>
+                                Xiaohan Zhang, Yifeng Zhu, <strong>Yan
+                                    Ding</strong>, Yuqian Jiang, Yuke Zhu, Peter
+                                Stone, and Shiqi Zhang
+                                <br>
+                                <em>International Conference on Intelligent
+                                    Robots and Systems (IROS), 2023</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2307.11889.pdf">Paper</a>]
+                            </td>
+                        </tr>
+
+                        <tr class="collaborative-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/UAI.jpg'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <br>
+
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Learning to Reason about
+                                        Contextual Knowledge for Planning under
+                                        Uncertainty</papertitle>
+                                </a>
+                                <br>
+                                Cheng Cui, Saeid Amiri, <strong>Yan
+                                    Ding</strong>, Xingyue Zhan, Shiqi Zhang
+                                <br>
+                                <em>The Conference on Uncertainty in Artificial
+                                    Intelligence (UAI), 2023</em>
+                                <br>
+                                [<a
+                                    href="https://proceedings.mlr.press/v216/cui23a/cui23a.pdf">Paper</a>]
+                            </td>
+                        </tr>
+
+                        <tr class="preprint-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img
+                                            src='img/glad_croped.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>GLAD: Grounded Layered
+                                        Autonomous Driving for Complex Service
+                                        Tasks</papertitle>
+                                </a>
+                                <br>
+                                <strong>Yan Ding</strong>, Cheng Cui, Xiaohan
+                                Zhang, Shiqi Zhang
+                                <br>
+                                <em>Under Review</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2210.02302.pdf">Paper</a>]
+                                <br>
+                                <p></p>
+                                <p>A new planning framework called GLAD has been
+                                    developed for autonomous urban driving to
+                                    enable efficient and safe fulfillment of
+                                    complex service requests.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="preprint-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/ORLA.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>ORLA*: Mobile Manipulator-Based
+                                        Object Rearrangement with Lazy
+                                        A</papertitle>
+                                </a>
+                                <br>
+                                Kai Gao, <strong>Yan Ding</strong>, Shiqi Zhang,
+                                Jingjin Yu
+                                <br>
+                                <em>Under Review</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2309.13707.pdf">Paper</a>]
+                                <br>
+                                <p></p>
+                                <p>In this research, we propose ORLA*, which
+                                    leverages delayed (lazy) evaluation in
+                                    searching for a high-quality object pick and
+                                    place sequence that considers both
+                                    end-effector and mobile robot base
+                                    travel.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="collaborative-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/tpvqa.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <br>
+
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Grounding Classical Task
+                                        Planners via Vision-Language
+                                        Models</papertitle>
+                                </a>
+                                <br>
+                                Xiaohan Zhang, <strong>Yan Ding</strong>, Saeid
+                                Amiri, Hao Yang, Andy Kaminski, Chad Esselink,
+                                and Shiqi Zhang
+                                <br>
+                                <em>ICRA Workshop on Robot Execution Failures
+                                    and Failure Management Strategies, 2023</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2304.08587.pdf">Paper</a>]
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img
+                                            src='img/cowp_real.png' width="160"
+                                            vspace="50"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Integrating Action Knowledge and
+                                        LLMs for Task Planning and Situation
+                                        Handling in Open Worlds</papertitle>
+                                </a>
+                                <br>
+                                <strong>Yan Ding</strong>, Xiaohan Zhang, Saeid
+                                Amiri, Nieqing Cao, Hao Yang, Chad Esselink,
+                                Shiqi Zhang
+                                <br>
+                                <em>Autonomous Robots (accepted)</em>
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2305.17590.pdf">Paper</a>]
+                                [<a
+                                    href="https://cowplanning.github.io/">Project</a>]
+                                [<a
+                                    href="https://youtu.be/HtxlXSzY5VQ">Video</a>]
+                                [<a
+                                    href="https://github.com/yding25/GPT-Planner">Code</a>]
+                                <br>
+                                <p></p>
+                                <p>The paper introduces a new algorithm (COWP)
+                                    that uses task-oriented common sense
+                                    extracted from Large Language Models to help
+                                    robots handle unforeseen situations and
+                                    complete complex tasks in an open world,
+                                    with better success rates than previous
+                                    algorithms.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/tmoc.png'
+                                            width="160" vspace="30"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Learning to Ground Objects for
+                                        Robot Task and Motion
+                                        Planning</papertitle>
+                                </a>
+                                <br>
+                                <strong>Yan Ding</strong>, Xiaohan Zhang,
+                                Xingyue Zhan, Shiqi Zhang
+                                <br>
+                                <em>IEEE Robotics and Automation Letters
+                                    (RA-L)</em>, 2022
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2202.06674.pdf">Paper</a>]
+                                [<a
+                                    href="https://yding25.github.io/project/TMOC/TMOC.html">Project</a>]
+                                [<a
+                                    href="https://github.com/yding25/TMOC">Code</a>]
+                                [<a
+                                    href="https://www.youtube.com/embed/3ijtbbeCQho">Presentation</a>]
+                                <br>
+                                <p></p>
+                                <p>The paper presents a new robot planning
+                                    algorithm, TMOC, which can handle complex
+                                    real-world scenarios without prior knowledge
+                                    of object properties by learning them
+                                    through a physics engine, outperforming
+                                    existing algorithms.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="collaborative-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img
+                                            src='img/grop_real.png' width="160"
+                                            vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Visually Grounded Task and
+                                        Motion Planning for Mobile
+                                        Manipulation</papertitle>
+                                </a>
+                                <br>
+                                Xiaohan Zhang, Yifeng Zhu, <strong>Yan
+                                    Ding</strong>, Yuke Zhu, Peter Stone, and
+                                Shiqi Zhang
+                                <br>
+                                <em>International Conference on Robotics and
+                                    Automation (ICRA)</em>, 2022
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2202.10667.pdf">Paper</a>]
+                                [<a
+                                    href="https://sites.google.com/view/grop-tamp">Project</a>]
+                            </td>
+                        </tr>
+
+                        <tr class="collaborative-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/howie.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Task and Situation Structures
+                                        for Case-Based Planning</papertitle>
+                                </a>
+                                <br>
+                                Hao Yang, Tavan Eftekhar, Chad Esselink,
+                                <strong>Yan Ding</strong>, Shiqi Zhang
+                                <br>
+                                <em>International Conference on Case-Based
+                                    Reasoning (ICCBR)</em>, 2021
+                                <br>
+                                [<a
+                                    href="https://link.springer.com/chapter/10.1007/978-3-030-86957-1_18">Paper</a>]
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/tmpud.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Task-Motion Planning for Safe
+                                        and Efficient Urban Driving</papertitle>
+                                </a>
+                                <br>
+                                <strong>Yan Ding</strong>, Xiaohan Zhang,
+                                Xingyue Zhan, Shiqi Zhang
+                                <br>
+                                <em>International Conference on Intelligent
+                                    Robots and Systems (IROS)</em>, 2020.
+                                <br>
+                                [<a
+                                    href="https://arxiv.org/pdf/2003.03807.pdf">Paper</a>]
+                                [<a
+                                    href="https://yding25.github.io/project/TMPUD/TMPUD.html">Project</a>]
+                                [<a
+                                    href="https://github.com/yding25/TMPUD">Code</a>]
+                                [<a
+                                    href="https://www.youtube.com/watch?v=8NHQYUqMyoI">Demo</a>]
+                                [<a
+                                    href="https://youtu.be/k-Pcnx8zgxE">Presentation</a>]
+                                <br>
+                                <p></p>
+                                <p>Autonomous vehicles need to balance
+                                    efficiency and safety when planning tasks
+                                    and motions, and the algorithm Task-Motion
+                                    Planning for Urban Driving (TMPUD) enables
+                                    communication between planners for optimal
+                                    performance.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/DVAT.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>DAVT: an error-bounded vehicle
+                                        trajectory data representation and
+                                        compression framework</papertitle>
+                                </a>
+                                <br>
+                                Chao Chen*, <strong>Yan Ding*</strong>, Suiming
+                                Guo, Yasha Wang
+                                <br>
+                                <em>IEEE TVT</em>, 2020.
+                                <br>
+                                [<a
+                                    href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296&casa_token=ZbgAMop0EiYAAAAA:BVnLHMxb3jaLs0Ukmq_RTszRARtuiPh5qg51GXNgxmmOsr5GbGna31OvxG6WnB8gfnyEJQUb">PDF</a>]
+                                <br>
+                                <p></p>
+                                <p>DAVT proposes a mobile edge computing
+                                    solution for vehicle trajectory data
+                                    compression, which reduces data at the
+                                    source and lowers communication and storage
+                                    costs, using three compressors for distance,
+                                    acceleration, velocity, and time data parts,
+                                    and outperforms other baselines according to
+                                    evaluation results.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/VTracer.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>VTracer: When online vehicle
+                                        trajectory compression meets mobile edge
+                                        computing</papertitle>
+                                </a>
+                                <br>
+                                Chao Chen*, <strong>Yan Ding*</strong>, Zhu
+                                Wang, Junfeng Zhao, Bin Guo, Daqing Zhang
+                                <br>
+                                <em>IEEE Systems Journal</em>, 2019.
+                                <br>
+                                [<a
+                                    href="https://hal.science/hal-02321015/document">PDF</a>]
+                                <br>
+                                <p></p>
+                                <p>This paper proposes an online trajectory
+                                    compression framework that uses SD-Matching
+                                    for GPS alignment and HCC for compression,
+                                    and demonstrates its effectiveness and
+                                    efficiency using real-world datasets in
+                                    Beijing and deployment in Chongqing.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img
+                                            src='img/trajcompressor.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>TrajCompressor: An Online
+                                        Map-matching-based Trajectory
+                                        Compression Framework Leveraging Vehicle
+                                        Heading Direction and
+                                        Change</papertitle>
+                                </a>
+                                <br>
+                                Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng
+                                Xie, Shu Zhang, Zhu Wang, Liang Feng
+                                <br>
+                                <em>IEEE TITS</em>, 2019.
+                                <br>
+                                [<a
+                                    href="https://ieeexplore.ieee.org/abstract/document/8697124">PDF</a>]
+                                <br>
+                                <p></p>
+                                <p>This paper presents an online trajectory
+                                    compression framework for reducing storage,
+                                    communication, and computation issues caused
+                                    by massive and redundant vehicle trajectory
+                                    data, consisting of two phases: online
+                                    trajectory mapping and trajectory
+                                    compression, using Spatial-Directional
+                                    Matching and Heading Change Compression
+                                    algorithms respectively, which have been
+                                    evaluated with real-world datasets in
+                                    Beijing and deployed in Chongqing, showing
+                                    higher accuracy and efficiency compared to
+                                    state-of-the-art algorithms.
+                                </p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img src='img/api.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Fuel Consumption Estimation of
+                                        Potential Driving Paths by Leveraging
+                                        Online Route APIs</papertitle>
+                                </a>
+                                <br>
+                                Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng
+                                Xie, Xuefeng Xie, Zhikai Yang
+                                <br>
+                                <em>Green, Pervasive, and Cloud Computing: 13th
+                                    International Conference (GPC)</em>, 2018.
+                                <br>
+                                [<a
+                                    href="https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7">PDF</a>]
+                                <br>
+                                <p></p>
+                                <p>This paper proposes a fuel consumption model
+                                    based on GPS trajectory and OBD-II data,
+                                    which can estimate the fuel usage of driving
+                                    paths and help drivers choose fuel-efficient
+                                    routes to reduce greenhouse gas and
+                                    pollutant emissions.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img
+                                            src='img/threestage.png' width="160"
+                                            vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>A three-stage online
+                                        map-matching algorithm by fully using
+                                        vehicle heading direction</papertitle>
+                                </a>
+                                <br>
+                                Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng
+                                Xie, Shu Zhang
+                                <br>
+                                <em>Journal of Ambient Intelligence and
+                                    Humanized Computing</em>, 2018.
+                                <br>
+                                [<a
+                                    href="https://link.springer.com/article/10.1007/s12652-018-0760-0">PDF</a>]
+                                <br>
+                                <p></p>
+                                <p>The SD-Matching algorithm proposes a
+                                    three-stage approach to improve the accuracy
+                                    and speed of online map-matching by
+                                    incorporating vehicle heading direction
+                                    data.</p>
+                            </td>
+                        </tr>
+
+                        <tr class="first-author-paper">
+                            <td width="25%">
+                                <div class="one">
+                                    <div class="two"><img
+                                            src='img/greenplanner.png'
+                                            width="160" vspace="20"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="75%">
+                                <a>
+                                    <papertitle>Greenplanner: Planning
+                                        personalized fuel-efficient driving
+                                        routes using multi-sourced urban
+                                        data</papertitle>
+                                </a>
+                                <br>
+                                <strong>Yan Ding*</strong>, Chao Chen*, Shu
+                                Zhang, Bin Guo, Zhiwen Yu, Yasha Wang
+                                <br>
+                                <em>IEEE PerCom</em>, 2017.
+                                <br>
+                                [<a
+                                    href="https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf">PDF</a>]
+                                <br>
+                                <p></p>
+                                <p>Greenhouse gas emissions from vehicles in
+                                    modern cities is a significant problem, but
+                                    recommending fuel-efficient routes to
+                                    drivers through a personalized fuel
+                                    consumption model can help alleviate this
+                                    issue, as demonstrated by the successful
+                                    implementation of GreenPlanner in Beijing,
+                                    which achieved a mean fuel consumption error
+                                    of less than 7% and an average savings of
+                                    20% fuel consumption for suggested
+                                    routes.</p>
+                            </td>
+                        </tr>
+
+                        <script
+                            src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
+                            id="yding25-com-8yejwvr6d"></script>
+                    </table>
                 </td>
             </tr>
-        </tbody>
-    </table>
+        </table>
 
-</body>
+        <table width="100%" cellspacing="0" cellpadding="20" border="0"
+            align="center">
+            <tbody>
+                <tr>
+                    <td>
+                        <br>
+                        <p align="center">
+                            <font size="2">
+                                Template from <a
+                                    href="https://github.com/jonbarron/jonbarron_website">here.</a>
+                            </font>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
