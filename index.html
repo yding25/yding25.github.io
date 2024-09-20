@@ -1114,16 +1114,8 @@
             </tbody>
         </table>
 
-        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5egl21qgimm&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
-    
-        <script>
-        fetch('https://ipapi.co/json/')
-            .then(response => response.json())
-            .then(data => {
-            document.getElementById('visitor-info').innerHTML = '您的IP地址:' + data.ip + '<br>所在地：' + data.city + ', ' + data.region + ', ' + data.country_name;
-            })
-            .catch(error => console.error('Error:', error));
-        </script>
-
-
+        <div id="clustrmaps-container" style="width: 400px; height: 400px; margin: 0 auto; text-align: center;">
+            <script type="text/javascript" id="clustrmaps" src="https:////clustrmaps.com/map_v2.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4&cl=ffffff&w=a"></script>
+        </div>       
+        <!-- <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4"></script> -->
     </body>
