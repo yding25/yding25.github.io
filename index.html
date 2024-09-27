@@ -157,53 +157,33 @@
 <script type="text/javascript">
     function togglePapers(category) {
         var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
-        var firstAuthorBtn = document.getElementById('first-author-btn');
         var collaborativePapers = document.getElementsByClassName('collaborative-paper');
-        var collaborativeBtn = document.getElementById('collaborative-btn');
         var preprintPapers = document.getElementsByClassName('preprint-paper');
-        var preprintBtn = document.getElementById('preprint-btn');
 
+        // Hide all rows first
+        for (var i = 0; i < firstAuthorPapers.length; i++) {
+            firstAuthorPapers[i].style.display = 'none';
+        }
+        for (var i = 0; i < collaborativePapers.length; i++) {
+            collaborativePapers[i].style.display = 'none';
+        }
+        for (var i = 0; i < preprintPapers.length; i++) {
+            preprintPapers[i].style.display = 'none';
+        }
+
+        // Show rows based on the selected category
         if (category === 'first-author') {
             for (var i = 0; i < firstAuthorPapers.length; i++) {
                 firstAuthorPapers[i].style.display = 'table-row';
             }
-            for (var i = 0; i < collaborativePapers.length; i++) {
-                collaborativePapers[i].style.display = 'none';
-            }
-            for (var i = 0; i < preprintPapers.length; i++) {
-                preprintPapers[i].style.display = 'none';
-            }
-            firstAuthorBtn.style.backgroundColor = '#f2f2f2';
-            collaborativeBtn.style.backgroundColor = '#ffffff';
-            preprintBtn.style.backgroundColor = '#ffffff';
-        }
-        if (category === 'collaborative') {
-            for (var i = 0; i < firstAuthorPapers.length; i++) {
-                firstAuthorPapers[i].style.display = 'none';
-            }
+        } else if (category === 'collaborative') {
             for (var i = 0; i < collaborativePapers.length; i++) {
                 collaborativePapers[i].style.display = 'table-row';
             }
-            for (var i = 0; i < preprintPapers.length; i++) {
-                preprintPapers[i].style.display = 'none';
-            }
-            firstAuthorBtn.style.backgroundColor = '#ffffff';
-            collaborativeBtn.style.backgroundColor = '#f2f2f2';
-            preprintBtn.style.backgroundColor = '#ffffff';
-        }
-        if (category === 'preprint') {
-            for (var i = 0; i < firstAuthorPapers.length; i++) {
-                firstAuthorPapers[i].style.display = 'none';
-            }
-            for (var i = 0; i < collaborativePapers.length; i++) {
-                collaborativePapers[i].style.display = 'none';
-            }
+        } else if (category === 'preprint') {
             for (var i = 0; i < preprintPapers.length; i++) {
                 preprintPapers[i].style.display = 'table-row';
             }
-            firstAuthorBtn.style.backgroundColor = '#ffffff';
-            collaborativeBtn.style.backgroundColor = '#ffffff';
-            preprintBtn.style.backgroundColor = '#f2f2f2';
         }
     }
 </script>
