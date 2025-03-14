@@ -154,40 +154,6 @@
         type='text/css'>
 </head>
 
-<!-- Add JavaScript to toggle visibility -->
-<script type="text/javascript">
-    function togglePapers(category) {
-        var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
-        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
-        var preprintPapers = document.getElementsByClassName('preprint-paper');
-
-        // Hide all rows first
-        for (var i = 0; i < firstAuthorPapers.length; i++) {
-            firstAuthorPapers[i].style.display = 'none';
-        }
-        for (var i = 0; i < collaborativePapers.length; i++) {
-            collaborativePapers[i].style.display = 'none';
-        }
-        for (var i = 0; i < preprintPapers.length; i++) {
-            preprintPapers[i].style.display = 'none';
-        }
-
-        // Show rows based on the selected category
-        if (category === 'first-author') {
-            for (var i = 0; i < firstAuthorPapers.length; i++) {
-                firstAuthorPapers[i].style.display = 'table-row';
-            }
-        } else if (category === 'collaborative') {
-            for (var i = 0; i < collaborativePapers.length; i++) {
-                collaborativePapers[i].style.display = 'table-row';
-            }
-        } else if (category === 'preprint') {
-            for (var i = 0; i < preprintPapers.length; i++) {
-                preprintPapers[i].style.display = 'table-row';
-            }
-        }
-    }
-</script>
 
 <body>
     <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
@@ -1103,3 +1069,38 @@
     </div>
     <!-- <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4"></script> -->
 </body>
+
+    <!-- Add JavaScript to toggle visibility -->
+<script type="text/javascript">
+    function togglePapers(category) {
+        var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
+        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
+        var preprintPapers = document.getElementsByClassName('preprint-paper');
+
+        // Hide all rows first
+        for (var i = 0; i < firstAuthorPapers.length; i++) {
+            firstAuthorPapers[i].style.display = 'none';
+        }
+        for (var i = 0; i < collaborativePapers.length; i++) {
+            collaborativePapers[i].style.display = 'none';
+        }
+        for (var i = 0; i < preprintPapers.length; i++) {
+            preprintPapers[i].style.display = 'none';
+        }
+
+        // Show rows based on the selected category
+        if (category === 'first-author') {
+            for (var i = 0; i < firstAuthorPapers.length; i++) {
+                firstAuthorPapers[i].style.display = 'table-row';
+            }
+        } else if (category === 'collaborative') {
+            for (var i = 0; i < collaborativePapers.length; i++) {
+                collaborativePapers[i].style.display = 'table-row';
+            }
+        } else if (category === 'preprint') {
+            for (var i = 0; i < preprintPapers.length; i++) {
+                preprintPapers[i].style.display = 'table-row';
+            }
+        }
+    }
+</script>
