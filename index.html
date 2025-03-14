@@ -121,7 +121,7 @@
             /* Gray color for active button */
         }
 
-        #first-author-btn,
+        #first-author-btn
         {
         width: 180px;
         height: 40px;
@@ -154,7 +154,41 @@
         type='text/css'>
 </head>
 
+    <!-- Add JavaScript to toggle visibility -->
+<script type="text/javascript">
+    function togglePapers(category) {
+        var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
+        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
+        var preprintPapers = document.getElementsByClassName('preprint-paper');
 
+        // Hide all rows first
+        for (var i = 0; i < firstAuthorPapers.length; i++) {
+            firstAuthorPapers[i].style.display = 'none';
+        }
+        for (var i = 0; i < collaborativePapers.length; i++) {
+            collaborativePapers[i].style.display = 'none';
+        }
+        for (var i = 0; i < preprintPapers.length; i++) {
+            preprintPapers[i].style.display = 'none';
+        }
+
+        // Show rows based on the selected category
+        if (category === 'first-author') {
+            for (var i = 0; i < firstAuthorPapers.length; i++) {
+                firstAuthorPapers[i].style.display = 'table-row';
+            }
+        } else if (category === 'collaborative') {
+            for (var i = 0; i < collaborativePapers.length; i++) {
+                collaborativePapers[i].style.display = 'table-row';
+            }
+        } else if (category === 'preprint') {
+            for (var i = 0; i < preprintPapers.length; i++) {
+                preprintPapers[i].style.display = 'table-row';
+            }
+        }
+    }
+</script>
+    
 <body>
     <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
         <tr>
@@ -294,10 +328,12 @@
                             onclick="togglePapers('first-author')">First(*)/Corresponding(#)</button>
                     </td>
                     <td width="100%" valign="middle" class="papers-heading">
-                        <button id="collaborative-btn" onclick="togglePapers('collaborative')">Collaborative</button>
+                        <button id="collaborative-btn"
+                            onclick="togglePapers('collaborative')">Collaborative</button>
                     </td>
                     <td width="100%" valign="middle" class="papers-heading">
-                        <button id="preprint-btn" onclick="togglePapers('preprint')">Preprint</button>
+                        <button id="preprint-btn"
+                            onclick="togglePapers('preprint')">Preprint</button>
                     </td>
                 </table>
 
@@ -317,7 +353,7 @@
                 <papertitle>MoMa-Kitchen: A 100K+ Benchmark for Affordance-Grounded Last-Mile Navigation in Mobile Manipulation</papertitle>
             </a>
             <br>
-           Pingrui Zhang<sup>1,2</sup>*, Xianqiang Gao<sup>2,3</sup>*, Yuhan Wu<sup>3</sup>,Kehui Liu<sup>2,4</sup>, Dong Wang<sup>2</sup>, Zhigang Wang<sup>2</sup>, Bin Zhao<sup>2,4</sup>, <strong>Yan Ding<sup>2†</sup></strong>, Xuelong Li<sup>5</sup>
+           Pingrui Zhang<sup>1,2</sup>*, Xianqiang Gao<sup>2,3</sup>*, Yuhan Wu<sup>3</sup>,Kehui Liu<sup>2,4</sup>, Dong Wang<sup>2</sup>, Zhigang Wang<sup>2</sup>, Bin Zhao<sup>2,4</sup>, <strong>Yan Ding<sup>#</sup></strong>, Xuelong Li<sup>5</sup>
             <br>
             <em>Under Review</em>
             <br>
@@ -1069,38 +1105,3 @@
     </div>
     <!-- <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4"></script> -->
 </body>
-
-    <!-- Add JavaScript to toggle visibility -->
-<script type="text/javascript">
-    function togglePapers(category) {
-        var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
-        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
-        var preprintPapers = document.getElementsByClassName('preprint-paper');
-
-        // Hide all rows first
-        for (var i = 0; i < firstAuthorPapers.length; i++) {
-            firstAuthorPapers[i].style.display = 'none';
-        }
-        for (var i = 0; i < collaborativePapers.length; i++) {
-            collaborativePapers[i].style.display = 'none';
-        }
-        for (var i = 0; i < preprintPapers.length; i++) {
-            preprintPapers[i].style.display = 'none';
-        }
-
-        // Show rows based on the selected category
-        if (category === 'first-author') {
-            for (var i = 0; i < firstAuthorPapers.length; i++) {
-                firstAuthorPapers[i].style.display = 'table-row';
-            }
-        } else if (category === 'collaborative') {
-            for (var i = 0; i < collaborativePapers.length; i++) {
-                collaborativePapers[i].style.display = 'table-row';
-            }
-        } else if (category === 'preprint') {
-            for (var i = 0; i < preprintPapers.length; i++) {
-                preprintPapers[i].style.display = 'table-row';
-            }
-        }
-    }
-</script>
