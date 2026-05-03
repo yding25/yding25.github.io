@@ -1,5 +1,105 @@
 [
   {
+    "year": "2026",
+    "category": "embodied-models",
+    "image": "img/mlm.png",
+    "title": "MLM: Learning Multi-Task Loco-Manipulation Whole-Body Control for Quadruped Robot With Arm",
+    "venue": "IEEE Robotics and Automation Letters, 2026",
+    "level": "IEEE Robotics Letter",
+    "contributors": "Xin Liu, Bida Ma, Chenkun Qi, Yan Ding, Nuo Xu, Zhaxizhuoma, Guorong Zhang, Pengan Chen, Kehui Liu, Zhongjie Jia, Chuyue Guan, Yule Mo, Jiaqi Liu, Feng Gao, Jiangwei Zhong, Bin Zhao, Xuelong Li",
+    "tags": [
+      "Loco-Manipulation",
+      "Whole-Body Control",
+      "Quadruped Robot"
+    ],
+    "summary": "MLM trains a multi-task whole-body loco-manipulation policy for a quadruped robot with an arm by combining real-world manipulation trajectories, simulation reinforcement learning, adaptive trajectory sampling, and trajectory-velocity prediction for robust deployment.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/pdf/2508.10538"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/LRA.2025.3632087"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "category": "embodied-models",
+    "image": "img/openfly.png",
+    "title": "OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation",
+    "venue": "ICLR, 2026",
+    "level": "ICLR Poster",
+    "contributors": "Yunpeng Gao, Chenhui Li, Zhongrui You, Junli Liu, Li Zhen, Pengan Chen, Qizhi Chen, Zhonghan Tang, Liansheng Wang, Penghui Yang, Yiwen Tang, Yuhang Tang, Shuai Liang, Songyi Zhu, Ziqin Xiong, Yifei Su, Xinyi Ye, Jianan Li, Yan Ding, Dong Wang, Zhigang Wang, Bin Zhao, Xuelong Li",
+    "tags": [
+      "Aerial VLN",
+      "Dataset Platform",
+      "Embodied Navigation"
+    ],
+    "summary": "OpenFly is a comprehensive aerial vision-language navigation platform that integrates multiple rendering engines, an automated data collection toolchain, a 100K-trajectory benchmark, and a keyframe-aware VLN model for UAV navigation.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openreview.net/forum?id=OKm3w71ymP"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2502.18041"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "img/asyncvla.png",
+    "title": "AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models",
+    "venue": "arXiv, 2025",
+    "level": "Preprint",
+    "contributors": "Yuhua Jiang, Shuang Cheng, Yan Ding, Feifei Gao, Biqing Qi",
+    "tags": [
+      "VLA",
+      "Flow Matching",
+      "Self-Correction"
+    ],
+    "summary": "AsyncVLA introduces asynchronous flow matching for vision-language-action models, using confidence-driven self-correction to selectively regenerate low-confidence action tokens while reusing visual-language context for efficient robot action generation.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2511.14148"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/YuhuaJiang2002/AsyncVLA"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "data-pipelines",
+    "image": "img/fastumi-100k.png",
+    "title": "FastUMI-100K: Advancing Data-driven Robotic Manipulation with a Large-scale UMI-style Dataset",
+    "venue": "arXiv, 2025",
+    "level": "Dataset Preprint",
+    "contributors": "Kehui Liu, Zhongjie Jia, Yang Li, Zhaxizhuoma, Pengan Chen, Song Liu, Xin Liu, Pingrui Zhang, Haoming Song, Xinyi Ye, Nieqing Cao, Zhigang Wang, Jia Zeng, Dong Wang, Yan Ding, Bin Zhao, Xuelong Li",
+    "tags": [
+      "Robot Dataset",
+      "UMI-style Data",
+      "Manipulation"
+    ],
+    "summary": "FastUMI-100K is a large-scale UMI-style multimodal manipulation dataset with 100K+ long-horizon demonstration trajectories across 54 tasks and over 100 real scenario objects, integrating end-effector states, fisheye images, dual-arm trajectories, and text annotations.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2510.08022"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/MrKeee/FastUMI-100K"
+      }
+    ]
+  },
+  {
     "year": "2025",
     "category": "embodied-models",
     "image": "img/LLM-GROP.png",
@@ -7,7 +107,10 @@
     "venue": "IJRR, 2025",
     "level": "Premier Robotics Journal",
     "contributors": "Xiaohan Zhang, Yan Ding, Yohei Hayamizu, Zainab Altaweel, Yifeng Zhu, Yuke Zhu, Peter Stone, Chris Paxton, Shiqi Zhang",
-    "tags": ["Robot Reasoning", "LLM Grounding"],
+    "tags": [
+      "Robot Reasoning",
+      "LLM Grounding"
+    ],
     "summary": "LLM-GROP uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates it with a task and motion planner, enabling successful and efficient multi-object rearrangement in various environments with a mobile manipulator.",
     "links": []
   },
@@ -19,11 +122,21 @@
     "venue": "Under Review",
     "level": "Benchmark / Dataset",
     "contributors": "Pingrui Zhang, Xianqiang Gao, Yuhan Wu, Kehui Liu, Dong Wang, Zhigang Wang, Bin Zhao, Yan Ding, Xuelong Li",
-    "tags": ["Benchmark", "Affordance Data", "Mobile Manipulation"],
+    "tags": [
+      "Benchmark",
+      "Affordance Data",
+      "Mobile Manipulation"
+    ],
     "summary": "MoMa-Kitchen is a benchmark dataset with over 100k auto-generated samples featuring affordance-grounded manipulation positions and egocentric RGB-D data. It introduces NavAff, a lightweight model for learning navigation termination points that support seamless manipulation transitions across diverse robotic platforms and arm configurations.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2503.11081" },
-      { "label": "Project", "url": "https://momakitchen.github.io/" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2503.11081"
+      },
+      {
+        "label": "Project",
+        "url": "https://momakitchen.github.io/"
+      }
     ]
   },
   {
@@ -34,11 +147,21 @@
     "venue": "Under Review",
     "level": "Large-Scale Platform",
     "contributors": "Team AgiBot-World",
-    "tags": ["Robot Data", "Embodied Platform", "Benchmark"],
+    "tags": [
+      "Robot Data",
+      "Embodied Platform",
+      "Benchmark"
+    ],
     "summary": "AgiBot World Colosseo is an open-source large-scale manipulation platform spanning data, models, benchmarks, and ecosystem resources. It deploys a suite of 100 dual-arm humanoid robots and proposes a generalist policy with a latent action planner trained across a diverse data corpus.",
     "links": [
-      { "label": "Paper", "url": "https://opendrivelab.com/assets/file/AgiBot_World_Colosseo.pdf" },
-      { "label": "Project", "url": "https://opendrivelab.com/blog/agibot-world/" }
+      {
+        "label": "Paper",
+        "url": "https://opendrivelab.com/assets/file/AgiBot_World_Colosseo.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "https://opendrivelab.com/blog/agibot-world/"
+      }
     ]
   },
   {
@@ -49,11 +172,21 @@
     "venue": "ICRA, 2025",
     "level": "Flagship Robotics Conference",
     "contributors": "Zhaxizhuoma, Pengan Chen, Ziniu Wu, Jiawei Sun, Dong Wang, Peng Zhou, Nieqing Cao, Yan Ding, Bin Zhao, Xuelong Li",
-    "tags": ["VLM", "Customization", "Household Robots"],
+    "tags": [
+      "VLM",
+      "Customization",
+      "Household Robots"
+    ],
     "summary": "AlignBot optimizes VLM-powered customized task planning for household robots by aligning with user reminders. It uses a fine-tuned LLaVA-7B adapter for GPT-4o to internalize personalized preferences, corrective guidance, and contextual assistance as structured cues for customized task plans.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2409.11905" },
-      { "label": "Project", "url": "https://yding25.com/AlignBot/" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2409.11905"
+      },
+      {
+        "label": "Project",
+        "url": "https://yding25.com/AlignBot/"
+      }
     ]
   },
   {
@@ -64,25 +197,137 @@
     "venue": "ICRA, 2025",
     "level": "Flagship Robotics Conference",
     "contributors": "Kai Gao, Zhaxizhuoma, Yan Ding, Shiqi Zhang, Jingjin Yu",
-    "tags": ["Object Rearrangement", "Mobile Manipulation"],
+    "tags": [
+      "Object Rearrangement",
+      "Mobile Manipulation"
+    ],
     "summary": "ORLA* leverages lazy evaluation to search for high-quality object pick-and-place sequences while considering both end-effector motion and mobile robot base travel.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2309.13707.pdf" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2309.13707.pdf"
+      }
     ]
   },
   {
-    "year": "2024",
+    "year": "2025",
     "category": "data-pipelines",
     "image": "img/fastumi.jpg",
     "title": "FastUMI: A Scalable and Hardware-Independent Universal Manipulation Interface and Dataset",
     "venue": "CoRL, 2025",
-    "level": "Flagship Robotics Conference",
+    "level": "Conference on Robot Learning",
     "contributors": "Zhaxizhuoma, Kehui Liu, Chuyue Guan, Zhongjie Jia, Ziniu Wu, Xin Liu, Tianyu Wang, Shuai Liang, Pengan Chen, Pingrui Zhang, Haoming Song, Delin Qu, Dong Wang, Zhigang Wang, Nieqing Cao, Yan Ding, Bin Zhao, Xuelong Li",
-    "tags": ["Data Collection", "Hardware Interface", "Manipulation Dataset"],
+    "tags": [
+      "Data Collection",
+      "Hardware Interface",
+      "Manipulation Dataset"
+    ],
     "summary": "FastUMI introduces an interface-mediated manipulation system with a handheld device for human-operated data collection and a robot-mounted device for policy inference, providing an efficient and user-friendly tool for robotic learning data acquisition.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2409.19499" },
-      { "label": "Project", "url": "https://fastumi.com/" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2409.19499"
+      },
+      {
+        "label": "Project",
+        "url": "https://fastumi.com/"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "img/dkprompt.png",
+    "title": "DKPROMPT: Domain Knowledge Prompting Vision-Language Models for Open-World Planning",
+    "venue": "AAAI Workshop LM4Plan, 2025",
+    "level": "Workshop Paper",
+    "contributors": "Xiaohan Zhang, Zainab Altaweel, Yohei Hayamizu, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, Shiqi Zhang",
+    "tags": [
+      "VLM",
+      "Domain Knowledge",
+      "Open-World Reasoning"
+    ],
+    "summary": "DKPROMPT studies how domain knowledge can be injected into vision-language models for open-world robot planning, improving grounding and reasoning in tasks where prior symbolic knowledge and visual observations must be connected.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openreview.net/forum?id=ANXjmdDQyV"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "img/spatialvla.png",
+    "title": "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model",
+    "venue": "arXiv, 2025",
+    "level": "Preprint",
+    "contributors": "Delin Qu, Haoming Song, Qizhi Chen, Dong Wang, Yuanqi Yao, Xinyi Ye, Yan Ding, Zhigang Wang, Jiayuan Gu, Bin Zhao, Xuelong Li",
+    "tags": [
+      "VLA",
+      "Spatial Representation",
+      "Robot Foundation Model"
+    ],
+    "summary": "SpatialVLA explores spatial representations for vision-language-action models through Ego3D position encoding and adaptive action grids, enabling cross-robot manipulation policies trained on large-scale real robot episodes.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2501.15830"
+      },
+      {
+        "label": "Project",
+        "url": "https://spatialvla.github.io/"
+      },
+      {
+        "label": "OpenReview",
+        "url": "https://openreview.net/forum?id=8OIwIEF1kV"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "deployment",
+    "image": "img/fabric-alignment.png",
+    "title": "A Coarse-to-Fine Robotic Fabric Alignment System Integrating Visual Servoing and Admittance Control",
+    "venue": "IEEE Transactions on Automation Science and Engineering, 2025",
+    "level": "IEEE Transactions",
+    "contributors": "Jiaming Qi, Liang Lu, Lei Yang, Yan Ding, Pai Zheng, David Navarro-Alarcon, Jia Pan, Peng Zhou",
+    "tags": [
+      "Fabric Manipulation",
+      "Visual Servoing",
+      "Admittance Control"
+    ],
+    "summary": "This work presents a robotic fabric alignment system that combines coarse-to-fine pose estimation, eye-in-hand visual servoing, disturbance-aware control, and force-aware manipulation for precise and adaptable fabric handling.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/TASE.2025.3585644"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "img/ske-layout.png",
+    "title": "SKE-Layout: Spatial Knowledge Enhanced Layout Generation with LLMs",
+    "venue": "CVPR, 2025",
+    "level": "Top Vision Conference",
+    "contributors": "Junsheng Wang, Nieqing Cao, Yan Ding, Mengying Xie, Fuqiang Gu, Chao Chen",
+    "tags": [
+      "Spatial Reasoning",
+      "Layout Generation",
+      "LLM"
+    ],
+    "summary": "SKE-Layout enhances LLM-based layout generation with mixed spatial knowledge from real and synthetic data, supporting fine-grained object rearrangement and text-to-image layout planning.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_SKE-Layout_Spatial_Knowledge_Enhanced_Layout_Generation_with_LLMs_CVPR_2025_paper.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_SKE-Layout_Spatial_Knowledge_Enhanced_Layout_Generation_with_LLMs_CVPR_2025_paper.html"
+      }
     ]
   },
   {
@@ -93,25 +338,21 @@
     "venue": "FCS Letter",
     "level": "Platform Paper",
     "contributors": "Kui Yang, Nieqing Cao, Yan Ding, Chao Chen",
-    "tags": ["Platform", "Simulation-Hardware APIs", "Mobile Manipulation"],
+    "tags": [
+      "Platform",
+      "Simulation-Hardware APIs",
+      "Mobile Manipulation"
+    ],
     "summary": "BestMan is a PyBullet-based modular mobile manipulator platform with an integrated multilevel skill chain, modular design for extensibility, unified simulation-hardware interfaces, and decoupled software support for diverse hardware.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2410.13407" },
-      { "label": "Project", "url": "https://bestmansim.com/" }
-    ]
-  },
-  {
-    "year": "2024",
-    "category": "embodied-models",
-    "image": "img/dkprompt.png",
-    "title": "DKPROMPT: Domain Knowledge Prompting Vision-Language Models for Open-World Planning",
-    "venue": "Under Review",
-    "level": "Preprint",
-    "contributors": "Xiaohan Zhang, Zainab Altaweel, Yohei Hayamizu, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, Shiqi Zhang",
-    "tags": ["VLM", "Domain Knowledge", "Open-World Reasoning"],
-    "summary": "DKPROMPT studies how domain knowledge can be injected into vision-language models for open-world robot planning, improving grounding and reasoning in tasks where prior symbolic knowledge and visual observations must be connected.",
-    "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2406.17659" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2410.13407"
+      },
+      {
+        "label": "Project",
+        "url": "https://bestmansim.com/"
+      }
     ]
   },
   {
@@ -122,10 +363,17 @@
     "venue": "IEEE/ASME Transactions on Mechatronics, 2024",
     "level": "IEEE Transactions",
     "contributors": "Zhigen Zhao, Shuo Chen, Yan Ding, Ziyi Zhou, Shiqi Zhang, Danfei Xu, Ye Zhao",
-    "tags": ["Survey", "Robot Planning", "Learning Methods"],
+    "tags": [
+      "Survey",
+      "Robot Planning",
+      "Learning Methods"
+    ],
     "summary": "This survey reviews optimization-based task and motion planning methods, spanning classical formulations and learning-based approaches for robot planning.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2404.02817" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2404.02817"
+      }
     ]
   },
   {
@@ -136,11 +384,63 @@
     "venue": "Under Review",
     "level": "Deployment Geometry",
     "contributors": "Beichen Shao, Yan Ding, Xingchen Wang, Xuefeng Xie, Fuqiang Gu, Jun Luo, Chao Chen",
-    "tags": ["Scene Deployment", "Mobile Manipulation", "Base Placement"],
+    "tags": [
+      "Scene Deployment",
+      "Mobile Manipulation",
+      "Base Placement"
+    ],
     "summary": "MoMa-Pos addresses the problem of selecting feasible base positions before navigation-manipulation tasks in cluttered real-world environments with furniture, obstacles, and many objects.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2403.19940.pdf" },
-      { "label": "Project", "url": "https://yding25.com/MoMa-Pos/" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2403.19940.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "https://yding25.com/MoMa-Pos/"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "deployment",
+    "image": "img/Chelsea.png",
+    "title": "A Decision Framework for AR, Dialogue and Eye Gaze to Enhance Human-Robot Collaboration",
+    "venue": "HRI Companion, 2024",
+    "level": "Conference Companion",
+    "contributors": "Chelsea Zou, Yan Ding, Kishan Chandan, Shiqi Zhang",
+    "tags": [
+      "Human-Robot Collaboration",
+      "AR",
+      "Eye Gaze"
+    ],
+    "summary": "This work studies how augmented reality, dialogue, and eye gaze can be coordinated in a decision framework to improve human-robot collaboration.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1145/3610978.3640550"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "data-pipelines",
+    "image": "img/routemap.png",
+    "title": "Joint Optimization for Quality Selection and Resource Allocation of Live Video Streaming in Internet of Vehicles",
+    "venue": "IEEE Transactions on Services Computing, 2024",
+    "level": "IEEE Transactions",
+    "contributors": "Penglin Dai, Meiting Wu, Ke Li, Xiao Wu, Yan Ding",
+    "tags": [
+      "Internet of Vehicles",
+      "Live Video Streaming",
+      "Resource Allocation"
+    ],
+    "summary": "This work optimizes live video streaming in Internet of Vehicles by jointly modeling vehicle grouping, quality selection, and wireless resource allocation for improved quality of experience.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/TSC.2023.3349051"
+      }
     ]
   },
   {
@@ -151,11 +451,21 @@
     "venue": "IROS, 2023",
     "level": "Flagship Robotics Conference",
     "contributors": "Yan Ding, Xiaohan Zhang, Chris Paxton, Shiqi Zhang",
-    "tags": ["LLM", "Object Rearrangement", "Mobile Manipulation"],
+    "tags": [
+      "LLM",
+      "Object Rearrangement",
+      "Mobile Manipulation"
+    ],
     "summary": "LLM-GROP uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates it with a task and motion planner, enabling successful and efficient multi-object rearrangement in various environments with a mobile manipulator.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2303.06247.pdf" },
-      { "label": "Project", "url": "https://sites.google.com/view/llm-grop" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2303.06247.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "https://sites.google.com/view/llm-grop"
+      }
     ]
   },
   {
@@ -166,10 +476,17 @@
     "venue": "ICRA Workshop on CoPerception: Collaborative Perception and Learning, 2023",
     "level": "Workshop",
     "contributors": "Chelsea Zou, Kishan Chandan, Yan Ding, Shiqi Zhang",
-    "tags": ["Human-Robot Collaboration", "AR", "Dialogue"],
+    "tags": [
+      "Human-Robot Collaboration",
+      "AR",
+      "Dialogue"
+    ],
     "summary": "ARDIE explores augmented reality, dialogue, and eye-gaze policies for collaborative perception and human-robot collaboration.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2305.04685.pdf" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2305.04685.pdf"
+      }
     ]
   },
   {
@@ -180,10 +497,17 @@
     "venue": "IROS, 2023",
     "level": "Flagship Robotics Conference",
     "contributors": "Xiaohan Zhang, Yifeng Zhu, Yan Ding, Yuqian Jiang, Yuke Zhu, Peter Stone, Shiqi Zhang",
-    "tags": ["Long-Horizon Reasoning", "Mobile Manipulation", "Execution"],
+    "tags": [
+      "Long-Horizon Reasoning",
+      "Mobile Manipulation",
+      "Execution"
+    ],
     "summary": "This work optimizes symbolic state spaces for long-horizon mobile manipulation planning, aiming to improve reasoning and execution over extended task sequences.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2307.11889.pdf" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2307.11889.pdf"
+      }
     ]
   },
   {
@@ -194,10 +518,17 @@
     "venue": "UAI, 2023",
     "level": "Top AI Conference",
     "contributors": "Cheng Cui, Saeid Amiri, Yan Ding, Xingyue Zhan, Shiqi Zhang",
-    "tags": ["Uncertainty", "Contextual Knowledge", "Reasoning"],
+    "tags": [
+      "Uncertainty",
+      "Contextual Knowledge",
+      "Reasoning"
+    ],
     "summary": "This paper studies how agents can learn to reason about contextual knowledge for planning under uncertainty.",
     "links": [
-      { "label": "Paper", "url": "https://proceedings.mlr.press/v216/cui23a/cui23a.pdf" }
+      {
+        "label": "Paper",
+        "url": "https://proceedings.mlr.press/v216/cui23a/cui23a.pdf"
+      }
     ]
   },
   {
@@ -208,10 +539,17 @@
     "venue": "ICRA Workshop on Robot Execution Failures and Failure Management Strategies, 2023",
     "level": "Workshop",
     "contributors": "Xiaohan Zhang, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, Shiqi Zhang",
-    "tags": ["VLM", "Grounding", "Failure Management"],
+    "tags": [
+      "VLM",
+      "Grounding",
+      "Failure Management"
+    ],
     "summary": "This work grounds classical task planners with vision-language models, connecting visual observations to symbolic planning requirements for robot execution and failure-management settings.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2304.08587.pdf" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2304.08587.pdf"
+      }
     ]
   },
   {
@@ -222,13 +560,29 @@
     "venue": "Autonomous Robots, 2023",
     "level": "Robotics Journal",
     "contributors": "Yan Ding, Xiaohan Zhang, Saeid Amiri, Nieqing Cao, Hao Yang, Chad Esselink, Shiqi Zhang",
-    "tags": ["LLM", "Open-World Reasoning", "Situation Handling"],
+    "tags": [
+      "LLM",
+      "Open-World Reasoning",
+      "Situation Handling"
+    ],
     "summary": "COWP uses task-oriented commonsense extracted from large language models to help robots handle unforeseen situations and complete complex tasks in an open world, improving success rates compared with previous algorithms.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2305.17590.pdf" },
-      { "label": "Project", "url": "./proj/COWP/index.html" },
-      { "label": "Video", "url": "https://youtu.be/HtxlXSzY5VQ" },
-      { "label": "Code", "url": "https://github.com/yding25/GPT-Planner" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2305.17590.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "./proj/COWP/index.html"
+      },
+      {
+        "label": "Video",
+        "url": "https://youtu.be/HtxlXSzY5VQ"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/yding25/GPT-Planner"
+      }
     ]
   },
   {
@@ -239,10 +593,38 @@
     "venue": "ICRA, 2023",
     "level": "Conference",
     "contributors": "Yan Ding, Cheng Cui, Xiaohan Zhang, Shiqi Zhang",
-    "tags": ["Autonomous Driving", "Task-Motion Planning", "Visual Grounding"],
+    "tags": [
+      "Autonomous Driving",
+      "Task-Motion Planning",
+      "Visual Grounding"
+    ],
     "summary": "GLAD is a layered planning framework for complex service requests in autonomous urban driving, coupling service-level, behavior-level, and motion-level planning with visually grounded safety estimates.",
     "links": [
-      { "label": "Project", "url": "./proj/GLAD/index.html" }
+      {
+        "label": "Project",
+        "url": "./proj/GLAD/index.html"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "deployment",
+    "image": "img/grop.png",
+    "title": "Embodied Visual Navigation for Grasping",
+    "venue": "ICCIP, 2023",
+    "level": "Conference",
+    "contributors": "Xingchen Wang, Yan Ding, Beichen Shao, Fei Meng, Chao Chen",
+    "tags": [
+      "Visual Navigation",
+      "Grasping",
+      "Embodied AI"
+    ],
+    "summary": "This work studies embodied visual navigation for grasping, connecting scene perception and navigation decisions with downstream object grasping in embodied systems.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1145/3638884.3638912"
+      }
     ]
   },
   {
@@ -253,12 +635,25 @@
     "venue": "IEEE Robotics and Automation Letters, 2022",
     "level": "IEEE Robotics Letter",
     "contributors": "Yan Ding, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang",
-    "tags": ["Object Grounding", "Robot Learning", "Execution"],
+    "tags": [
+      "Object Grounding",
+      "Robot Learning",
+      "Execution"
+    ],
     "summary": "TMOC learns object properties through a physics engine so robot task and motion planners can handle complex real-world scenarios without prior object-property knowledge, outperforming existing algorithms.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2202.06674.pdf" },
-      { "label": "Project", "url": "./proj/TMOC/TMOC.html" },
-      { "label": "Code", "url": "https://github.com/yding25/TMOC" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2202.06674.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "./proj/TMOC/TMOC.html"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/yding25/TMOC"
+      }
     ]
   },
   {
@@ -269,11 +664,21 @@
     "venue": "ICRA, 2022",
     "level": "Flagship Robotics Conference",
     "contributors": "Xiaohan Zhang, Yifeng Zhu, Yan Ding, Yuke Zhu, Peter Stone, Shiqi Zhang",
-    "tags": ["Visual Grounding", "Mobile Manipulation", "Scene Execution"],
+    "tags": [
+      "Visual Grounding",
+      "Mobile Manipulation",
+      "Scene Execution"
+    ],
     "summary": "This paper studies visually grounded task and motion planning for mobile manipulation, linking visual scene understanding with symbolic and geometric planning.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2202.10667.pdf" },
-      { "label": "Project", "url": "https://sites.google.com/view/grop-tamp" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2202.10667.pdf"
+      },
+      {
+        "label": "Project",
+        "url": "https://sites.google.com/view/grop-tamp"
+      }
     ]
   },
   {
@@ -284,10 +689,17 @@
     "venue": "ICCBR, 2021",
     "level": "Conference",
     "contributors": "Hao Yang, Tavan Eftekhar, Chad Esselink, Yan Ding, Shiqi Zhang",
-    "tags": ["Case-Based Reasoning", "Task Structure", "Situation Modeling"],
+    "tags": [
+      "Case-Based Reasoning",
+      "Task Structure",
+      "Situation Modeling"
+    ],
     "summary": "This work models task and situation structures for case-based planning, supporting reuse of prior planning experience across related scenarios.",
     "links": [
-      { "label": "Paper", "url": "https://link.springer.com/chapter/10.1007/978-3-030-86957-1_18" }
+      {
+        "label": "Paper",
+        "url": "https://link.springer.com/chapter/10.1007/978-3-030-86957-1_18"
+      }
     ]
   },
   {
@@ -298,12 +710,25 @@
     "venue": "IROS, 2020",
     "level": "Flagship Robotics Conference",
     "contributors": "Yan Ding, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang",
-    "tags": ["Autonomous Driving", "Deployment", "Safety"],
+    "tags": [
+      "Autonomous Driving",
+      "Deployment",
+      "Safety"
+    ],
     "summary": "TMPUD helps autonomous vehicles balance efficiency and safety by coordinating task and motion planners for urban driving.",
     "links": [
-      { "label": "Paper", "url": "https://arxiv.org/pdf/2003.03807" },
-      { "label": "Code", "url": "https://github.com/yding25/TMPUD" },
-      { "label": "Demo", "url": "https://www.youtube.com/watch?v=8NHQYUqMyoI" }
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/pdf/2003.03807"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/yding25/TMPUD"
+      },
+      {
+        "label": "Demo",
+        "url": "https://www.youtube.com/watch?v=8NHQYUqMyoI"
+      }
     ]
   },
   {
@@ -314,10 +739,17 @@
     "venue": "IEEE TVT, 2020",
     "level": "IEEE Transactions",
     "contributors": "Chao Chen, Yan Ding, Suiming Guo, Yasha Wang",
-    "tags": ["Trajectory Data", "Compression", "Edge Computing"],
+    "tags": [
+      "Trajectory Data",
+      "Compression",
+      "Edge Computing"
+    ],
     "summary": "DAVT proposes a mobile edge computing solution for vehicle trajectory compression that reduces data at the source and lowers communication and storage costs using compressors for distance, acceleration, velocity, and time data.",
     "links": [
-      { "label": "PDF", "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296" }
+      {
+        "label": "PDF",
+        "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296"
+      }
     ]
   },
   {
@@ -328,10 +760,17 @@
     "venue": "IEEE Systems Journal, 2019",
     "level": "IEEE Journal",
     "contributors": "Chao Chen, Yan Ding, Zhu Wang, Junfeng Zhao, Bin Guo, Daqing Zhang",
-    "tags": ["Trajectory Data", "Compression", "Mobile Edge Computing"],
+    "tags": [
+      "Trajectory Data",
+      "Compression",
+      "Mobile Edge Computing"
+    ],
     "summary": "VTracer is an online trajectory compression framework that uses SD-Matching for GPS alignment and HCC for compression, demonstrating effectiveness and efficiency on real-world datasets in Beijing and deployment in Chongqing.",
     "links": [
-      { "label": "PDF", "url": "https://hal.science/hal-02321015/document" }
+      {
+        "label": "PDF",
+        "url": "https://hal.science/hal-02321015/document"
+      }
     ]
   },
   {
@@ -342,10 +781,38 @@
     "venue": "IEEE TITS, 2019",
     "level": "IEEE Transactions",
     "contributors": "Chao Chen, Yan Ding, Xuefeng Xie, Shu Zhang, Zhu Wang, Liang Feng",
-    "tags": ["Trajectory Data", "Map Matching", "Compression"],
+    "tags": [
+      "Trajectory Data",
+      "Map Matching",
+      "Compression"
+    ],
     "summary": "TrajCompressor reduces storage, communication, and computation overhead from massive redundant vehicle trajectory data through online trajectory mapping and trajectory compression with Spatial-Directional Matching and Heading Change Compression.",
     "links": [
-      { "label": "PDF", "url": "https://ieeexplore.ieee.org/abstract/document/8697124" }
+      {
+        "label": "PDF",
+        "url": "https://ieeexplore.ieee.org/abstract/document/8697124"
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "category": "deployment",
+    "image": "img/ford.png",
+    "title": "A Hierarchical Energy Management Strategy Based on Model Predictive Control for Plug-In Hybrid Electric Vehicles",
+    "venue": "IEEE Access, 2019",
+    "level": "IEEE Journal",
+    "contributors": "Yuanjian Zhang, Liang Chu, Yan Ding, Nan Xu, Chong Guo, Zicheng Fu, Lei Xu, Xin Tang, Yadan Liu",
+    "tags": [
+      "Hybrid Vehicles",
+      "Model Predictive Control",
+      "Energy Management"
+    ],
+    "summary": "This paper presents a hierarchical model predictive control strategy for plug-in hybrid electric vehicles, combining velocity prediction and dynamic programming for energy management.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/ACCESS.2019.2924165"
+      }
     ]
   },
   {
@@ -356,10 +823,17 @@
     "venue": "GPC, 2018",
     "level": "Conference",
     "contributors": "Chao Chen, Yan Ding, Xuefeng Xie, Zhikai Yang",
-    "tags": ["Urban Computing", "Route APIs", "Fuel Estimation"],
+    "tags": [
+      "Urban Computing",
+      "Route APIs",
+      "Fuel Estimation"
+    ],
     "summary": "This work proposes a fuel consumption model based on GPS trajectory and OBD-II data to estimate fuel usage of driving paths and help drivers choose fuel-efficient routes that reduce emissions.",
     "links": [
-      { "label": "PDF", "url": "https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7" }
+      {
+        "label": "PDF",
+        "url": "https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7"
+      }
     ]
   },
   {
@@ -370,10 +844,38 @@
     "venue": "Journal of Ambient Intelligence and Humanized Computing, 2018",
     "level": "Journal",
     "contributors": "Chao Chen, Yan Ding, Xuefeng Xie, Shu Zhang",
-    "tags": ["Map Matching", "Trajectory Data", "Heading Direction"],
+    "tags": [
+      "Map Matching",
+      "Trajectory Data",
+      "Heading Direction"
+    ],
     "summary": "The SD-Matching algorithm uses a three-stage approach to improve the accuracy and speed of online map matching by incorporating vehicle heading direction data.",
     "links": [
-      { "label": "PDF", "url": "https://link.springer.com/article/10.1007/s12652-018-0760-0" }
+      {
+        "label": "PDF",
+        "url": "https://link.springer.com/article/10.1007/s12652-018-0760-0"
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "category": "data-pipelines",
+    "image": "img/trajcompressor.png",
+    "title": "An Online Trajectory Compression System Applied to Resource-Constrained GPS Devices in Vehicles",
+    "venue": "SECON, 2018",
+    "level": "Conference",
+    "contributors": "Yan Ding, Chao Chen, Xuefeng Xie, Kai Liu, Liang Feng",
+    "tags": [
+      "Trajectory Compression",
+      "GPS Devices",
+      "Mobile Computing"
+    ],
+    "summary": "This system migrates online trajectory mapping, compression, and visualization to mobile devices to support resource-constrained GPS trajectory compression in vehicles.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/SAHCN.2018.8397160"
+      }
     ]
   },
   {
@@ -384,10 +886,17 @@
     "venue": "IEEE PerCom, 2017",
     "level": "Conference",
     "contributors": "Yan Ding, Chao Chen, Shu Zhang, Bin Guo, Zhiwen Yu, Yasha Wang",
-    "tags": ["Urban Computing", "Route Planning", "Deployment"],
+    "tags": [
+      "Urban Computing",
+      "Route Planning",
+      "Deployment"
+    ],
     "summary": "GreenPlanner recommends personalized fuel-efficient driving routes using multi-sourced urban data and a personalized fuel consumption model, reducing fuel consumption in the Beijing deployment.",
     "links": [
-      { "label": "PDF", "url": "https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf" }
+      {
+        "label": "PDF",
+        "url": "https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf"
+      }
     ]
   }
 ]
