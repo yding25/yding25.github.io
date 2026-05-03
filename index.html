@@ -1,1135 +1,1514 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta name=viewport content="width=800">
-    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-    <style type="text/css">
-        /* Color scheme stolen from Sergey Karayev */
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yan Ding</title>
+    <meta name="description"
+        content="Yan Ding - CTO at Lumos Robotics. Embodied data pipelines, embodied manipulation models, robot learning, and real-world deployment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;650;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #17202a;
+            --muted: #5f6b76;
+            --line: #d9dee5;
+            --paper: #fbfbf8;
+            --panel: #ffffff;
+            --accent: #0b5cab;
+            --accent-dark: #123f73;
+            --gold: #9f6a16;
+            --green: #23705a;
+            --red: #9b3a30;
+            --shadow: 0 14px 36px rgba(27, 39, 51, .08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+            line-height: 1.62;
+        }
+
         a {
-            color: #1772d0;
+            color: var(--accent);
             text-decoration: none;
         }
 
-        a:focus,
-        a:hover {
-            color: #f09228;
+        a:hover,
+        a:focus {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            border-bottom: 1px solid var(--line);
+            background: rgba(251, 251, 248, .94);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav {
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: 0;
+            color: var(--ink);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 650;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
             text-decoration: none;
         }
 
-        body,
-        td,
-        th,
-        tr,
-        p,
-        a {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
-            font-size: 14px
+        .hero {
+            padding: 54px 0 34px;
+            border-bottom: 1px solid var(--line);
         }
 
-        strong {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 270px;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--accent-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.18;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 29px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 760;
+        }
+
+        .lead {
+            max-width: 760px;
+            color: #35414d;
+            font-size: 18px;
+            line-height: 1.72;
+            margin: 18px 0 18px;
+        }
+
+        .role-line {
+            color: var(--muted);
+            font-size: 15px;
+            margin: 0 0 20px;
+        }
+
+        .affiliations {
+            display: grid;
+            gap: 6px;
+            margin: 0 0 18px;
+            color: #40505f;
             font-size: 14px;
         }
 
-        heading {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
-            font-size: 22px;
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
         }
 
-        papertitle {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
-            font-size: 14px;
-            font-weight: 700
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 8px 13px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--panel);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
         }
 
-        name {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
-            font-size: 32px;
+        .button.primary {
+            color: #fff;
+            border-color: var(--accent-dark);
+            background: var(--accent-dark);
         }
 
-        .one {
-            width: 160px;
-            height: 160px;
-            position: relative;
+        .button:hover {
+            text-decoration: none;
+            border-color: var(--accent);
         }
 
-        .two {
-            width: 160px;
-            height: 160px;
-            position: absolute;
-            transition: opacity .2s ease-in-out;
-            -moz-transition: opacity .2s ease-in-out;
-            -webkit-transition: opacity .2s ease-in-out;
+        .portrait-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 10px;
+            box-shadow: var(--shadow);
         }
 
-        .fade {
-            transition: opacity .2s ease-in-out;
-            -moz-transition: opacity .2s ease-in-out;
-            -webkit-transition: opacity .2s ease-in-out;
+        .portrait-card img {
+            aspect-ratio: 1 / 1.08;
+            object-fit: cover;
+            object-position: center 18%;
         }
 
-        .indented {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
-            font-size: 22px;
-            font-weight: normal;
-            padding-left: 20px;
-            margin-bottom: -40px;
-            margin-top: -0px;
+        .caption {
+            margin: 10px 2px 0;
+            color: var(--muted);
+            font-size: 12px;
         }
 
-        .first-author-paper {
-            display: table-row;
+        section {
+            padding: 42px 0;
+            border-bottom: 1px solid var(--line);
         }
 
-        .collaborative-paper {
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-note {
+            color: var(--muted);
+            max-width: 660px;
+            margin: 8px 0 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .focus-card,
+        .tool-card,
+        .demo-card,
+        .stat-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .focus-card {
+            padding: 20px;
+        }
+
+        .focus-card .index {
+            color: var(--gold);
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .focus-card p,
+        .tool-card p,
+        .demo-card p {
+            color: var(--muted);
+            margin: 9px 0 0;
+        }
+
+        .tool-strip {
+            display: grid;
+            grid-template-columns: 1.1fr repeat(3, minmax(0, .9fr));
+            gap: 12px;
+        }
+
+        .tool-card {
+            padding: 17px;
+            min-height: 168px;
+        }
+
+        .tool-card.featured {
+            background: #f4f8fc;
+            border-color: #bfd2e5;
+        }
+
+        .tag-row,
+        .pub-tags {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 3px 8px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: #40505f;
+            background: #f6f7f5;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .tag.blue {
+            color: #164b7d;
+            border-color: #b9d0e7;
+            background: #edf5fc;
+        }
+
+        .tag.green {
+            color: var(--green);
+            border-color: #b9d8ce;
+            background: #edf8f4;
+        }
+
+        .tag.gold {
+            color: var(--gold);
+            border-color: #dcc898;
+            background: #fbf6e8;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+            gap: 18px;
+        }
+
+        .demo-links {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .demo-entry {
+            display: flex;
+            flex-direction: column;
+            min-height: 168px;
+        }
+
+        .demo-entry .button {
+            margin-top: auto;
+            width: fit-content;
+        }
+
+        .demo-source {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .demo-library {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 13px;
+            margin-top: 18px;
+        }
+
+        .demo-card {
+            overflow: hidden;
+        }
+
+        .demo-card.main img {
+            width: 100%;
+            aspect-ratio: 16 / 7.5;
+            object-fit: cover;
+        }
+
+        .demo-body {
+            padding: 18px;
+        }
+
+        .demo-slot {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .demo-thumb {
+            min-height: 126px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5b6976;
+            background: #eef3f7;
+            border-bottom: 1px solid var(--line);
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .demo-slot img,
+        .demo-slot video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .demo-slot-body {
+            padding: 13px;
+        }
+
+        .demo-slot-body h3 {
+            font-size: 15px;
+        }
+
+        .channel-card {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 18px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .channel-card img {
+            border: 1px solid var(--line);
+            border-radius: 6px;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin: 0 0 18px;
+        }
+
+        .filter-btn {
+            min-height: 36px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            color: #40505f;
+            border-radius: 6px;
+            padding: 7px 12px;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 750;
+            cursor: pointer;
+        }
+
+        .filter-btn.active {
+            color: #fff;
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+        }
+
+        .filter-select {
+            min-height: 36px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            color: #40505f;
+            border-radius: 6px;
+            padding: 7px 34px 7px 12px;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 750;
+            cursor: pointer;
+        }
+
+        .year-group {
+            margin-top: 28px;
+        }
+
+        .year-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--accent-dark);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .year-title::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: var(--line);
+        }
+
+        .pub-list {
+            display: grid;
+            gap: 13px;
+        }
+
+        .pub {
+            display: grid;
+            grid-template-columns: 155px 1fr;
+            gap: 18px;
+            padding: 14px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .pub[hidden],
+        .year-group[hidden] {
             display: none;
         }
 
-        span.highlight {
-            background-color: #ffffd0;
+        .pub img {
+            width: 155px;
+            height: 102px;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            background: #f1f3f5;
         }
 
-        button {
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
-            background-color: #ffffff;
-            /* 修改背景为白色 */
-            border: 1px solid #ddd;
-            /* 添加浅灰色边框 */
-            color: #888;
-            /* 修改文本为灰色 */
-            padding: 10px 15px;
-            font-size: 14px;
-            border-radius: 5px;
+        .pub-title {
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 1.35;
+            color: var(--ink);
+            margin: 0 0 6px;
+        }
+
+        .pub-meta,
+        .pub-contributors,
+        .pub-summary {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 3px 0;
+        }
+
+        .pub-summary {
+            color: #35414d;
+            line-height: 1.58;
+            margin-top: 8px;
+        }
+
+        .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .pub-links a {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 750;
+        }
+
+        .pub-maintenance {
+            margin-top: 20px;
+            padding: 14px;
+            border: 1px dashed #b9c2cc;
+            border-radius: 8px;
+            background: #f7f8f6;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pub-maintenance code {
+            color: var(--ink);
+            font-size: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .stat-card {
+            padding: 18px;
+        }
+
+        .stat-number {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .visitor-frame {
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-visitors {
+            max-width: 190px;
+            overflow: hidden;
+            opacity: .72;
+        }
+
+        .visitor-frame script {
+            display: block;
+        }
+
+        footer {
+            padding: 30px 0 70px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .chat-launch {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 30;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            border: 1px solid #0d3760;
+            background: var(--accent-dark);
+            color: #fff;
+            font-weight: 800;
             cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-            display: inline-block;
+            box-shadow: 0 12px 26px rgba(18, 63, 115, .28);
         }
 
-        button:hover {
-            background-color: #f2f2f2;
-            /* 鼠标悬停时的背景颜色 */
-            transform: scale(1.05);
+        .chat-panel {
+            position: fixed;
+            right: 22px;
+            bottom: 86px;
+            z-index: 30;
+            width: min(380px, calc(100vw - 32px));
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: none;
         }
 
-        button:focus {
-            outline: none;
+        .chat-panel.open {
+            display: block;
         }
 
-        button.active {
-            background-color: #d3d3d3;
-            /* Gray color for active button */
+        .chat-head {
+            padding: 14px 16px;
+            background: #f4f8fc;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
         }
 
-        #first-author-btn
-        {
-        width: 180px;
-        height: 40px;
+        .chat-head strong {
+            display: block;
+            line-height: 1.25;
         }
 
-        #collaborative-btn {
-            width: 120px;
-            height: 40px;
+        .chat-head span {
+            color: var(--muted);
+            font-size: 12px;
         }
 
-        .up-one-line {
-            margin-top: 0em;
+        .chat-close {
+            border: 0;
+            background: transparent;
+            font-size: 22px;
+            cursor: pointer;
+            line-height: 1;
+            color: var(--muted);
         }
 
-        .papers-heading {
-            margin-bottom: 10px;
-            /* Adjust as needed */
+        .chat-log {
+            height: 245px;
+            overflow-y: auto;
+            padding: 14px;
+            display: grid;
+            gap: 10px;
+            background: #fcfcfa;
         }
 
-        .papers-table {
-            margin-top: -90px;
-            /* Adjust as needed */
+        .bubble {
+            max-width: 88%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .bubble.bot {
+            background: #eef3f7;
+            color: #263746;
+        }
+
+        .bubble.user {
+            margin-left: auto;
+            background: var(--accent-dark);
+            color: #fff;
+        }
+
+        .quick-asks {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            padding: 0 14px 12px;
+            background: #fcfcfa;
+        }
+
+        .quick-asks button {
+            min-height: 31px;
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 6px;
+            color: #40505f;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 5px 8px;
+        }
+
+        .chat-form {
+            display: grid;
+            grid-template-columns: 1fr 72px;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid var(--line);
+        }
+
+        .chat-form input {
+            min-width: 0;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 9px 10px;
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .chat-form button {
+            border: 1px solid var(--accent-dark);
+            border-radius: 6px;
+            background: var(--accent-dark);
+            color: #fff;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 750;
+            cursor: pointer;
+        }
+
+        @media (max-width: 860px) {
+            .wrap {
+                width: min(100% - 28px, 720px);
+            }
+
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 14px 0;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+                gap: 12px;
+            }
+
+            .hero-grid,
+            .demo-grid,
+            .demo-library,
+            .demo-links,
+            .stats-grid,
+            .tool-strip,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 34px;
+            }
+
+            .portrait-card {
+                max-width: 280px;
+            }
+
+            .pub {
+                grid-template-columns: 1fr;
+            }
+
+            .pub img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 8;
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .channel-card {
+                grid-template-columns: 96px 1fr;
+            }
         }
     </style>
-
-    <link rel="icon" type="image/jpg" href="images/seal_icon.jpg">
-    <title>Yan Ding</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet'
-        type='text/css'>
 </head>
 
-    <!-- Add JavaScript to toggle visibility -->
-<script type="text/javascript">
-    function togglePapers(category) {
-        var firstAuthorPapers = document.getElementsByClassName('first-author-paper');
-        var collaborativePapers = document.getElementsByClassName('collaborative-paper');
-        var preprintPapers = document.getElementsByClassName('preprint-paper');
-
-        // Hide all rows first
-        for (var i = 0; i < firstAuthorPapers.length; i++) {
-            firstAuthorPapers[i].style.display = 'none';
-        }
-        for (var i = 0; i < collaborativePapers.length; i++) {
-            collaborativePapers[i].style.display = 'none';
-        }
-        for (var i = 0; i < preprintPapers.length; i++) {
-            preprintPapers[i].style.display = 'none';
-        }
-
-        // Show rows based on the selected category
-        if (category === 'first-author') {
-            for (var i = 0; i < firstAuthorPapers.length; i++) {
-                firstAuthorPapers[i].style.display = 'table-row';
-            }
-        } else if (category === 'collaborative') {
-            for (var i = 0; i < collaborativePapers.length; i++) {
-                collaborativePapers[i].style.display = 'table-row';
-            }
-        } else if (category === 'preprint') {
-            for (var i = 0; i < preprintPapers.length; i++) {
-                preprintPapers[i].style.display = 'table-row';
-            }
-        }
-    }
-</script>
-    
 <body>
-    <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-        <tr>
-            <td>
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <tr>
-                        <td width="100%" valign="middle" class="papers-heading">
-                            <p align="center">
-                                <name>Yan Ding</name>
-                            </p>
-                            <p>I am a Researcher at Shanghai AI Laboratory.
-                                I completed my PhD in Computer Science at the State University of New York (SUNY),
-                                Binghamton, in May 2024.
-                                I have been supported by grants from the Ford Motor Company for 4.5 years during my PhD
-                                studies.
-                                I also got the Academic Excellence in Computer Science (PhD) at Binghamton University.
-                                <!-- I was supervised by Professor <a href="http://www.cs.cqu.edu.cn/info/1322/6092.htm">Chao
-                                    Chen</a>, during my master's program. -->
-                                I received my M.S. in Computer Science in 2019, and got my B.S. in Mechanical
-                                Engineering in 2016 from Chongqing University, China.
-                                The master's thesis is awarded the Outstanding Thesis of Chongqing City.
-                                <!-- %, is available via this <a href="./project/PDF/dissertation_master.pdf">Link</a> -->
-                                <!-- %directed by Professor <a href="https://scholar.google.com/citations?user=ahUibskAAAAJ&hl=en&oi=ao">Xuelong Li</a> -->
-                            </p>
+    <header class="site-header">
+        <div class="wrap nav">
+            <a class="brand" href="#">Yan Ding</a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="#demos">Demos</a>
+                <a href="#publications">Publications</a>
+                <a href="mailto:yding25@binghamton.edu">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-                            <p><span style="color: red;">I am seeking interns for Embodied AI and Robotics!</span> Feel
-                                free to contact me at yding25@binghamton.edu.
-                            </p>
-                        </td>
-                        <td width="33%">
-                            <img src="img/headshot3.jpg" width="256" height="264">
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <tr>
-                        <td width="100%" valign="middle" class="papers-heading">
-                            <heading>Research Direction</heading>
-                            <p>The current research interests include:</p>
-                            <ul>
-                                <li><span style="color: #1772d0;">Spatial Intelligence for Robotics</span>: Empowering
-                                    Robots to Understand the Real World
-                                </li>
-                                <li><span style="color: #1772d0;">Skill Learning for Robotics</span>: Enabling Robots to
-                                    Transform the Real World
-                                </li>
-                            </ul>
-                            <p>with a particular emphasis on their applications in the context of <span
-                                    style="color: #1772d0;">mobile manipulators (MoMa)</span>.</p>
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <tr>
-                        <td width="100%" valign="middle" class="papers-heading">
-                            <heading>Robot Family</heading>
-                            <p>
-                                <strong>BestMan X</strong> reflects my vision for these robots to be the best assistants
-                                for humans.
-                            </p>
-                            </p>
-                            <img src="/img/BestMan_robots.jpg" alt="real_robots" style="width: 500px;">
-                            </p>
-
-                            <br>
-
-                            <heading>BestMan World</heading>
-                            <p>
-                                It is a comprehensive “BestMan” world, encompassing open data, code, simulators,
-                                hardware, and my aspirations. For more information, please visit
-                                <a href="https://bestmanrobot.com/" target="_blank">[Link]</a>.
-                            </p>
-
-
-                            <br>
-
-                            <heading>Robotic Tool</heading>
-                            <p>My team has multiple robots. Therefore, we are developing an open-source robotic tool
-                                called <a href="http://bestmanrobot.com/">BestMan</a>. This tool supports development
-                                both in simulation and on real machines. By using a unified framework, BestMan
-                                facilitates rapid development, helping researchers save significant time. (Note: BestMan
-                                is still under construction.)
-                            </p>
-                            <p>This project encompasses various sub-projects (selected):
-                            <ul>
-                                <li>
-                                    <a href="https://github.com/AutonoBot-Lab/BestMan_Pybullet">BestMan_Pybullet</a>
-                                    <img src="https://img.shields.io/github/stars/AutonoBot-Lab/BestMan_Pybullet?style=social"
-                                        alt="GitHub stars">
-                                </li>
-                                <li>
-                                    <a href="https://github.com/yding25/BestMan_Flexiv">BestMan_Arm (Private)</a>
-                                    <!-- <img src="https://img.shields.io/github/stars/yding25/BestMan_Flexiv?style=social" alt="GitHub stars"> -->
-                                </li>
-                                <li>
-                                    <a href="https://github.com/yding25/BestMan_Xarm">BestMan_Wheel (Private)</a>
-                                    <!-- <img src="https://img.shields.io/github/stars/yding25/BestMan_Xarm?style=social" alt="GitHub stars"> -->
-                                </li>
-                                <li>
-                                    <a href="https://github.com/yding25/BestMan_Xarm">BestMan_Hand (Private)</a>
-                                    <!-- <img src="https://img.shields.io/github/stars/yding25/BestMan_Xarm?style=social" alt="GitHub stars"> -->
-                                </li>
-                                <li>
-                                    <a href="https://github.com/yding25/BestMan_Xarm">BestMan_Humanoid (Private)</a>
-                                    <!-- <img src="https://img.shields.io/github/stars/yding25/BestMan_Xarm?style=social" alt="GitHub stars"> -->
-                                </li>
-                            </ul>
-
-                            <br>
-
-                            <heading>Robotic Demos</heading>
-                            <p>
-                                Xiaohongshu Channel: <a
-                                    href="https://www.xiaohongshu.com/user/profile/5e3d92d00000000001000a14?xhsshare=CopyLink&appuid=5e3d92d00000000001000a14&apptime=1727694511&share_id=9e781b4ef2ef424cbfbb2fd64d59be0d">444988405</a>
-                            </p>
-                            <!-- <p>
-                                YouTube Channel: <a href="https://www.youtube.com/@yanding1760">&#64;yanding1760</a>
-                            </p> -->
-                            <p>
-                                WeChat Video Channel (Scan it using WeChat):
-                            </p>
-                            <p>
-                                <img src="/img/WeChat_QR.jpg" alt="WeChat QR Code" style="width: 200px;">
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <heading>Publication</heading>
-                    </td>
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <button id="first-author-btn"
-                            onclick="togglePapers('first-author')">First(*)/Corresponding(#)</button>
-                    </td>
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <button id="collaborative-btn"
-                            onclick="togglePapers('collaborative')">Collaborative</button>
-                    </td>
-                    <td width="100%" valign="middle" class="papers-heading">
-                        <button id="preprint-btn"
-                            onclick="togglePapers('preprint')">Preprint</button>
-                    </td>
-                </table>
-
-                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10" class="papers-table"
-                    style="margin-top: -11em;">
-        </tr>
-
-        <tr class="first-author-paper">
-        <td width="25%">
-            <div class="one">
-                <div class="two"><img src='img/LLM-GROP.png' width="160" vspace="5"></div>
-            </div>
-        </td>
-        <br>
-        <td valign="middle" width="75%">
-            <a>
-                <papertitle>LLM-GROP: Visually Grounded Robot Task and Motion Planning with Large Language Models</papertitle>
-            </a>
-            <br>
-           Xiaohan Zhang<sup>#</sup>,<strong>Yan Ding<sup>#</sup></strong>，Yohei Hayamizu, Zainab Altaweel, Yifeng Zhu, Yuke Zhu, Peter Stone,Chris Paxton, Shiqi Zhang
-            <br>
-            <em>IJRR 2025</em>
-            <br>
-            [<a href="">Paper</a>]
-            [<a href="">Project</a>]
-            <br>
-            <p></p>
-            <p> LLM-GROP is a method that uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates them with a task and motion planner, allowing for successful and efficient multi-object rearrangement in various environments using a mobile manipulator.
-            </p>
-        </td>
-    </tr>
-
-        <tr class="first-author-paper">
-        <td width="25%">
-            <div class="one">
-                <div class="two"><img src='img/MoMa-Kitchen.png' width="160" vspace="5"></div>
-            </div>
-        </td>
-        <br>
-        <td valign="middle" width="75%">
-            <a>
-                <papertitle>MoMa-Kitchen: A 100K+ Benchmark for Affordance-Grounded Last-Mile Navigation in Mobile Manipulation</papertitle>
-            </a>
-            <br>
-           Pingrui Zhang<sup>1,2</sup>*, Xianqiang Gao<sup>2,3</sup>*, Yuhan Wu<sup>3</sup>,Kehui Liu<sup>2,4</sup>, Dong Wang<sup>2</sup>, Zhigang Wang<sup>2</sup>, Bin Zhao<sup>2,4</sup>, <strong>Yan Ding<sup>#</sup></strong>, Xuelong Li<sup>5</sup>
-            <br>
-            <em>Under Review</em>
-            <br>
-            [<a href="https://arxiv.org/pdf/2503.11081">Paper</a>]
-            [<a href="https://momakitchen.github.io/">Project</a>]
-            <br>
-            <p></p>
-            <p> We present MoMa-Kitchen, a benchmark dataset with over 100k auto-generated samples featuring affordance-grounded manipulation positions and egocentric RGB-D data, and propose NavAff, a lightweight model that learns optimal navigation termination for seamless manipulation transitions. Our approach generalizes across diverse robotic platforms and arm configurations, addressing the critical gap between navigation proximity and manipulation readiness in mobile manipulation.
-            </p>
-        </td>
-    </tr>
-                    
-        <tr class="first-author-paper preprint-paper">
-        <td width="25%">
-            <div class="one">
-                <div class="two"><img src='img/agibot-world.png' width="160" vspace="5"></div>
-            </div>
-        </td>
-        <br>
-        <td valign="middle" width="75%">
-            <a>
-                <papertitle>AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent
-                    Embodied Systems</papertitle>
-            </a>
-            <br>
-            Team AgiBot-World
-            <br>
-            <em>Under Review</em>
-            <br>
-            [<a href="https://opendrivelab.com/assets/file/AgiBot_World_Colosseo.pdf">Paper</a>]
-            [<a href="https://opendrivelab.com/blog/agibot-world/">Project</a>]
-            <br>
-            <p></p>
-            <p> Introducing AgiBot World Colosseo, an open-sourced large-scale manipulation platform comprising data,
-                models, benchmarks and ecosystem.
-                AgiBot World stands out for its unparalleled scale and diversity compared to prior counterparts.
-                A suite of 100 dual-arm humanoid robots is deployed.
-                We further propose a generalist policy (GO-1) with the latent action planner.
-                It is trained across diverse data corpus with a scalable performance of 32% gain compared to prior arts.
-            </p>
-        </td>
-    </tr>
-
-        <tr class="first-author-paper preprint-paper">
-        <td width="25%">
-            <div class="one">
-                <div class="two"><img src='img/BestMan.png' width="160" vspace="5"></div>
-            </div>
-        </td>
-        <br>
-        <td valign="middle" width="75%">
-            <a>
-                <papertitle>BestMan: A Modular Mobile Manipulator Platform for Embodied AI with Unified
-                    Simulation-Hardware APIs</papertitle>
-            </a>
-            <br>
-            Kui Yang*, Nieqing Cao*, <strong>Yan Ding<sup>#</sup></strong>, Chao Chen<sup>#</sup>
-            <br>
-            <em>FCS Letter</em>
-            <br>
-            [<a href="https://arxiv.org/pdf/2410.13407">Paper</a>]
-            [<a href="https://bestmansim.com/">Project</a>]
-            <br>
-            <p></p>
-            <p> To address these challenges, we develop the BestMan platform based on the PyBullet
-                simulator, with the following key contributions:
-                1) Integrated Multilevel Skill Chain to Address Multilevel Technical Complexity;
-                2) Highly Modular Design for Expandability and Algorithm Integration;
-                3)Unified Interfaces for Simulation and Real Devices to Address Interface Heterogeneity;
-                4)Decoupling Software from Hardware to Address Hardware Diversity. </p>
-        </td>
-    </tr>
-
-        <tr class="first-author-paper preprint-paper">
-        <td width="25%">
-            <div class="one">
-                <div class="two"><img src='img/fastumi.jpg' width="160" vspace="5"></div>
-            </div>
-        </td>
-        <br>
-
-        <td valign="middle" width="75%">
-            <a>
-                <papertitle>FastUMI: A Scalable and Hardware-Independent Universal Manipulation Interface and Dataset
-                </papertitle>
-            </a>
-            <br>
-            Zhaxizhuoma*, Kehui Liu*, Chuyue Guan*, Zhongjie Jia*, Ziniu Wu*, Xin Liu*, Tianyu Wang**, Shuai Liang**,
-            Pengan Chen**, Pingrui Zhang**, Haoming Song, Delin Qu,
-            Dong Wang, Zhigang Wang, Nieqing Cao, <strong>Yan Ding*<sup>#</sup></strong>, Bin Zhao<sup>#</sup>, Xuelong Li
-            <br>
-            <em>Under Review</em>
-            <br>
-            [<a href="https://arxiv.org/pdf/2409.19499">Paper</a>]
-            [<a href="https://fastumi.com/">Project</a>]
-            <br>
-            <p></p>
-            <p> In this work, we introduce Fast-UMI, an interface-mediated manipulation system comprising two key
-                components: a handheld device operated by humans for data collection and a robot-mounted device used
-                during policy inference.
-                This system offers an efficient and user-friendly tool for robotic learning data acquisition. </p>
-        </td>
-        </tr>
-
-        <tr class="first-author-paper preprint-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/alignbot.png' width="160" vspace="5"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through
-                        Fine-Tuning for Household Robots</papertitle>
-                </a>
-                <br>
-                Zhaxizhuoma*, Pengan Chen*, Ziniu Wu*, Jiawei Sun, Dong Wang, Peng Zhou, Nieqing Cao, <strong>Yan
-                    Ding<sup>#</sup></strong>, Bin Zhao, Xuelong Li
-                <br>
-                <em>ICRA 2025</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2409.11905">Paper</a>]
-                [<a href="https://yding25.com/AlignBot/">Project</a>]
-                <!-- [<a
-                                    href="https://yding25.com/AlignBot/">Video</a>]
-                                [<a
-                                    href="">Code</a>] -->
-                <br>
-                <p></p>
-                <p> This paper presents AlignBot, a novel framework designed to optimize VLM-powered customized task
-                    planning for household robots by effectively aligning with user reminders.
-                    AlignBot employs a fine-tuned LLaVA-7B model, functioning as an adapter for GPT-4o. This adapter
-                    model internalizes diverse forms of user reminders-such as personalized preferences, corrective
-                    guidance, and contextual assistance into structured instruction-formatted cues that prompt GPT-4o in
-                    generating customized task plans. </p>
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/dkprompt.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>DKPROMPT: Domain Knowledge Prompting Vision-Language Models for Open-World Planning
-                    </papertitle>
-                </a>
-                <br>
-                Xiaohan Zhang, Zainab Altaweel, Yohei Hayamizu, <strong>Yan Ding</strong>, Saeid Amiri, Hao Yang, Andy
-                Kaminski, Chad Esselink, Shiqi Zhang
-                <br>
-                <em>Under Review</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2406.17659">Paper</a>]
-                <br>
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/mtech.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>A Survey of Optimization-based Task and Motion Planning: From Classical To Learning
-                        Approaches</papertitle>
-                </a>
-                <br>
-                Zhigen Zhao, Shuo Chen, <strong>Yan Ding</strong>, Ziyi Zhou, Shiqi Zhang, Danfei Xu, Ye Zhao
-                <br>
-                <em>IEEE/ASME Transactions on Mechatronics, 2024</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2404.02817">Paper</a>]
-                <br>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper preprint-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/moma_pos.jpg' width="160" vspace="5"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>MoMa-Pos: Where Should Mobile Manipulators Stand in Cluttered Environment Before Task
-                        Execution?</papertitle>
-                </a>
-                <br>
-                Beichen Shao*, <strong>Yan Ding*<sup>#</sup></strong>, Xingchen Wang, Xuefeng Xie, Fuqiang Gu, Jun Luo, Chao Chen<sup>#</sup>
-                <br>
-                <em>Under Review</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2403.19940.pdf">Paper</a>]
-                [<a href="https://yding25.com/MoMa-Pos/">Project</a>]
-                <!-- [<a
-                                    href="https://yding25.com/MoMa-Pos/static/assets/videos/demos/demo1.mp4">Video</a>]
-                                [<a
-                                    href="https://github.com/AutonoBot-Lab/Project_MoMa-Pos">Code</a>] -->
-                <br>
-                <p></p>
-                <p> Mobile manipulators always need to determine feasible base positions prior to carrying out
-                    navigation-manipulation tasks.
-                    Real-world environments are often cluttered with various furniture, obstacles, and dozens of other
-                    objects. Efficiently computing base positions poses a challenge.
-                    In this work, we introduce a framework named MoMa-Pos to address this issue.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/llm-grop.jpg' width="160" vspace="5"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Task and Motion Planning with
-                        Large Language Models for Object
-                        Rearrangement</papertitle>
-                </a>
-                <br>
-                <strong>Yan Ding</strong>, Xiaohan Zhang, Chris Paxton, Shiqi Zhang
-                <br>
-                <em>International Conference on Intelligent Robots and Systems (IROS), 2023</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2303.06247.pdf">Paper</a>]
-                [<a href="https://sites.google.com/view/llm-grop">Project</a>]
-                <!-- [<a
-                                    href="https://youtu.be/8q5WPkABfNE">Video</a>]
-                                [<a
-                                    href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">Code</a>] -->
-                <br>
-                <p></p>
-                <p>LLM-GROP is a method that uses prompting to extract commonsense knowledge about object configurations
-                    from a large language model and instantiates them with a task and motion planner, allowing for
-                    successful and efficient multi-object rearrangement in various environments using a mobile
-                    manipulator.</p>
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/Chelsea.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>ARDIE: AR, Dialogue, and Eye Gaze Policies for Human-Robot Collaboration</papertitle>
-                </a>
-                <br>
-                Chelsea Zou, Kishan Chandan, <strong>Yan Ding</strong>, Shiqi Zhang
-                <br>
-                <em>ICRA Workshop on CoPerception: Collaborative
-                    Perception and Learning, 2023</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2305.04685.pdf">Paper</a>]
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/s30.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Symbolic State Space Optimization for Long Horizon Mobile Manipulation Planning
-                    </papertitle>
-                </a>
-                <br>
-                Xiaohan Zhang, Yifeng Zhu, <strong>Yan
-                    Ding</strong>, Yuqian Jiang, Yuke Zhu, Peter
-                Stone, and Shiqi Zhang
-                <br>
-                <em>International Conference on Intelligent
-                    Robots and Systems (IROS), 2023</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2307.11889.pdf">Paper</a>]
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/UAI.jpg' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Learning to Reason about Contextual Knowledge for Planning under Uncertainty
-                    </papertitle>
-                </a>
-                <br>
-                Cheng Cui, Saeid Amiri, <strong>Yan
-                    Ding</strong>, Xingyue Zhan, Shiqi Zhang
-                <br>
-                <em>The Conference on Uncertainty in Artificial
-                    Intelligence (UAI), 2023</em>
-                <br>
-                [<a href="https://proceedings.mlr.press/v216/cui23a/cui23a.pdf">Paper</a>]
-            </td>
-        </tr>
-
-        <tr class="preprint-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/ORLA.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>ORLA*: Mobile Manipulator-Based Object Rearrangement with LazyA</papertitle>
-                </a>
-                <br>
-                Kai Gao*, Zhaxizhuoma*, <strong>Yan Ding</strong>, Shiqi Zhang, Jingjin Yu
-                <br>
-                <em>ICRA 2025</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2309.13707.pdf">Paper</a>]
-                <br>
-                <p></p>
-                <p>In this research, we propose ORLA*, which leverages delayed (lazy) evaluation in searching for a
-                    high-quality object pick and place sequence that considers both end-effector and mobile robot base
-                    travel.</p>
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/tpvqa.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <br>
-
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Grounding Classical Task Planners via Vision-Language Models</papertitle>
-                </a>
-                <br>
-                Xiaohan Zhang, <strong>Yan Ding</strong>, Saeid
-                Amiri, Hao Yang, Andy Kaminski, Chad Esselink,
-                and Shiqi Zhang
-                <br>
-                <em>ICRA Workshop on Robot Execution Failures
-                    and Failure Management Strategies, 2023</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2304.08587.pdf">Paper</a>]
-                <br>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/cowp_real.png' width="160" vspace="50"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Integrating Action Knowledge and
-                        LLMs for Task Planning and Situation
-                        Handling in Open Worlds</papertitle>
-                </a>
-                <br>
-                <strong>Yan Ding</strong>, Xiaohan Zhang, Saeid
-                Amiri, Nieqing Cao, Hao Yang, Chad Esselink,
-                Shiqi Zhang
-                <br>
-                <em>Autonomous Robots (accepted)</em>
-                <br>
-                [<a href="https://arxiv.org/pdf/2305.17590.pdf">Paper</a>]
-                [<a href="https://cowplanning.github.io/">Project</a>]
-                [<a href="https://youtu.be/HtxlXSzY5VQ">Video</a>]
-                [<a href="https://github.com/yding25/GPT-Planner">Code</a>]
-                <br>
-                <p></p>
-                <p>The paper introduces a new algorithm (COWP)
-                    that uses task-oriented common sense
-                    extracted from Large Language Models to help
-                    robots handle unforeseen situations and
-                    complete complex tasks in an open world,
-                    with better success rates than previous
-                    algorithms.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/tmoc.png' width="160" vspace="30"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Learning to Ground Objects for
-                        Robot Task and Motion
-                        Planning</papertitle>
-                </a>
-                <br>
-                <strong>Yan Ding</strong>, Xiaohan Zhang,
-                Xingyue Zhan, Shiqi Zhang
-                <br>
-                <em>IEEE Robotics and Automation Letters
-                    (RA-L)</em>, 2022
-                <br>
-                [<a href="https://arxiv.org/pdf/2202.06674.pdf">Paper</a>]
-                [<a href="https://yding25.github.io/project/TMOC/TMOC.html">Project</a>]
-                [<a href="https://github.com/yding25/TMOC">Code</a>]
-                [<a href="https://www.youtube.com/embed/3ijtbbeCQho">Presentation</a>]
-                <br>
-                <p></p>
-                <p>The paper presents a new robot planning
-                    algorithm, TMOC, which can handle complex
-                    real-world scenarios without prior knowledge
-                    of object properties by learning them
-                    through a physics engine, outperforming
-                    existing algorithms.</p>
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/grop_real.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Visually Grounded Task and
-                        Motion Planning for Mobile
-                        Manipulation</papertitle>
-                </a>
-                <br>
-                Xiaohan Zhang, Yifeng Zhu, <strong>Yan
-                    Ding</strong>, Yuke Zhu, Peter Stone, and
-                Shiqi Zhang
-                <br>
-                <em>International Conference on Robotics and
-                    Automation (ICRA)</em>, 2022
-                <br>
-                [<a href="https://arxiv.org/pdf/2202.10667.pdf">Paper</a>]
-                [<a href="https://sites.google.com/view/grop-tamp">Project</a>]
-            </td>
-        </tr>
-
-        <tr class="collaborative-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/howie.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Task and Situation Structures
-                        for Case-Based Planning</papertitle>
-                </a>
-                <br>
-                Hao Yang, Tavan Eftekhar, Chad Esselink,
-                <strong>Yan Ding</strong>, Shiqi Zhang
-                <br>
-                <em>International Conference on Case-Based
-                    Reasoning (ICCBR)</em>, 2021
-                <br>
-                [<a href="https://link.springer.com/chapter/10.1007/978-3-030-86957-1_18">Paper</a>]
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/tmpud.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Task-Motion Planning for Safe
-                        and Efficient Urban Driving</papertitle>
-                </a>
-                <br>
-                <strong>Yan Ding</strong>, Xiaohan Zhang,
-                Xingyue Zhan, Shiqi Zhang
-                <br>
-                <em>International Conference on Intelligent
-                    Robots and Systems (IROS)</em>, 2020.
-                <br>
-                [<a href="https://arxiv.org/pdf/2003.03807">Paper</a>]
-                [<a href="https://yding25.com/TMPUD/website/TMPUD.html">Project</a>]
-                [<a href="https://github.com/yding25/TMPUD">Code</a>]
-                [<a href="https://www.youtube.com/watch?v=8NHQYUqMyoI">Demo</a>]
-                [<a href="https://youtu.be/k-Pcnx8zgxE">Presentation</a>]
-                <br>
-                <p></p>
-                <p>Autonomous vehicles need to balance
-                    efficiency and safety when planning tasks
-                    and motions, and the algorithm Task-Motion
-                    Planning for Urban Driving (TMPUD) enables
-                    communication between planners for optimal
-                    performance.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/DVAT.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>DAVT: an error-bounded vehicle
-                        trajectory data representation and
-                        compression framework</papertitle>
-                </a>
-                <br>
-                Chao Chen*, <strong>Yan Ding*</strong>, Suiming
-                Guo, Yasha Wang
-                <br>
-                <em>IEEE TVT</em>, 2020.
-                <br>
-                [<a
-                    href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296&casa_token=ZbgAMop0EiYAAAAA:BVnLHMxb3jaLs0Ukmq_RTszRARtuiPh5qg51GXNgxmmOsr5GbGna31OvxG6WnB8gfnyEJQUb">PDF</a>]
-                <br>
-                <p></p>
-                <p>DAVT proposes a mobile edge computing
-                    solution for vehicle trajectory data
-                    compression, which reduces data at the
-                    source and lowers communication and storage
-                    costs, using three compressors for distance,
-                    acceleration, velocity, and time data parts,
-                    and outperforms other baselines according to
-                    evaluation results.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/VTracer.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>VTracer: When online vehicle
-                        trajectory compression meets mobile edge
-                        computing</papertitle>
-                </a>
-                <br>
-                Chao Chen*, <strong>Yan Ding*</strong>, Zhu
-                Wang, Junfeng Zhao, Bin Guo, Daqing Zhang
-                <br>
-                <em>IEEE Systems Journal</em>, 2019.
-                <br>
-                [<a href="https://hal.science/hal-02321015/document">PDF</a>]
-                <br>
-                <p></p>
-                <p>This paper proposes an online trajectory
-                    compression framework that uses SD-Matching
-                    for GPS alignment and HCC for compression,
-                    and demonstrates its effectiveness and
-                    efficiency using real-world datasets in
-                    Beijing and deployment in Chongqing.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/trajcompressor.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>TrajCompressor: An Online
-                        Map-matching-based Trajectory
-                        Compression Framework Leveraging Vehicle
-                        Heading Direction and
-                        Change</papertitle>
-                </a>
-                <br>
-                Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng
-                Xie, Shu Zhang, Zhu Wang, Liang Feng
-                <br>
-                <em>IEEE TITS</em>, 2019.
-                <br>
-                [<a href="https://ieeexplore.ieee.org/abstract/document/8697124">PDF</a>]
-                <br>
-                <p></p>
-                <p>This paper presents an online trajectory
-                    compression framework for reducing storage,
-                    communication, and computation issues caused
-                    by massive and redundant vehicle trajectory
-                    data, consisting of two phases: online
-                    trajectory mapping and trajectory
-                    compression, using Spatial-Directional
-                    Matching and Heading Change Compression
-                    algorithms respectively, which have been
-                    evaluated with real-world datasets in
-                    Beijing and deployed in Chongqing, showing
-                    higher accuracy and efficiency compared to
-                    state-of-the-art algorithms.
-                </p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/api.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Fuel Consumption Estimation of
-                        Potential Driving Paths by Leveraging
-                        Online Route APIs</papertitle>
-                </a>
-                <br>
-                Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng
-                Xie, Xuefeng Xie, Zhikai Yang
-                <br>
-                <em>Green, Pervasive, and Cloud Computing: 13th
-                    International Conference (GPC)</em>, 2018.
-                <br>
-                [<a href="https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7">PDF</a>]
-                <br>
-                <p></p>
-                <p>This paper proposes a fuel consumption model
-                    based on GPS trajectory and OBD-II data,
-                    which can estimate the fuel usage of driving
-                    paths and help drivers choose fuel-efficient
-                    routes to reduce greenhouse gas and
-                    pollutant emissions.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/threestage.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>A three-stage online
-                        map-matching algorithm by fully using
-                        vehicle heading direction</papertitle>
-                </a>
-                <br>
-                Chao Chen*, <strong>Yan Ding*</strong>, Xuefeng
-                Xie, Shu Zhang
-                <br>
-                <em>Journal of Ambient Intelligence and
-                    Humanized Computing</em>, 2018.
-                <br>
-                [<a href="https://link.springer.com/article/10.1007/s12652-018-0760-0">PDF</a>]
-                <br>
-                <p></p>
-                <p>The SD-Matching algorithm proposes a
-                    three-stage approach to improve the accuracy
-                    and speed of online map-matching by
-                    incorporating vehicle heading direction
-                    data.</p>
-            </td>
-        </tr>
-
-        <tr class="first-author-paper">
-            <td width="25%">
-                <div class="one">
-                    <div class="two"><img src='img/greenplanner.png' width="160" vspace="20"></div>
-                </div>
-            </td>
-            <td valign="middle" width="75%">
-                <a>
-                    <papertitle>Greenplanner: Planning
-                        personalized fuel-efficient driving
-                        routes using multi-sourced urban
-                        data</papertitle>
-                </a>
-                <br>
-                <strong>Yan Ding*</strong>, Chao Chen*, Shu
-                Zhang, Bin Guo, Zhiwen Yu, Yasha Wang
-                <br>
-                <em>IEEE PerCom</em>, 2017.
-                <br>
-                [<a
-                    href="https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf">PDF</a>]
-                <br>
-                <p></p>
-                <p>Greenhouse gas emissions from vehicles in
-                    modern cities is a significant problem, but
-                    recommending fuel-efficient routes to
-                    drivers through a personalized fuel
-                    consumption model can help alleviate this
-                    issue, as demonstrated by the successful
-                    implementation of GreenPlanner in Beijing,
-                    which achieved a mean fuel consumption error
-                    of less than 7% and an average savings of
-                    20% fuel consumption for suggested
-                    routes.</p>
-            </td>
-        </tr>
-
-        <script src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
-            id="yding25-com-8yejwvr6d"></script>
-    </table>
-    </td>
-    </tr>
-    </table>
-
-    <table width="100%" cellspacing="0" cellpadding="20" border="0" align="center">
-        <tbody>
-            <tr>
-                <td>
-                    <br>
-                    <p align="center">
-                        <font size="2">
-                            Template from <a href="https://github.com/jonbarron/jonbarron_website">here.</a>
-                        </font>
+    <main>
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <h1>Yan Ding</h1>
+                    <p class="lead">
+                        CTO at Lumos Robotics.
                     </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    <p class="role-line">
+                        Former CTO at One Star Robotics. Ph.D. in Computer Science, State University of New York at
+                        Binghamton. Previously a researcher at Shanghai AI Laboratory, with long-term work on mobile
+                        manipulation and robot-learning systems. FastUMI is one of my key efforts, connecting data
+                        collection, model training, and deployment for embodied manipulation.
+                    </p>
+                    <div class="affiliations">
+                        <span>Part-time Researcher, Fudan University</span>
+                        <span>Visiting Scholar, Xi'an Jiaotong-Liverpool University</span>
+                        <span>Recruiting interns and prospective Master's / Ph.D. students.</span>
+                    </div>
+                    <div class="contact-row">
+                        <a class="button primary" href="mailto:yding25@binghamton.edu">yding25 at binghamton.edu</a>
+                        <a class="button" href="https://scholar.google.com/citations?user=0rP_rGUAAAAJ"
+                            target="_blank" rel="noopener">Google Scholar</a>
+                        <a class="button" href="https://dblp.org/pid/57/4533-2.html" target="_blank"
+                            rel="noopener">DBLP</a>
+                        <a class="button" href="./pdf/CV.pdf">CV</a>
+                    </div>
+                </div>
+                <aside class="portrait-card" aria-label="Portrait">
+                    <img src="img/headshot4.jpg" alt="Yan Ding">
+                </aside>
+            </div>
+        </section>
 
-    <div id="clustrmaps-container" style="width: 400px; height: 400px; margin: 0 auto; text-align: center;">
-        <script type="text/javascript" id="clustrmaps"
-            src="https:////clustrmaps.com/map_v2.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4&cl=ffffff&w=a"></script>
-    </div>
-    <!-- <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4"></script> -->
+        <section id="demos">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <h2>Robotic Demos</h2>
+                        <p class="section-note">
+                            I keep most short videos on social and company channels. The homepage keeps this section
+                            compact and routes visitors to the right source.
+                        </p>
+                    </div>
+                </div>
+                <div class="demo-links">
+                    <article class="tool-card demo-entry">
+                        <div class="demo-source">Social</div>
+                        <h3>Xiaohongshu</h3>
+                        <p>Short robot demos and project updates.</p>
+                        <a class="button"
+                            href="https://www.xiaohongshu.com/user/profile/5e3d92d00000000001000a14?xhsshare=CopyLink&appuid=5e3d92d00000000001000a14&apptime=1727694511&share_id=9e781b4ef2ef424cbfbb2fd64d59be0d"
+                            target="_blank" rel="noopener">Open Channel</a>
+                    </article>
+                    <article class="tool-card demo-entry">
+                        <div class="demo-source">WeChat</div>
+                        <h3>WeChat Video Channel</h3>
+                        <p>Recent videos and field clips. The QR code opens as a standalone image.</p>
+                        <a class="button" href="img/WeChat_QR.jpg" target="_blank" rel="noopener">Open QR Code</a>
+                    </article>
+                    <article class="tool-card demo-entry">
+                        <div class="demo-source">Company</div>
+                        <h3>Lumos / FastUMI Videos</h3>
+                        <p>Selected product and deployment videos from Lumos Robotics and FastUMI.</p>
+                        <a class="button" href="https://fastumi.com/" target="_blank" rel="noopener">Open Site</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <h2>Publications</h2>
+                        <p class="section-note">
+                            Selected works are shown directly on this page. Each item includes thumbnail, venue,
+                            contributors, links, and a short project summary.
+                        </p>
+                    </div>
+                </div>
+                <div class="filter-bar" aria-label="Publication filters">
+                    <button class="filter-btn active" data-filter="all" type="button">All</button>
+                    <button class="filter-btn" data-filter="data-pipelines" type="button">Data Infrastructure</button>
+                    <button class="filter-btn" data-filter="embodied-models" type="button">Embodied Models</button>
+                    <button class="filter-btn" data-filter="deployment" type="button">Scenario Deployment</button>
+                    <select class="filter-select" id="publicationYearFilter" aria-label="Filter publications by year">
+                        <option value="all">All Years</option>
+                    </select>
+                </div>
+                <div id="publicationYears"></div>
+                <script type="application/json" id="publicationDataJson">
+[
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "img/LLM-GROP.png",
+    "title": "LLM-GROP: Visually Grounded Robot Task and Motion Planning with Large Language Models",
+    "venue": "IJRR, 2025",
+    "level": "Premier Robotics Journal",
+    "contributors": "Xiaohan Zhang, Yan Ding, Yohei Hayamizu, Zainab Altaweel, Yifeng Zhu, Yuke Zhu, Peter Stone, Chris Paxton, Shiqi Zhang",
+    "tags": ["Robot Reasoning", "LLM Grounding"],
+    "summary": "LLM-GROP uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates it with a task and motion planner, enabling successful and efficient multi-object rearrangement in various environments with a mobile manipulator.",
+    "links": []
+  },
+  {
+    "year": "2025",
+    "category": "data-pipelines",
+    "image": "img/MoMa-Kitchen.png",
+    "title": "MoMa-Kitchen: A 100K+ Benchmark for Affordance-Grounded Last-Mile Navigation in Mobile Manipulation",
+    "venue": "Under Review",
+    "level": "Benchmark / Dataset",
+    "contributors": "Pingrui Zhang, Xianqiang Gao, Yuhan Wu, Kehui Liu, Dong Wang, Zhigang Wang, Bin Zhao, Yan Ding, Xuelong Li",
+    "tags": ["Benchmark", "Affordance Data", "Mobile Manipulation"],
+    "summary": "MoMa-Kitchen is a benchmark dataset with over 100k auto-generated samples featuring affordance-grounded manipulation positions and egocentric RGB-D data. It introduces NavAff, a lightweight model for learning navigation termination points that support seamless manipulation transitions across diverse robotic platforms and arm configurations.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2503.11081" },
+      { "label": "Project", "url": "https://momakitchen.github.io/" }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "data-pipelines",
+    "image": "img/agibot-world.png",
+    "title": "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
+    "venue": "Under Review",
+    "level": "Large-Scale Platform",
+    "contributors": "Team AgiBot-World",
+    "tags": ["Robot Data", "Embodied Platform", "Benchmark"],
+    "summary": "AgiBot World Colosseo is an open-source large-scale manipulation platform spanning data, models, benchmarks, and ecosystem resources. It deploys a suite of 100 dual-arm humanoid robots and proposes a generalist policy with a latent action planner trained across a diverse data corpus.",
+    "links": [
+      { "label": "Paper", "url": "https://opendrivelab.com/assets/file/AgiBot_World_Colosseo.pdf" },
+      { "label": "Project", "url": "https://opendrivelab.com/blog/agibot-world/" }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "img/alignbot.png",
+    "title": "AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots",
+    "venue": "ICRA, 2025",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Zhaxizhuoma, Pengan Chen, Ziniu Wu, Jiawei Sun, Dong Wang, Peng Zhou, Nieqing Cao, Yan Ding, Bin Zhao, Xuelong Li",
+    "tags": ["VLM", "Customization", "Household Robots"],
+    "summary": "AlignBot optimizes VLM-powered customized task planning for household robots by aligning with user reminders. It uses a fine-tuned LLaVA-7B adapter for GPT-4o to internalize personalized preferences, corrective guidance, and contextual assistance as structured cues for customized task plans.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2409.11905" },
+      { "label": "Project", "url": "https://yding25.com/AlignBot/" }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "deployment",
+    "image": "img/ORLA.png",
+    "title": "ORLA*: Mobile Manipulator-Based Object Rearrangement with LazyA",
+    "venue": "ICRA, 2025",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Kai Gao, Zhaxizhuoma, Yan Ding, Shiqi Zhang, Jingjin Yu",
+    "tags": ["Object Rearrangement", "Mobile Manipulation"],
+    "summary": "ORLA* leverages lazy evaluation to search for high-quality object pick-and-place sequences while considering both end-effector motion and mobile robot base travel.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2309.13707.pdf" }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "data-pipelines",
+    "image": "img/fastumi.jpg",
+    "title": "FastUMI: A Scalable and Hardware-Independent Universal Manipulation Interface and Dataset",
+    "venue": "CoRL, 2025",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Zhaxizhuoma, Kehui Liu, Chuyue Guan, Zhongjie Jia, Ziniu Wu, Xin Liu, Tianyu Wang, Shuai Liang, Pengan Chen, Pingrui Zhang, Haoming Song, Delin Qu, Dong Wang, Zhigang Wang, Nieqing Cao, Yan Ding, Bin Zhao, Xuelong Li",
+    "tags": ["Data Collection", "Hardware Interface", "Manipulation Dataset"],
+    "summary": "FastUMI introduces an interface-mediated manipulation system with a handheld device for human-operated data collection and a robot-mounted device for policy inference, providing an efficient and user-friendly tool for robotic learning data acquisition.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2409.19499" },
+      { "label": "Project", "url": "https://fastumi.com/" }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "deployment",
+    "image": "img/BestMan.png",
+    "title": "BestMan: A Modular Mobile Manipulator Platform for Embodied AI with Unified Simulation-Hardware APIs",
+    "venue": "FCS Letter",
+    "level": "Platform Paper",
+    "contributors": "Kui Yang, Nieqing Cao, Yan Ding, Chao Chen",
+    "tags": ["Platform", "Simulation-Hardware APIs", "Mobile Manipulation"],
+    "summary": "BestMan is a PyBullet-based modular mobile manipulator platform with an integrated multilevel skill chain, modular design for extensibility, unified simulation-hardware interfaces, and decoupled software support for diverse hardware.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2410.13407" },
+      { "label": "Project", "url": "https://bestmansim.com/" }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "embodied-models",
+    "image": "img/dkprompt.png",
+    "title": "DKPROMPT: Domain Knowledge Prompting Vision-Language Models for Open-World Planning",
+    "venue": "Under Review",
+    "level": "Preprint",
+    "contributors": "Xiaohan Zhang, Zainab Altaweel, Yohei Hayamizu, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, Shiqi Zhang",
+    "tags": ["VLM", "Domain Knowledge", "Open-World Reasoning"],
+    "summary": "DKPROMPT studies how domain knowledge can be injected into vision-language models for open-world robot planning, improving grounding and reasoning in tasks where prior symbolic knowledge and visual observations must be connected.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2406.17659" }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "embodied-models",
+    "image": "img/mtech.png",
+    "title": "A Survey of Optimization-based Task and Motion Planning: From Classical To Learning Approaches",
+    "venue": "IEEE/ASME Transactions on Mechatronics, 2024",
+    "level": "IEEE Transactions",
+    "contributors": "Zhigen Zhao, Shuo Chen, Yan Ding, Ziyi Zhou, Shiqi Zhang, Danfei Xu, Ye Zhao",
+    "tags": ["Survey", "Robot Planning", "Learning Methods"],
+    "summary": "This survey reviews optimization-based task and motion planning methods, spanning classical formulations and learning-based approaches for robot planning.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2404.02817" }
+    ]
+  },
+  {
+    "year": "2024",
+    "category": "deployment",
+    "image": "img/moma_pos.jpg",
+    "title": "MoMa-Pos: Where Should Mobile Manipulators Stand in Cluttered Environment Before Task Execution?",
+    "venue": "Under Review",
+    "level": "Deployment Geometry",
+    "contributors": "Beichen Shao, Yan Ding, Xingchen Wang, Xuefeng Xie, Fuqiang Gu, Jun Luo, Chao Chen",
+    "tags": ["Scene Deployment", "Mobile Manipulation", "Base Placement"],
+    "summary": "MoMa-Pos addresses the problem of selecting feasible base positions before navigation-manipulation tasks in cluttered real-world environments with furniture, obstacles, and many objects.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2403.19940.pdf" },
+      { "label": "Project", "url": "https://yding25.com/MoMa-Pos/" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "embodied-models",
+    "image": "img/llm-grop.jpg",
+    "title": "Task and Motion Planning with Large Language Models for Object Rearrangement",
+    "venue": "IROS, 2023",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Yan Ding, Xiaohan Zhang, Chris Paxton, Shiqi Zhang",
+    "tags": ["LLM", "Object Rearrangement", "Mobile Manipulation"],
+    "summary": "LLM-GROP uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates it with a task and motion planner, enabling successful and efficient multi-object rearrangement in various environments with a mobile manipulator.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2303.06247.pdf" },
+      { "label": "Project", "url": "https://sites.google.com/view/llm-grop" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "deployment",
+    "image": "img/Chelsea.png",
+    "title": "ARDIE: AR, Dialogue, and Eye Gaze Policies for Human-Robot Collaboration",
+    "venue": "ICRA Workshop on CoPerception: Collaborative Perception and Learning, 2023",
+    "level": "Workshop",
+    "contributors": "Chelsea Zou, Kishan Chandan, Yan Ding, Shiqi Zhang",
+    "tags": ["Human-Robot Collaboration", "AR", "Dialogue"],
+    "summary": "ARDIE explores augmented reality, dialogue, and eye-gaze policies for collaborative perception and human-robot collaboration.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2305.04685.pdf" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "deployment",
+    "image": "img/s30.png",
+    "title": "Symbolic State Space Optimization for Long Horizon Mobile Manipulation Planning",
+    "venue": "IROS, 2023",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Xiaohan Zhang, Yifeng Zhu, Yan Ding, Yuqian Jiang, Yuke Zhu, Peter Stone, Shiqi Zhang",
+    "tags": ["Long-Horizon Reasoning", "Mobile Manipulation", "Execution"],
+    "summary": "This work optimizes symbolic state spaces for long-horizon mobile manipulation planning, aiming to improve reasoning and execution over extended task sequences.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2307.11889.pdf" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "embodied-models",
+    "image": "img/UAI.jpg",
+    "title": "Learning to Reason about Contextual Knowledge for Planning under Uncertainty",
+    "venue": "UAI, 2023",
+    "level": "Top AI Conference",
+    "contributors": "Cheng Cui, Saeid Amiri, Yan Ding, Xingyue Zhan, Shiqi Zhang",
+    "tags": ["Uncertainty", "Contextual Knowledge", "Reasoning"],
+    "summary": "This paper studies how agents can learn to reason about contextual knowledge for planning under uncertainty.",
+    "links": [
+      { "label": "Paper", "url": "https://proceedings.mlr.press/v216/cui23a/cui23a.pdf" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "embodied-models",
+    "image": "img/tpvqa.png",
+    "title": "Grounding Classical Task Planners via Vision-Language Models",
+    "venue": "ICRA Workshop on Robot Execution Failures and Failure Management Strategies, 2023",
+    "level": "Workshop",
+    "contributors": "Xiaohan Zhang, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, Shiqi Zhang",
+    "tags": ["VLM", "Grounding", "Failure Management"],
+    "summary": "This work grounds classical task planners with vision-language models, connecting visual observations to symbolic planning requirements for robot execution and failure-management settings.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2304.08587.pdf" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "embodied-models",
+    "image": "img/cowp_real.png",
+    "title": "Integrating Action Knowledge and LLMs for Task Planning and Situation Handling in Open Worlds",
+    "venue": "Autonomous Robots, 2023",
+    "level": "Robotics Journal",
+    "contributors": "Yan Ding, Xiaohan Zhang, Saeid Amiri, Nieqing Cao, Hao Yang, Chad Esselink, Shiqi Zhang",
+    "tags": ["LLM", "Open-World Reasoning", "Situation Handling"],
+    "summary": "COWP uses task-oriented commonsense extracted from large language models to help robots handle unforeseen situations and complete complex tasks in an open world, improving success rates compared with previous algorithms.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2305.17590.pdf" },
+      { "label": "Project", "url": "./proj/COWP/index.html" },
+      { "label": "Video", "url": "https://youtu.be/HtxlXSzY5VQ" },
+      { "label": "Code", "url": "https://github.com/yding25/GPT-Planner" }
+    ]
+  },
+  {
+    "year": "2023",
+    "category": "deployment",
+    "image": "img/glad.png",
+    "title": "GLAD: Grounded Layered Autonomous Driving for Complex Service Tasks",
+    "venue": "ICRA, 2023",
+    "level": "Conference",
+    "contributors": "Yan Ding, Cheng Cui, Xiaohan Zhang, Shiqi Zhang",
+    "tags": ["Autonomous Driving", "Task-Motion Planning", "Visual Grounding"],
+    "summary": "GLAD is a layered planning framework for complex service requests in autonomous urban driving, coupling service-level, behavior-level, and motion-level planning with visually grounded safety estimates.",
+    "links": [
+      { "label": "Project", "url": "./proj/GLAD/index.html" }
+    ]
+  },
+  {
+    "year": "2022",
+    "category": "deployment",
+    "image": "img/tmoc.png",
+    "title": "Learning to Ground Objects for Robot Task and Motion Planning",
+    "venue": "IEEE Robotics and Automation Letters, 2022",
+    "level": "IEEE Robotics Letter",
+    "contributors": "Yan Ding, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang",
+    "tags": ["Object Grounding", "Robot Learning", "Execution"],
+    "summary": "TMOC learns object properties through a physics engine so robot task and motion planners can handle complex real-world scenarios without prior object-property knowledge, outperforming existing algorithms.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2202.06674.pdf" },
+      { "label": "Project", "url": "./proj/TMOC/TMOC.html" },
+      { "label": "Code", "url": "https://github.com/yding25/TMOC" }
+    ]
+  },
+  {
+    "year": "2022",
+    "category": "deployment",
+    "image": "img/grop_real.png",
+    "title": "Visually Grounded Task and Motion Planning for Mobile Manipulation",
+    "venue": "ICRA, 2022",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Xiaohan Zhang, Yifeng Zhu, Yan Ding, Yuke Zhu, Peter Stone, Shiqi Zhang",
+    "tags": ["Visual Grounding", "Mobile Manipulation", "Scene Execution"],
+    "summary": "This paper studies visually grounded task and motion planning for mobile manipulation, linking visual scene understanding with symbolic and geometric planning.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2202.10667.pdf" },
+      { "label": "Project", "url": "https://sites.google.com/view/grop-tamp" }
+    ]
+  },
+  {
+    "year": "2021",
+    "category": "embodied-models",
+    "image": "img/howie.png",
+    "title": "Task and Situation Structures for Case-Based Planning",
+    "venue": "ICCBR, 2021",
+    "level": "Conference",
+    "contributors": "Hao Yang, Tavan Eftekhar, Chad Esselink, Yan Ding, Shiqi Zhang",
+    "tags": ["Case-Based Reasoning", "Task Structure", "Situation Modeling"],
+    "summary": "This work models task and situation structures for case-based planning, supporting reuse of prior planning experience across related scenarios.",
+    "links": [
+      { "label": "Paper", "url": "https://link.springer.com/chapter/10.1007/978-3-030-86957-1_18" }
+    ]
+  },
+  {
+    "year": "2020",
+    "category": "deployment",
+    "image": "img/tmpud.png",
+    "title": "Task-Motion Planning for Safe and Efficient Urban Driving",
+    "venue": "IROS, 2020",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Yan Ding, Xiaohan Zhang, Xingyue Zhan, Shiqi Zhang",
+    "tags": ["Autonomous Driving", "Deployment", "Safety"],
+    "summary": "TMPUD helps autonomous vehicles balance efficiency and safety by coordinating task and motion planners for urban driving.",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/pdf/2003.03807" },
+      { "label": "Code", "url": "https://github.com/yding25/TMPUD" },
+      { "label": "Demo", "url": "https://www.youtube.com/watch?v=8NHQYUqMyoI" }
+    ]
+  },
+  {
+    "year": "2020",
+    "category": "data-pipelines",
+    "image": "img/DVAT.png",
+    "title": "DAVT: an error-bounded vehicle trajectory data representation and compression framework",
+    "venue": "IEEE TVT, 2020",
+    "level": "IEEE Transactions",
+    "contributors": "Chao Chen, Yan Ding, Suiming Guo, Yasha Wang",
+    "tags": ["Trajectory Data", "Compression", "Edge Computing"],
+    "summary": "DAVT proposes a mobile edge computing solution for vehicle trajectory compression that reduces data at the source and lowers communication and storage costs using compressors for distance, acceleration, velocity, and time data.",
+    "links": [
+      { "label": "PDF", "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9163296" }
+    ]
+  },
+  {
+    "year": "2019",
+    "category": "data-pipelines",
+    "image": "img/VTracer.png",
+    "title": "VTracer: When online vehicle trajectory compression meets mobile edge computing",
+    "venue": "IEEE Systems Journal, 2019",
+    "level": "IEEE Journal",
+    "contributors": "Chao Chen, Yan Ding, Zhu Wang, Junfeng Zhao, Bin Guo, Daqing Zhang",
+    "tags": ["Trajectory Data", "Compression", "Mobile Edge Computing"],
+    "summary": "VTracer is an online trajectory compression framework that uses SD-Matching for GPS alignment and HCC for compression, demonstrating effectiveness and efficiency on real-world datasets in Beijing and deployment in Chongqing.",
+    "links": [
+      { "label": "PDF", "url": "https://hal.science/hal-02321015/document" }
+    ]
+  },
+  {
+    "year": "2019",
+    "category": "data-pipelines",
+    "image": "img/trajcompressor.png",
+    "title": "TrajCompressor: An Online Map-matching-based Trajectory Compression Framework Leveraging Vehicle Heading Direction and Change",
+    "venue": "IEEE TITS, 2019",
+    "level": "IEEE Transactions",
+    "contributors": "Chao Chen, Yan Ding, Xuefeng Xie, Shu Zhang, Zhu Wang, Liang Feng",
+    "tags": ["Trajectory Data", "Map Matching", "Compression"],
+    "summary": "TrajCompressor reduces storage, communication, and computation overhead from massive redundant vehicle trajectory data through online trajectory mapping and trajectory compression with Spatial-Directional Matching and Heading Change Compression.",
+    "links": [
+      { "label": "PDF", "url": "https://ieeexplore.ieee.org/abstract/document/8697124" }
+    ]
+  },
+  {
+    "year": "2018",
+    "category": "deployment",
+    "image": "img/api.png",
+    "title": "Fuel Consumption Estimation of Potential Driving Paths by Leveraging Online Route APIs",
+    "venue": "GPC, 2018",
+    "level": "Conference",
+    "contributors": "Chao Chen, Yan Ding, Xuefeng Xie, Zhikai Yang",
+    "tags": ["Urban Computing", "Route APIs", "Fuel Estimation"],
+    "summary": "This work proposes a fuel consumption model based on GPS trajectory and OBD-II data to estimate fuel usage of driving paths and help drivers choose fuel-efficient routes that reduce emissions.",
+    "links": [
+      { "label": "PDF", "url": "https://link.springer.com/chapter/10.1007/978-3-030-15093-8_7" }
+    ]
+  },
+  {
+    "year": "2018",
+    "category": "data-pipelines",
+    "image": "img/threestage.png",
+    "title": "A three-stage online map-matching algorithm by fully using vehicle heading direction",
+    "venue": "Journal of Ambient Intelligence and Humanized Computing, 2018",
+    "level": "Journal",
+    "contributors": "Chao Chen, Yan Ding, Xuefeng Xie, Shu Zhang",
+    "tags": ["Map Matching", "Trajectory Data", "Heading Direction"],
+    "summary": "The SD-Matching algorithm uses a three-stage approach to improve the accuracy and speed of online map matching by incorporating vehicle heading direction data.",
+    "links": [
+      { "label": "PDF", "url": "https://link.springer.com/article/10.1007/s12652-018-0760-0" }
+    ]
+  },
+  {
+    "year": "2017",
+    "category": "deployment",
+    "image": "img/greenplanner.png",
+    "title": "Greenplanner: Planning personalized fuel-efficient driving routes using multi-sourced urban data",
+    "venue": "IEEE PerCom, 2017",
+    "level": "Conference",
+    "contributors": "Yan Ding, Chao Chen, Shu Zhang, Bin Guo, Zhiwen Yu, Yasha Wang",
+    "tags": ["Urban Computing", "Route Planning", "Deployment"],
+    "summary": "GreenPlanner recommends personalized fuel-efficient driving routes using multi-sourced urban data and a personalized fuel consumption model, reducing fuel consumption in the Beijing deployment.",
+    "links": [
+      { "label": "PDF", "url": "https://www.researchgate.net/profile/Chao-Chen-82/publication/311588334_GreenPlanner_Planning_Personalized_Fuel-efficient_Driving_Routes_using_Multi-sourced_Urban_Data/links/5a67db75a6fdcce9c106ed92/GreenPlanner-Planning-Personalized-Fuel-efficient-Driving-Routes-using-Multi-sourced-Urban-Data.pdf" }
+    ]
+  }
+]
+                </script>
+                <div class="pub-maintenance">
+                    <strong>Adding new papers:</strong>
+                    <span>edit the embedded <code>publicationDataJson</code> block in <code>index.html</code>. Use category
+                        <code>data-pipelines</code>, <code>embodied-models</code>, or <code>deployment</code>. Images
+                        and headshots stay together in <code>img/</code>.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap footer-row">
+            <p>
+                © Yan Ding. Contact:
+                <a href="mailto:yding25@binghamton.edu">yding25 at binghamton.edu</a>.
+            </p>
+            <div class="footer-visitors" aria-label="Visitor map">
+                <script type="text/javascript" id="clustrmaps"
+                    src="https://clustrmaps.com/map_v2.js?d=WYdWih066J3wTpH_iNl0ozrF76XRIfsDmIJ7adgimc4&cl=ffffff&w=130"></script>
+            </div>
+        </div>
+    </footer>
+
+    <button class="chat-launch" id="chatLaunch" type="button" aria-label="Open chat">Chat</button>
+    <aside class="chat-panel" id="chatPanel" aria-label="Ask Yan">
+        <div class="chat-head">
+            <div>
+                <strong>Ask Yan</strong>
+                <span>Static assistant with email handoff</span>
+            </div>
+            <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+        </div>
+        <div class="chat-log" id="chatLog">
+            <div class="bubble bot">
+                Hi, I can route questions about FastUMI, embodied AI, publications, internships, or factory deployment.
+                For detailed replies, I will prepare an email to Yan.
+            </div>
+        </div>
+        <div class="quick-asks">
+            <button type="button" data-question="I want to discuss FastUMI hardware.">FastUMI</button>
+            <button type="button" data-question="I have a question about embodied model training.">Model training</button>
+            <button type="button" data-question="I want to discuss factory deployment.">Factory deployment</button>
+        </div>
+        <form class="chat-form" id="chatForm">
+            <input id="chatInput" name="question" type="text" autocomplete="off" placeholder="Type your question">
+            <button type="submit">Send</button>
+        </form>
+    </aside>
+
+    <script>
+        const visiblePublicationSection = document.querySelector("#publications > .wrap");
+        const filterButtons = visiblePublicationSection.querySelectorAll(".filter-btn");
+        const publicationYearFilter = document.getElementById("publicationYearFilter");
+        const publicationYears = document.getElementById("publicationYears");
+        const publicationData = JSON.parse(document.getElementById("publicationDataJson").textContent);
+        let activePublicationFilter = "all";
+        let activePublicationYear = "all";
+
+        function renderPublications() {
+            const filtered = publicationData.filter((paper) => {
+                const matchesCategory = activePublicationFilter === "all" || paper.category === activePublicationFilter;
+                const matchesYear = activePublicationYear === "all" || paper.year === activePublicationYear;
+                return matchesCategory && matchesYear;
+            });
+            const years = [...new Set(filtered.map((paper) => paper.year))];
+
+            if (!filtered.length) {
+                publicationYears.innerHTML = "<p class=\"section-note\">No publications match the selected filters.</p>";
+                return;
+            }
+
+            publicationYears.innerHTML = years.map((year) => {
+                const papers = filtered.filter((paper) => paper.year === year);
+                const paperHtml = papers.map((paper) => {
+                    const links = (paper.links || []).map((link) =>
+                        `<a href="${link.url}" target="_blank" rel="noopener">${link.label}</a>`
+                    ).join("");
+                    const tags = (paper.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join("");
+                    const summary = paper.summary ? `<p class="pub-summary">${paper.summary}</p>` : "";
+
+                    return `
+                        <article class="pub" data-category="${paper.category}">
+                            <img src="${paper.image}" alt="${paper.title}">
+                            <div>
+                                <p class="pub-title">${paper.title}</p>
+                                <p class="pub-meta">${paper.venue} · <span class="tag blue">${paper.level}</span></p>
+                                <p class="pub-contributors">Major contributors: ${paper.contributors}</p>
+                                ${summary}
+                                ${links ? `<div class="pub-links">${links}</div>` : ""}
+                                ${tags ? `<div class="pub-tags">${tags}</div>` : ""}
+                            </div>
+                        </article>
+                    `;
+                }).join("");
+
+                return `
+                    <div class="year-group" data-year="${year}">
+                        <div class="year-title">${year}</div>
+                        <div class="pub-list">${paperHtml}</div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                activePublicationFilter = button.dataset.filter;
+                filterButtons.forEach((item) => item.classList.remove("active"));
+                button.classList.add("active");
+                renderPublications();
+            });
+        });
+
+        const publicationYearOptions = [...new Set(publicationData.map((paper) => paper.year))];
+        publicationYearOptions.forEach((year) => {
+            const option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            publicationYearFilter.appendChild(option);
+        });
+
+        publicationYearFilter.addEventListener("change", () => {
+            activePublicationYear = publicationYearFilter.value;
+            renderPublications();
+        });
+
+        renderPublications();
+
+        const chatLaunch = document.getElementById("chatLaunch");
+        const chatPanel = document.getElementById("chatPanel");
+        const chatClose = document.getElementById("chatClose");
+        const chatLog = document.getElementById("chatLog");
+        const chatForm = document.getElementById("chatForm");
+        const chatInput = document.getElementById("chatInput");
+
+        function appendBubble(text, speaker) {
+            const bubble = document.createElement("div");
+            bubble.className = `bubble ${speaker}`;
+            bubble.textContent = text;
+            chatLog.appendChild(bubble);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function respondTo(question) {
+            const lower = question.toLowerCase();
+            let response = "Thanks. This site is static, so I can prepare an email with your question for Yan.";
+
+            if (lower.includes("fastumi") || lower.includes("hardware")) {
+                response = "FastUMI is the right entry point for hardware-independent data collection. I will open an email draft so you can share your scenario and robot platform.";
+            } else if (lower.includes("model") || lower.includes("training")) {
+                response = "For embodied model training, it helps to include data format, robot embodiment, target tasks, and deployment constraints in your question.";
+            } else if (lower.includes("factory") || lower.includes("deployment")) {
+                response = "For factory deployment, please include the target process, cycle time, safety constraints, and current automation setup.";
+            } else if (lower.includes("intern") || lower.includes("collaborat")) {
+                response = "For internship or collaboration questions, include your background, project interest, timeline, and links to prior work.";
+            } else if (lower.includes("paper") || lower.includes("publication")) {
+                response = "For publication questions, mention the paper title and whether you are asking about data, model, experiments, or deployment.";
+            }
+
+            appendBubble(response, "bot");
+            const subject = encodeURIComponent("Website question for Yan Ding");
+            const body = encodeURIComponent(`Hi Yan,\n\nI visited your homepage and have a question:\n\n${question}\n\nBest,\n`);
+            window.location.href = `mailto:yding25@binghamton.edu?subject=${subject}&body=${body}`;
+        }
+
+        chatLaunch.addEventListener("click", () => {
+            chatPanel.classList.toggle("open");
+            if (chatPanel.classList.contains("open")) {
+                chatInput.focus();
+            }
+        });
+
+        chatClose.addEventListener("click", () => {
+            chatPanel.classList.remove("open");
+        });
+
+        document.querySelectorAll(".quick-asks button").forEach((button) => {
+            button.addEventListener("click", () => {
+                const question = button.dataset.question;
+                appendBubble(question, "user");
+                respondTo(question);
+            });
+        });
+
+        chatForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const question = chatInput.value.trim();
+            if (!question) return;
+            appendBubble(question, "user");
+            chatInput.value = "";
+            respondTo(question);
+        });
+    </script>
 </body>
+
+</html>
