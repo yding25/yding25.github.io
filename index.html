@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yan Ding</title>
     <meta name="description"
-        content="Yan Ding - CTO at Lumos Robotics. Embodied data pipelines, embodied manipulation models, robot learning, and real-world deployment.">
+        content="Yan Ding - Robotics researcher working on embodied AI, scalable robot data collection, vision-language-action models, mobile manipulation, and task and motion planning.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -342,7 +342,7 @@
 
         .demo-links {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
         }
 
@@ -515,6 +515,28 @@
         .pub[hidden],
         .year-group[hidden] {
             display: none;
+        }
+
+        .pub-text-only {
+            grid-template-columns: 1fr;
+        }
+
+        .publication-highlight {
+            margin: 0 0 20px;
+            padding: 14px;
+            border: 1px solid #dcc898;
+            border-radius: 8px;
+            background: #fbf6e8;
+        }
+
+        .publication-highlight p {
+            margin: 8px 0 0;
+        }
+
+        .pub-award {
+            margin: 8px 0;
+            color: var(--gold);
+            font-size: 13px;
         }
 
         .pub img {
@@ -836,13 +858,15 @@
                 <div>
                     <h1>Yan Ding</h1>
                     <p class="lead">
-                        CTO at Lumos Robotics.
+                        Robotics researcher working on embodied AI.
                     </p>
                     <p class="role-line">
-                        Former CTO at One Star Robotics. Ph.D. in Computer Science, State University of New York at
-                        Binghamton. Previously a researcher at Shanghai AI Laboratory, with long-term work on mobile
-                        manipulation and robot-learning systems. FastUMI is one of my key efforts, connecting data
-                        collection, model training, and deployment for embodied manipulation.
+                        I work on robot learning and mobile manipulation, connecting scalable data collection,
+                        vision-language-action models, task and motion planning, and real-world deployment.
+                        I received my Ph.D. in Computer Science from the State University of New York at Binghamton.
+                        Previously, I was CTO at Lumos Robotics (until August 2026) and One Star Robotics,
+                        and a researcher at Shanghai AI Laboratory. FastUMI is one of my key efforts in connecting
+                        data collection, model training, and deployment for embodied manipulation.
                     </p>
                     <div class="affiliations">
                         <span>Part-time Researcher, Fudan University</span>
@@ -870,8 +894,7 @@
                     <div>
                         <h2>Robotic Demos</h2>
                         <p class="section-note">
-                            I keep most short videos on social and company channels. The homepage keeps this section
-                            compact and routes visitors to the right source.
+                            Short robot demos and project updates from my social channel and FastUMI.
                         </p>
                     </div>
                 </div>
@@ -885,15 +908,9 @@
                             target="_blank" rel="noopener">Open Channel</a>
                     </article>
                     <article class="tool-card demo-entry">
-                        <div class="demo-source">WeChat</div>
-                        <h3>WeChat Video Channel</h3>
-                        <p>Recent videos and field clips. The QR code opens as a standalone image.</p>
-                        <a class="button" href="img/WeChat_QR.jpg" target="_blank" rel="noopener">Open QR Code</a>
-                    </article>
-                    <article class="tool-card demo-entry">
-                        <div class="demo-source">Company</div>
-                        <h3>Lumos / FastUMI Videos</h3>
-                        <p>Selected product and deployment videos from Lumos Robotics and FastUMI.</p>
+                        <div class="demo-source">Project</div>
+                        <h3>FastUMI Videos</h3>
+                        <p>Selected data collection, robot learning, and deployment videos from FastUMI.</p>
                         <a class="button" href="https://fastumi.com/" target="_blank" rel="noopener">Open Site</a>
                     </article>
                 </div>
@@ -906,11 +923,15 @@
                     <div>
                         <h2>Publications</h2>
                         <p class="section-note">
-                            Selected works are shown directly on this page. Each item includes thumbnail, venue,
-                            contributors, links, and a short project summary.
+                            Selected papers, preprints, and manuscripts with publication details, links, and project summaries.
                         </p>
                     </div>
                 </div>
+                <aside class="publication-highlight" aria-label="Publication award">
+                    <span class="tag gold">Best Paper Award</span>
+                    <p><a href="https://vap-tamp.github.io/vap-tamp/" target="_blank" rel="noopener">VAP-TAMP</a>
+                        received the Best Paper Award from the Full-Shift Robot Co-Workers Workshop at IROS 2026.</p>
+                </aside>
                 <div class="filter-bar" aria-label="Publication filters">
                     <button class="filter-btn active" data-filter="all" type="button">All</button>
                     <button class="filter-btn" data-filter="data-pipelines" type="button">Data Infrastructure</button>
@@ -923,6 +944,216 @@
                 <div id="publicationYears"></div>
                 <script type="application/json" id="publicationDataJson">
 [
+  {
+    "year": "2026",
+    "category": "embodied-models",
+    "image": "",
+    "title": "AWARE-VLA: Geometry-Grounded Anticipatory World-Action Representations from Large-Scale UMI Pretraining",
+    "venue": "Submitted to ICRA, 2026",
+    "level": "Unpublished Manuscript",
+    "contributors": "Anonymous authors",
+    "role": "Corresponding author",
+    "tags": [
+      "VLA",
+      "Geometry Grounding",
+      "UMI Pretraining"
+    ],
+    "summary": "Geometry-grounded anticipatory world-action representations from large-scale UMI pretraining. The manuscript is not yet public.",
+    "links": []
+  },
+  {
+    "year": "2026",
+    "category": "embodied-models",
+    "image": "img/vap-tamp.png",
+    "title": "Robot Planning and Situation Handling with Active Perception (VAP-TAMP)",
+    "venue": "IROS, 2026",
+    "level": "Flagship Robotics Conference",
+    "contributors": "Austine Oloo, Zainab Altaweel, Yohei Hayamizu, Peiqi Liu, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski, Chad Esselink, Chris Paxton, Xiaohan Zhang, Shiqi Zhang",
+    "award": "Full-Shift Robot Co-Workers Workshop, IROS 2026",
+    "tags": [
+      "Active Perception",
+      "Task and Motion Planning",
+      "Situation Handling"
+    ],
+    "summary": "VAP-TAMP combines action knowledge, vision-language models, active view selection, and scene-graph reasoning to detect and handle unforeseen situations during robot plan execution, with evaluation in simulation and on a mobile manipulation platform.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2604.26988"
+      },
+      {
+        "label": "Project",
+        "url": "https://vap-tamp.github.io/vap-tamp/"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "category": "data-pipelines",
+    "image": "",
+    "title": "Assessing the Marginal Utility of Exocentric Head Views in UMI-Style Large-FoV Wrist-Camera Manipulation",
+    "venue": "arXiv, 2026",
+    "level": "Preprint",
+    "contributors": "Yuhui Duan, Shi Jin, Yuntian Wang, Jin Wang, Siao Liu, Wenchang Gao, Zhaxizhuoma, Yan Ding",
+    "tags": [
+      "UMI",
+      "Camera Design",
+      "Bimanual Manipulation"
+    ],
+    "summary": "This study compares wrist-only and wrist-plus-head camera policies on real bimanual manipulation tasks. It finds that head views help most when they add focused, task-relevant information, and examines how field of view and demonstration count affect performance.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2610.14075"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "category": "embodied-models",
+    "image": "img/internvla-a15.png",
+    "title": "InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",
+    "venue": "arXiv, 2026",
+    "level": "Preprint",
+    "contributors": "Haoxiang Ma, Junhao Cai, Xiaoxu Xu, Hao Li, Yuyin Yang, Yang Tian, Jiafei Cao, Hongrui Zhu, Zherui Qiu, Zhaxizhuoma, Yuqiang Yang, Jiaqi Peng, Xueyuan Wei, Yangkun Zhu, Jiahao Jiang, Xing Gao, Hanqing Wang, Feng Yuan, Kailin Li, Xueyue Zhu, Tai Wang, Yan Ding, Jiangmiao Pang, Jia Zeng, Jingjing Zhang, Bowen Zhou, Yao Mu, Chunhua Shen, Weinan Zhang",
+    "tags": [
+      "Vision-Language-Action",
+      "Latent Foresight",
+      "Compositional Generalization"
+    ],
+    "summary": "InternVLA-A1.5 combines vision-language understanding, latent visual foresight, and continuous action generation. Learnable foresight tokens transfer dynamics knowledge from a frozen video model during training, while a lightweight action expert supports deployment without the video branch.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2607.04988"
+      },
+      {
+        "label": "Project",
+        "url": "https://internrobotics.github.io/internvla-a15.github.io/"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/InternRobotics/InternVLA-A-series"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "category": "deployment",
+    "image": "",
+    "title": "A Scalable Embodied Intelligence Platform for Seamless Real-to-Sim-to-Real Transfer of Household Mobile Manipulation Tasks",
+    "venue": "CCF Transactions on Pervasive Computing and Interaction, 8:541–558, 2026",
+    "level": "Journal",
+    "contributors": "Kui Yang, Xianlei Long, Haoxuan Li, Yan Ding, Chao Chen",
+    "tags": [
+      "BestMan",
+      "Mobile Manipulation",
+      "Real-to-Sim-to-Real"
+    ],
+    "summary": "This extended BestMan platform connects automated scene reconstruction, simulation-guided task formalization and skill learning, and hardware-independent deployment. It supports a complete real-to-sim-to-real workflow for household mobile manipulation across heterogeneous robots.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://link.springer.com/article/10.1007/s42486-026-00238-y"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2606.18646"
+      },
+      {
+        "label": "Project",
+        "url": "https://bestmansim.com/"
+      }
+    ],
+    "role": "Corresponding author"
+  },
+  {
+    "year": "2026",
+    "category": "data-pipelines",
+    "image": "img/umi-bench.png",
+    "title": "UMI-Bench 1.0: An Open and Reproducible Real-World Benchmark for Tabletop Robotic Manipulation with UMI Data",
+    "venue": "arXiv, 2026",
+    "level": "Preprint",
+    "contributors": "Shi Jin, Yuntian Wang, Yuhui Duan, Di Wu, Gaoqi Dong, Xiaohang Liu, Xiaotong Li, Hongfei Jia, Zehao Zhang, Tianyu Wang, Zhongjie Jia, Yuanqi Yao, Chenjia Bai, Zhaxizhuoma, Siao Liu, Nieqing Cao, Jin Wang, Chao Yu, Yan Ding",
+    "tags": [
+      "UMI",
+      "Real-World Benchmark",
+      "Reproducible Evaluation"
+    ],
+    "summary": "UMI-Bench standardizes real-robot evaluation of UMI-trained manipulation policies. A unified protocol connects demonstration collection, scene reset, policy execution, result logging, and task-factor analysis to measure generalization beyond curated demonstrations.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2606.10382"
+      },
+      {
+        "label": "Project",
+        "url": "https://umibenchmark.github.io/"
+      },
+      {
+        "label": "Dataset",
+        "url": "https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1"
+      },
+      {
+        "label": "Models",
+        "url": "https://huggingface.co/UMIbenchmark/UMI-Benchmark-v1-checkpoints"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "category": "embodied-models",
+    "image": "img/vista.png",
+    "title": "VISTA: Vision-Grounded and Physics-Validated Adaptation of UMI data for VLA Training",
+    "venue": "arXiv, 2026",
+    "level": "Preprint",
+    "contributors": "Siyuan Yang, Linzheng Guo, Ouyang Lu, Zhaxizhuoma, Daoran Zhang, Xinmiao Wang, Ting Xiao, Fangzheng Yan, Zhijun Chen, Yan Ding, Chao Yu, Chenjia Bai, Xuelong Li",
+    "tags": [
+      "Vision-Language-Action",
+      "UMI",
+      "Physical Validation"
+    ],
+    "summary": "VISTA adapts UMI demonstrations for VLA training by aligning perception to wrist-mounted fisheye images and filtering trajectories for physical feasibility. It combines UMI-VQA supervision, trajectory scoring, and two-stage vision-language-action training.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2606.04708"
+      },
+      {
+        "label": "Project",
+        "url": "https://tele-umi-vista.github.io/"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/TeleHuman/umi-vista"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "category": "data-pipelines",
+    "image": "",
+    "title": "U-ARM: Ultra Low-cost General Teleoperation Interface for Robot Manipulation",
+    "venue": "RSS 2026 RoboData Workshop",
+    "level": "Workshop Paper",
+    "contributors": "Yanwen Zou, Zhaoye Zhou, Chenyang Shi, Zewei Ye, Junda Huang, Yan Ding, Bo Zhao",
+    "tags": [
+      "Teleoperation",
+      "Low-Cost Hardware",
+      "Robot Data Collection"
+    ],
+    "summary": "U-Arm is a low-cost leader-follower teleoperation interface with three 3D-printed configurations for different robot arms. Its hardware and control design supports efficient demonstration collection, simulation testing, and real-world robot manipulation.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2509.02437"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/MINT-SJTU/LeRobot-Anything-U-Arm"
+      }
+    ]
+  },
   {
     "year": "2026",
     "category": "embodied-models",
@@ -995,6 +1226,114 @@
     ]
   },
   {
+    "year": "2026",
+    "category": "deployment",
+    "image": "img/moma_pos.jpg",
+    "title": "MoMa-Pos: An Efficient Object-Kinematic-Aware Base Placement Determination Framework for Mobile Manipulation",
+    "venue": "ICA3PP 2025, LNCS 16383, 2026",
+    "level": "Conference Paper",
+    "contributors": "Beichen Shao, Nieqing Cao, Yan Ding, Xingchen Wang, Fuqiang Gu, Chao Chen",
+    "tags": [
+      "Scene Deployment",
+      "Mobile Manipulation",
+      "Base Placement"
+    ],
+    "summary": "MoMa-Pos addresses the problem of selecting feasible base positions before navigation-manipulation tasks in cluttered real-world environments with furniture, obstacles, and many objects.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2403.19940"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1007/978-981-95-8405-5_14"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/AutonoBot-Lab/Project_MoMa-Pos"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "",
+    "title": "OVA-Fields: Weakly Supervised Open-Vocabulary Affordance Fields for Robot Operational Part Detection",
+    "venue": "ICCV, 2025",
+    "level": "Top Vision Conference",
+    "contributors": "Heng Su, Mengying Xie, Nieqing Cao, Yan Ding, Beichen Shao, Xianlei Long, Fuqiang Gu, Chao Chen",
+    "tags": [
+      "Open-Vocabulary Affordance",
+      "3D Scene Understanding",
+      "Robot Manipulation"
+    ],
+    "summary": "OVA-Fields grounds open-vocabulary instructions in actionable object parts within 3D scenes. It combines geometric encoding and semantic affordance representations to support targeted robot manipulation from complex natural-language commands.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Su_OVA-Fields_Weakly_Supervised_Open-Vocabulary_Affordance_Fields_for_Robot_Operational_Part_ICCV_2025_paper.html"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/vlasu19/OVA-Fields"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "",
+    "title": "Think Small, Act Big: Primitive Prompt Learning for Lifelong Robot Manipulation",
+    "venue": "CVPR, 2025",
+    "level": "Top Vision Conference",
+    "contributors": "Yuanqi Yao, Siao Liu, Haoming Song, Delin Qu, Qizhi Chen, Yan Ding, Bin Zhao, Zhigang Wang, Xuelong Li, Dong Wang",
+    "tags": [
+      "Lifelong Learning",
+      "Primitive Prompt Learning",
+      "Robot Manipulation"
+    ],
+    "summary": "Primitive Prompt Learning represents reusable manipulation primitives with prompts learned across multiple skills. New skills add prompts while retaining pretrained ones, enabling knowledge transfer and continued skill acquisition in simulated and real-world robot tasks.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yao_Think_Small_Act_Big_Primitive_Prompt_Learning_for_Lifelong_Robot_CVPR_2025_paper.html"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2504.00420"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "category": "embodied-models",
+    "image": "",
+    "title": "Learning 2D Invariant Affordance Knowledge for 3D Affordance Grounding",
+    "venue": "AAAI, 2025",
+    "level": "Flagship AI Conference",
+    "contributors": "Xianqiang Gao, Pingrui Zhang, Delin Qu, Dong Wang, Zhigang Wang, Yan Ding, Bin Zhao",
+    "tags": [
+      "3D Affordance Grounding",
+      "Invariant Representations",
+      "Cross-Modal Learning"
+    ],
+    "summary": "MIFAG learns affordance knowledge shared across multiple human-object interaction images and transfers it to 3D point clouds. It introduces an affordance dictionary and adaptive fusion to improve grounding across changes in object geometry and appearance.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/32318"
+      },
+      {
+        "label": "Project",
+        "url": "https://goxq.github.io/mifag/"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2408.13024"
+      }
+    ]
+  },
+  {
     "year": "2025",
     "category": "embodied-models",
     "image": "img/asyncvla.png",
@@ -1057,15 +1396,24 @@
       "LLM Grounding"
     ],
     "summary": "LLM-GROP uses prompting to extract commonsense knowledge about object configurations from a large language model and instantiates it with a task and motion planner, enabling successful and efficient multi-object rearrangement in various environments with a mobile manipulator.",
-    "links": []
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2511.07727"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1177/02783649251378196"
+      }
+    ]
   },
   {
     "year": "2025",
     "category": "data-pipelines",
     "image": "img/MoMa-Kitchen.png",
     "title": "MoMa-Kitchen: A 100K+ Benchmark for Affordance-Grounded Last-Mile Navigation in Mobile Manipulation",
-    "venue": "Under Review",
-    "level": "Benchmark / Dataset",
+    "venue": "ICCV, 2025",
+    "level": "Top Vision Conference",
     "contributors": "Pingrui Zhang, Xianqiang Gao, Yuhan Wu, Kehui Liu, Dong Wang, Zhigang Wang, Bin Zhao, Yan Ding, Xuelong Li",
     "tags": [
       "Benchmark",
@@ -1081,6 +1429,10 @@
       {
         "label": "Project",
         "url": "https://momakitchen.github.io/"
+      },
+      {
+        "label": "Proceedings",
+        "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_MoMa-Kitchen_A_100K_Benchmark_for_Affordance-Grounded_Last-Mile_Navigation_in_Mobile_ICCV_2025_paper.html"
       }
     ]
   },
@@ -1089,8 +1441,8 @@
     "category": "data-pipelines",
     "image": "img/agibot-world.png",
     "title": "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
-    "venue": "Under Review",
-    "level": "Large-Scale Platform",
+    "venue": "IROS, 2025",
+    "level": "Flagship Robotics Conference",
     "contributors": "Team AgiBot-World",
     "tags": [
       "Robot Data",
@@ -1106,6 +1458,10 @@
       {
         "label": "Project",
         "url": "https://opendrivelab.com/blog/agibot-world/"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/IROS60139.2025.11247088"
       }
     ]
   },
@@ -1205,8 +1561,8 @@
     "category": "embodied-models",
     "image": "img/spatialvla.png",
     "title": "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model",
-    "venue": "arXiv, 2025",
-    "level": "Preprint",
+    "venue": "Robotics: Science and Systems (RSS), 2025",
+    "level": "Robotics: Science and Systems",
     "contributors": "Delin Qu, Haoming Song, Qizhi Chen, Dong Wang, Yuanqi Yao, Xinyi Ye, Yan Ding, Zhigang Wang, Jiayuan Gu, Bin Zhao, Xuelong Li",
     "tags": [
       "VLA",
@@ -1224,8 +1580,8 @@
         "url": "https://spatialvla.github.io/"
       },
       {
-        "label": "OpenReview",
-        "url": "https://openreview.net/forum?id=8OIwIEF1kV"
+        "label": "Proceedings",
+        "url": "https://www.roboticsproceedings.org/rss21/p011.html"
       }
     ]
   },
@@ -1276,13 +1632,13 @@
     ]
   },
   {
-    "year": "2024",
+    "year": "2025",
     "category": "deployment",
     "image": "img/BestMan.png",
     "title": "BestMan: A Modular Mobile Manipulator Platform for Embodied AI with Unified Simulation-Hardware APIs",
-    "venue": "FCS Letter",
-    "level": "Platform Paper",
-    "contributors": "Kui Yang, Nieqing Cao, Yan Ding, Chao Chen",
+    "venue": "Frontiers of Computer Science, 19(9):199361, 2025",
+    "level": "Journal Letter",
+    "contributors": "Kui Yang, Nieqing Cao, Beichen Shao, Xingchen Wang, Yan Ding, Chao Chen",
     "tags": [
       "Platform",
       "Simulation-Hardware APIs",
@@ -1297,6 +1653,10 @@
       {
         "label": "Project",
         "url": "https://bestmansim.com/"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1007/s11704-025-41109-6"
       }
     ]
   },
@@ -1318,31 +1678,6 @@
       {
         "label": "Paper",
         "url": "https://arxiv.org/pdf/2404.02817"
-      }
-    ]
-  },
-  {
-    "year": "2024",
-    "category": "deployment",
-    "image": "img/moma_pos.jpg",
-    "title": "MoMa-Pos: Where Should Mobile Manipulators Stand in Cluttered Environment Before Task Execution?",
-    "venue": "Under Review",
-    "level": "Deployment Geometry",
-    "contributors": "Beichen Shao, Yan Ding, Xingchen Wang, Xuefeng Xie, Fuqiang Gu, Jun Luo, Chao Chen",
-    "tags": [
-      "Scene Deployment",
-      "Mobile Manipulation",
-      "Base Placement"
-    ],
-    "summary": "MoMa-Pos addresses the problem of selecting feasible base positions before navigation-manipulation tasks in cluttered real-world environments with furniture, obstacles, and many objects.",
-    "links": [
-      {
-        "label": "Paper",
-        "url": "https://arxiv.org/pdf/2403.19940.pdf"
-      },
-      {
-        "label": "Project",
-        "url": "https://yding25.com/MoMa-Pos/"
       }
     ]
   },
@@ -1925,14 +2260,19 @@
                     ).join("");
                     const tags = (paper.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join("");
                     const summary = paper.summary ? `<p class="pub-summary">${paper.summary}</p>` : "";
+                    const image = paper.image ? `<img src="${paper.image}" alt="${paper.title}">` : "";
+                    const role = paper.role ? `<p class="pub-contributors">My role: ${paper.role}</p>` : "";
+                    const award = paper.award ? `<p class="pub-award"><span class="tag gold">Best Paper Award</span> ${paper.award}</p>` : "";
 
                     return `
-                        <article class="pub" data-category="${paper.category}">
-                            <img src="${paper.image}" alt="${paper.title}">
+                        <article class="pub${paper.image ? "" : " pub-text-only"}" data-category="${paper.category}">
+                            ${image}
                             <div>
                                 <p class="pub-title">${paper.title}</p>
                                 <p class="pub-meta">${paper.venue} · <span class="tag blue">${paper.level}</span></p>
-                                <p class="pub-contributors">Major contributors: ${paper.contributors}</p>
+                                <p class="pub-contributors">Authors: ${paper.contributors}</p>
+                                ${role}
+                                ${award}
                                 ${summary}
                                 ${links ? `<div class="pub-links">${links}</div>` : ""}
                                 ${tags ? `<div class="pub-tags">${tags}</div>` : ""}
