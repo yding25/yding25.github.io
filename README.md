@@ -36,3 +36,6 @@ The October 2026 update adds the VAP-TAMP workshop award and recent publications
 - [U-ARM workshop listing on the first author’s homepage](https://yanwen-zou.github.io/) (RSS 2026 RoboData Workshop; confirmed by Yan Ding).
 
 Thumbnail sources: [VAP-TAMP](https://vap-tamp.github.io/vap-tamp/figures/overview-hires.png), [InternVLA-A1.5](https://internrobotics.github.io/internvla-a15.github.io/reference-assets/paper/teaser.png), [VISTA](https://arxiv.org/html/2606.04708v2/1.png), [UMI-Bench 1.0](https://arxiv.org/html/2606.10382v1/overview.png).
+
+AWARE-VLA’s summary and overview figure were verified against the author-supplied anonymized manuscript on 17 October 2026. Its author list remains anonymous, with the homepage owner identified only by the corresponding-author role. The submission venue remains as confirmed by Yan Ding.
+The anonymous [AWARE-VLA supplementary project page](https://aware-vla.github.io/) is linked from the publication record and was confirmed accessible with the matching title.
