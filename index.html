@@ -838,6 +838,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="homepage.css">
 </head>
 
 <body>
@@ -857,9 +858,7 @@
             <div class="wrap hero-grid">
                 <div>
                     <h1>Yan Ding</h1>
-                    <p class="lead">
-                        Robotics researcher working on embodied AI.
-                    </p>
+                    <p class="lead">Robotics researcher working on embodied AI.</p>
                     <p class="role-line">
                         I work on robot learning and mobile manipulation, connecting scalable data collection,
                         vision-language-action models, task and motion planning, and real-world deployment.
@@ -885,6 +884,12 @@
                 <aside class="portrait-card" aria-label="Portrait">
                     <img src="img/headshot4.jpg" alt="Yan Ding">
                 </aside>
+            </div>
+            <div class="wrap research-strip" aria-label="Selected research">
+                <a href="#publications"><img src="img/fastumi.jpg" alt="FastUMI robot data collection"><span>Robot data collection</span></a>
+                <a href="#publications"><img src="img/dynamoe.png" alt="DynaMoE robot learning research"><span>Robot learning</span></a>
+                <a href="#publications"><img src="img/alignbot.png" alt="AlignBot task planning research"><span>Task planning</span></a>
+                <a href="#publications"><img src="img/MoMa-Kitchen.png" alt="MoMa-Kitchen research"><span>Mobile manipulation</span></a>
             </div>
         </section>
 
@@ -2187,12 +2192,6 @@
   }
 ]
                 </script>
-                <div class="pub-maintenance">
-                    <strong>Adding new papers:</strong>
-                    <span>edit the embedded <code>publicationDataJson</code> block in <code>index.html</code>. Use category
-                        <code>data-pipelines</code>, <code>embodied-models</code>, or <code>deployment</code>. Images
-                        and headshots stay together in <code>img/</code>.</span>
-                </div>
             </div>
         </section>
     </main>
@@ -2297,10 +2296,15 @@
         }
 
         filterButtons.forEach((button) => {
+            button.setAttribute("aria-pressed", button.classList.contains("active"));
             button.addEventListener("click", () => {
                 activePublicationFilter = button.dataset.filter;
-                filterButtons.forEach((item) => item.classList.remove("active"));
+                filterButtons.forEach((item) => {
+                    item.classList.remove("active");
+                    item.setAttribute("aria-pressed", "false");
+                });
                 button.classList.add("active");
+                button.setAttribute("aria-pressed", "true");
                 renderPublications();
             });
         });
